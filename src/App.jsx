@@ -58,7 +58,7 @@ const ORDER_DEFS = {
     { book: "new-house", question: "a cup?", target: "No" },
     { book: "new-house", question: "a ball?", target: "Yes" },
     { book: "new-house", question: "a bottle?", target: "Yes" },
-    { book: "new-house", question: "an car?", target: "No" },
+    { book: "new-house", question: "a car?", target: "No" },
     { book: "new-house", question: "a cookie?", target: "Yes" },
     { book: "new-house", question: "a block?", target: "No" },
     { book: "new-house", question: "an apple?", target: "No" }
@@ -68,7 +68,7 @@ const ORDER_DEFS = {
     { book: "new-house", question: "a cup?", target: "No" },
     { book: "new-house", question: "a ball?", target: "Yes" },
     { book: "new-house", question: "a bottle?", target: "Yes" },
-    { book: "new-house", question: "an car?", target: "No" },
+    { book: "new-house", question: "a car?", target: "No" },
     { book: "new-house", question: "a cookie?", target: "Yes" },
     { book: "new-house", question: "a block?", target: "No" },
     { book: "new-house", question: "an apple?", target: "No" },
@@ -603,7 +603,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
     const pkg = buildPackage();
     try {
       setUploadStatus({ message: "Uploading to dropbox... This may take a (long) while!", type: "loading" });
-      const sessionId = await DropboxService.uploadVideo(videoBlob);
+      const sessionId = await DropboxService.uploadVideo(videoBlob, meta.participant_id);
       await DropboxService.saveSessionData(sessionId, pkg);
       setUploadStatus({ message: "Successfully saved to dropbox! Coders can now access this video.", type: "success" });
       setTimeout(() => setUploadStatus({ message: "", type: "" }), 5000);
@@ -724,10 +724,8 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
                   {uploaderSessions.map((s) => {
                     const uploadDate = formatDate(s.savedAt);
                     const completedDate = formatDate(s.progress?.completedAt);
-                    const statusText = s.status === 'completed' ? 'Completed' : 
-                                      s.status === 'in_progress' ? 'In Progress' : 'Uncoded';
-                    const statusColor = s.status === 'completed' ? 'text-green-700' : 
-                                       s.status === 'in_progress' ? 'text-yellow-700' : 'text-gray-600';
+                    const statusText = s.status === 'completed' ? 'Completed' : 'Uncoded';
+                    const statusColor = s.status === 'completed' ? 'text-green-700' : 'text-gray-600';
 
                     return (
                       <tr key={s.id} className="border-b border-gray-200 hover:bg-gray-50">
@@ -834,7 +832,6 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
                             <option value="">— select type —</option>
                             <option value="parent_question">Parent question</option>
                             <option value="child_response">Child response</option>
-                            <option value="continued_response">Continued response</option>
                             <option value="other">Other</option>
                         </select>
                           <button
@@ -1156,20 +1153,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
     return true;
   };
 
-  const nextClip = async () => {
-    if (sessionId) {
-      try {
-        await DropboxService.saveProgress(sessionId, {
-          phase,
-          idx,
-          answers,
-          phaseOrders,
-        });
-      } catch (error) {
-        console.warn("Failed to auto-save progress:", error);
-      }
-    }
-
+  const nextClip = () => {
     if (idx + 1 < queue.length) {
       setIdx(idx + 1);
     } else {
@@ -1259,7 +1243,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
     try {
       setSaveStatus({ message: "Saving responses to dropbox...", type: "loading" });
       
-      await DropboxService.saveProgress(sessionId, {
+      await DropboxService.saveCompletion(sessionId, {
         phase: 3,
         idx,
         answers,
@@ -1291,37 +1275,11 @@ function Coder({ videoURL = "", initialPkg = null }) {
     setPkg(sess.pkg);
       setSessionId(selectedId);
       
-      const progress = await DropboxService.loadProgress(selectedId);
-      if (progress && progress.answers) {
-        const savedOrders = progress.phaseOrders || {};
-        const resumedPhase = progress.phase || 0;
-        setAnswers(progress.answers);
-        setPhaseOrders(savedOrders);
-        setPhase(resumedPhase);
-        setIdx(progress.idx || 0);
-        if (resumedPhase === 1 || resumedPhase === 2) {
-          const type =
-            resumedPhase === 1 ? "child_response" : "parent_question";
-          const result = buildQueueInOrder(
-            type,
-            sess.pkg,
-            savedOrders[type] || [],
-          );
-          setQueue(result.queue);
-          setPhaseOrders((previous) => ({
-            ...previous,
-            [type]: result.order,
-          }));
-        } else {
-          setQueue([]);
-        }
-      } else {
-    setPhase(0);
-    setIdx(0);
-        setAnswers({});
-        setPhaseOrders({});
-        setQueue([]);
-      }
+      setPhase(0);
+      setIdx(0);
+      setAnswers({});
+      setPhaseOrders({});
+      setQueue([]);
     } catch (error) {
       alert(`Load failed: ${error.message}`);
     } finally {
@@ -1353,8 +1311,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
             )}
             <div className="space-y-2">
               {uncodedSessions.map((s) => {
-                const statusBadge = s.status === 'in_progress' ? 
-                  <span className="px-2 py-0.5 rounded-full text-xs bg-yellow-100 text-yellow-800 border border-yellow-300">In Progress</span> : 
+                const statusBadge =
                   <span className="px-2 py-0.5 rounded-full text-xs bg-gray-100 text-gray-800 border border-gray-300">Uncoded</span>;
                 const dateStr = formatDate(s.savedAt, "Recently uploaded");
                 
@@ -1452,6 +1409,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
               <div className="text-center py-12">
                 <div className="text-gray-500 mb-4">
                   <p className="mb-2"><span className="font-medium">Participant:</span> {pkg.meta.participant_id}</p>
+                  <p className="mb-2 text-sm text-gray-600">Responses are saved only when you finish coding and select “Save responses to dropbox”. Leaving or reloading starts this session over.</p>
                   <br/>
                 </div>
                 <button 

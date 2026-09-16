@@ -1,3 +1,4 @@
+import { collectSessions } from "./session-list.js";
 import { getIdToken } from "./auth";
 
 const CHUNK_SIZE = 2 * 1024 * 1024;
@@ -37,12 +38,15 @@ async function apiRequest(action, options = {}) {
   return data;
 }
 
-export async function uploadVideo(videoBlob) {
+export async function uploadVideo(videoBlob, participantId) {
   if (!(videoBlob instanceof Blob) || videoBlob.size === 0) {
     throw new Error("A non-empty video is required");
   }
 
-  const started = await apiRequest("upload-start", { method: "POST" });
+  const started = await apiRequest("upload-start", {
+    method: "POST",
+    json: { participantId },
+  });
   let offset = 0;
   while (offset < videoBlob.size) {
     const chunk = videoBlob.slice(offset, offset + CHUNK_SIZE);
@@ -76,28 +80,17 @@ export async function saveSessionData(sessionId, data) {
   });
 }
 
-export async function saveProgress(sessionId, data) {
-  await apiRequest("progress", {
+export async function saveCompletion(sessionId, data) {
+  await apiRequest("completion", {
     method: "POST",
     json: { sessionId, data },
   });
 }
 
-export async function loadProgress(sessionId) {
-  const result = await apiRequest("progress", {
-    query: { sessionId },
-  });
-  return result.progress;
-}
-
 export async function listSessions() {
-  const result = await apiRequest("list");
-  const sessions = result.sessions || [];
-  Object.defineProperty(sessions, "loadWarnings", {
-    value: result.skipped || [],
-    enumerable: false,
-  });
-  return sessions;
+  return collectSessions((cursor) =>
+    apiRequest("list", { query: cursor ? { cursor } : {} }),
+  );
 }
 
 export async function loadSession(sessionId) {

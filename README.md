@@ -22,7 +22,7 @@ This respository contains code for a blind-coding website, made specifically for
    - Use spacebar to play/pause
    - Zoom in/out for precision
 3. Assign each segment a type and pair. Press "play" to ensure the correct segment is selected.
-   - **Type**: parent_question, child_response, continued_response, or other
+   - **Type**: parent_question, child_response, or other
    - **Pair**: Which question this segment belongs to
 4. Click "upload to dropbox" to save each video.
 

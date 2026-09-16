@@ -37,7 +37,7 @@ export default [
     },
   },
   {
-    files: ["api/**/*.js", "server/**/*.js", "get-refresh-token.js"],
+    files: ["api/**/*.js", "server/**/*.js"],
     languageOptions: {
       ecmaVersion: 2022,
       globals: globals.node,
