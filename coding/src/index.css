@@ -219,9 +219,9 @@ th, td { text-align: left; }
 .admin-status-dialog > .flex { flex-wrap: wrap; }
 
 /* Preserve compact controls while restoring the action colors. */
-.coding-workspace button.bg-blue-600 { background: #2563eb; border-color: #2563eb; color: #fff; }
-.coding-workspace button.bg-blue-600:hover:not(:disabled) { background: #1d4ed8; border-color: #1d4ed8; }
-.coding-workspace button.bg-blue-600:disabled:hover { background: #2563eb; }
+.coding-workspace button.bg-blue-600, button.button-primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+.coding-workspace button.bg-blue-600:hover:not(:disabled), button.button-primary:hover:not(:disabled) { background: #1d4ed8; border-color: #1d4ed8; }
+.coding-workspace button.bg-blue-600:disabled:hover, button.button-primary:disabled:hover { background: #2563eb; }
 .coding-workspace button.bg-black, button.button-dark { white-space: nowrap; background: #111827; border-color: #111827; color: #fff; }
 .coding-workspace button.bg-black:hover:not(:disabled), button.button-dark:hover:not(:disabled) { background: #1f2937; border-color: #1f2937; }
 .coding-workspace button.bg-black:disabled:hover { background: #111827; }

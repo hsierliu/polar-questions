@@ -1561,58 +1561,6 @@ function AppFooter() {
   );
 }
 
-// Temporary admin-only controls for the participant-folder migration.
-function MigrationControls() {
-  const [plans, setPlans] = useState([]);
-  const [status, setStatus] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [finished, setFinished] = useState(false);
-  const preview = async () => {
-    setBusy(true); setPlans([]); setFinished(false);
-    try {
-      const inventory = await DropboxService.migrationRequest();
-      const next = [];
-      const participants = new Map();
-      for (const folderName of inventory.folders) {
-        setStatus(`Reading participant information from ${folderName}…`);
-        const plan = await DropboxService.migrationRequest("folder", undefined, folderName);
-        if (participants.has(plan.participant)) {
-          throw new Error(`Two folders contain participant ${plan.participant}: ${participants.get(plan.participant)} and ${folderName}. No changes were made.`);
-        }
-        participants.set(plan.participant, folderName);
-        next.push(plan);
-      }
-      setStatus("Checking master CSV…");
-      next.push({ participant: "csv", ...await DropboxService.migrationRequest("csv") });
-      setPlans(next); setStatus("Dry run complete. Review all source and destination paths below before applying.");
-    } catch (error) { setStatus(error.message); }
-    finally { setBusy(false); }
-  };
-  const apply = async () => {
-    setBusy(true); setFinished(true);
-    try {
-      for (const plan of plans) {
-        setStatus(`Migrating ${plan.participant}…`);
-        await DropboxService.migrationRequest(plan.participant, plan.token, plan.folderName);
-      }
-      setStatus("Migration completed and files verified. Refresh the admin table. Keep the Dropbox backup until you have reviewed the results.");
-    } catch (error) { setStatus(`Stopped: ${error.message}. Some earlier steps may have completed; review the backups before retrying.`); }
-    finally { setBusy(false); }
-  };
-  return (
-    <details className="mt-4">
-      <summary>Temporary data migration (admin only)</summary>
-      <p className="text-sm mt-3">Pause uploading and coding while migrating. Folders will be named using the participant ID in session.json, and the CSV session_id column will be removed. Only existing folders are processed; skipped participant numbers are fine. Dates are preserved. Originals are backed up outside the participant folder.</p>
-      <div className="flex gap-3 mt-3">
-        <button className="table-action" onClick={preview} disabled={busy}>Preview migration</button>
-        <button className="table-action" onClick={apply} disabled={busy || !plans.length || finished}>Apply reviewed migration</button>
-      </div>
-      <p role="status" className="text-sm">{status}</p>
-      {plans.length > 0 && <pre style={{ maxHeight: "240px", overflow: "auto", fontSize: "12px" }}>{JSON.stringify(plans, null, 2)}</pre>}
-    </details>
-  );
-}
-
 function AdminPanel() {
   const dialog = useRef(null);
   const [result, setResult] = useState(null);
@@ -1639,7 +1587,6 @@ function AdminPanel() {
         Admin
       </button>
       <dialog ref={dialog} className="admin-status-dialog" aria-labelledby="admin-status-heading">
-        <MigrationControls />
         <div className="flex justify-between items-center gap-4 mb-4">
           <h2 id="admin-status-heading" className="text-xl font-semibold">Upload and coding status</h2>
           <div className="flex gap-2">
@@ -1777,7 +1724,7 @@ function AuthenticatedApp() {
               style={{ maxWidth: "500px" }}
             >
               <p className="text-gray-600 mb-8">
-                Sign in with your g.harvard.edu account.
+                Sign in with your Harvard google account.
               </p>
               {authError && (
                 <p className="mb-5 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-red-700">
@@ -1788,7 +1735,7 @@ function AuthenticatedApp() {
               <button
                 type="button"
                 onClick={handleSignIn}
-                className="w-full px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium"
+                className="button-primary w-full px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium"
               >
                 Sign in with Google
               </button>

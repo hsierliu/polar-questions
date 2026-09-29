@@ -206,18 +206,3 @@ async function collectSessions(loadPage) {
   });
   return sessions;
 }
-
-// Temporary migration controls; remove after the live data migration is verified.
-export async function migrationRequest(participant, token, folderName) {
-  const authToken = await getIdToken();
-  const query = participant === undefined ? "inventory=1" : new URLSearchParams({ participant, ...(folderName ? { folderName } : {}) });
-  const response = await fetch(`/api/migrate?${query}`, {
-    method: token ? "POST" : "GET",
-    headers: { Authorization: `Bearer ${authToken}`, ...(token ? { "Content-Type": "application/json" } : {}) },
-    ...(token ? { body: JSON.stringify({ participant, token, folderName, confirm: "APPLY REVIEWED MIGRATION" }) } : {}),
-    cache: "no-store",
-  });
-  const result = await response.json();
-  if (!response.ok) throw new Error(result.error || "Migration request failed");
-  return result;
-}

@@ -801,6 +801,3 @@ export default async function handler(req, res) {
     return res.status(statusFor(error)).json({ error: safeMessage(error) });
   }
 }
-
-// Used by the temporary, admin-only migration endpoint.
-export { requireRole, getDropbox, listFolderEntries, downloadText, readOptionalFile, parseCsv, csvCell, rpc, readJson };
