@@ -1,10 +1,31 @@
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
+
+const missingFirebaseValues = Object.entries(firebaseConfig)
+  .filter(([, value]) => !value)
+  .map(([name]) => name);
+
+export const firebaseConfigurationError = missingFirebaseValues.length
+  ? `Missing Firebase configuration: ${missingFirebaseValues.join(", ")}`
+  : "";
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { auth } from "./firebase";
 
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });

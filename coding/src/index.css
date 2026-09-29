@@ -82,8 +82,6 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 .text-red-800 { color: #991b1b; }
 .text-green-600 { color: #16a34a; }
 .text-green-700 { color: #15803d; }
-.text-yellow-700 { color: #a16207; }
-.text-yellow-800 { color: #92400e; }
 .text-white { color: #fff; }
 .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
@@ -100,15 +98,11 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .bg-gray-100 { background: #f3f4f6; }
 .bg-gray-200 { background: #e5e7eb; }
 .bg-gray-300 { background: #d1d5db; }
-.bg-gray-400 { background: #9ca3af; }
 .bg-gray-600 { background: #4b5563; }
 .bg-gray-700 { background: #374151; }
 .bg-blue-600 { background: #2563eb; }
-.bg-blue-700 { background: #1d4ed8; }
-.bg-yellow-100 { background: #fef3c7; }
 .bg-green-50 { background: #f0fdf4; }
 .bg-green-600 { background: #16a34a; }
-.bg-green-700 { background: #15803d; }
 .bg-red-50 { background: #fef2f2; }
 .bg-red-600 { background: #dc2626; }
 .bg-blue-50 { background: #eff6ff; }
@@ -178,7 +172,6 @@ th, td { text-align: left; }
 .border-b-2 { border-bottom: 2px solid #d1d5db; }
 .border-gray-200 { border-color: #e5e7eb; }
 .border-blue-600 { border-color: #2563eb; }
-.border-yellow-300 { border-color: #fcd34d; }
 .border-green-200 { border-color: #bbf7d0; }
 .border-red-200 { border-color: #fecaca; }
 .border-red-300 { border-color: #fca5a5; }

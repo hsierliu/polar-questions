@@ -23,12 +23,6 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      // This project does not currently use eslint-plugin-react, so the base
-      // rule cannot recognize identifiers referenced only from JSX.
-      "no-unused-vars": "off",
-      "no-useless-escape": "off",
-      "no-empty": "off",
-      "react-hooks/immutability": "off",
       "react-hooks/set-state-in-effect": "off",
       "react-refresh/only-export-components": [
         "warn",
@@ -37,7 +31,7 @@ export default [
     },
   },
   {
-    files: ["api/**/*.js", "server/**/*.js"],
+    files: ["api/**/*.js", "*.js"],
     languageOptions: {
       ecmaVersion: 2022,
       globals: globals.node,

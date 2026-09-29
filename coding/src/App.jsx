@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import * as DropboxService from "./services/dropbox";
+import * as DropboxService from "./dropbox.js";
 import {
+  firebaseConfigurationError,
   getAccessProfile,
   observeAuth,
   signInWithGoogle,
   signOutUser,
-} from "./services/auth";
-import { firebaseConfigurationError } from "./services/firebase";
+} from "./auth.js";
 
 const ORDER_DEFS = {
   "1": [
@@ -155,7 +155,7 @@ const CHILD_QUESTIONS = [
     dropdownLabel: "What was the label?",
     dropdownType: "text",
     dropdownPlaceholder: "Type the label here...",
-    instruction: 'Affirmative labels include "an X" or "that/there/it\'s an X". They do NOT include "that/there/it\'s not X\."',
+    instruction: 'Affirmative labels include "an X" or "that/there/it\'s an X". They do NOT include "that/there/it\'s not X."',
   },
 ];
 

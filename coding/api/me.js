@@ -1,4 +1,35 @@
-import { verifyFirebaseToken } from "./firebase-admin.js";
+import { createRemoteJWKSet, jwtVerify } from "jose";
+
+const projectId =
+  process.env.FIREBASE_PROJECT_ID || process.env.VITE_FIREBASE_PROJECT_ID;
+
+if (!projectId) {
+  throw new Error("FIREBASE_PROJECT_ID is not configured");
+}
+
+const firebaseKeys = createRemoteJWKSet(
+  new URL(
+    "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com",
+  ),
+);
+
+async function verifyFirebaseToken(token) {
+  const { payload } = await jwtVerify(token, firebaseKeys, {
+    algorithms: ["RS256"],
+    audience: projectId,
+    issuer: `https://securetoken.google.com/${projectId}`,
+  });
+
+  if (!payload.sub || typeof payload.sub !== "string") {
+    throw new Error("Firebase token has no subject");
+  }
+
+  return {
+    ...payload,
+    uid: payload.sub,
+  };
+}
+
 
 function parseEmails(value) {
   return new Set(
@@ -28,7 +59,7 @@ function rolesForEmail(email) {
   return [...roles];
 }
 
-export async function authenticate(req) {
+async function authenticate(req) {
   const authorization = req.headers.authorization || "";
   if (!authorization.startsWith("Bearer ")) {
     const error = new Error("Authentication required");
@@ -73,4 +104,22 @@ export async function requireRole(req, allowedRoles) {
     throw error;
   }
   return user;
+}
+
+
+export default async function handler(req, res) {
+  res.setHeader("Cache-Control", "private, no-store");
+  if (req.method !== "GET") {
+    res.setHeader("Allow", "GET");
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  try {
+    const user = await authenticate(req);
+    return res.status(200).json(user);
+  } catch (error) {
+    return res.status(error.status || 401).json({
+      error: error.status === 403 ? error.message : "Authentication failed",
+    });
+  }
 }
