@@ -12,7 +12,7 @@ const participantId = (value) => {
 };
 const owner = (id) => {
   const n = Number(/^S(\d+)$/i.exec(id)?.[1]);
-  return n >= 1 && n <= 61 ? 'iphillips' : n >= 63 && n <= 87 ? 'egunce' : null;
+  return n >= 1 && n <= 61 ? 'iphillips' : n >= 63 && n <= 87 ? 'ecegunce' : null;
 };
 const digest = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const fail = (message) => { throw Object.assign(new Error(message), { status: 409 }); };
@@ -50,6 +50,13 @@ async function planFolder(dbx, folderName, expectedParticipant) {
       if (children.some(e => e.name.toLowerCase() === name.toLowerCase())) fail(`${participant}/${name} already exists; nothing was overwritten`);
       if (!data.completedAt) fail(`${participant}/progress.json has no completion date; review it before migration`);
       data.coder = owner(participant);
+      data.sessionId = participant;
+      data.migratedFromLegacy = true;
+    } else if (name === 'egunce.json' && owner(participant) === 'ecegunce') {
+      if (prefix(data.coder) !== 'egunce') fail(`${participant}/egunce.json has unexpected coder ownership`);
+      name = 'ecegunce.json';
+      if (children.some(e => e.name.toLowerCase() === name)) fail(`${participant}/${name} already exists; nothing was overwritten`);
+      data.coder = 'ecegunce';
       data.sessionId = participant;
       data.migratedFromLegacy = true;
     } else if (name !== 'session.json' && name !== 'progress.json') {
@@ -92,7 +99,7 @@ async function planCsv(dbx) {
     if (!participant) fail(`CSV contains an unrecognized participant ID: ${row[subject]}`);
     row[subject] = participant;
     const expected = owner(participant), existing = prefix(row[coder]);
-    if (expected && existing && existing !== expected) fail(`${participant} already has coder ${existing}; review before replacing attribution`);
+    if (expected && existing && existing !== expected && !(expected === 'ecegunce' && existing === 'egunce')) fail(`${participant} already has coder ${existing}; review before replacing attribution`);
     row[coder] = expected || existing;
     counts[row[coder] || '(blank)'] = (counts[row[coder] || '(blank)'] || 0) + 1;
   }
