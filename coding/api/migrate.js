@@ -6,6 +6,10 @@ export const config = { api: { bodyParser: false }, maxDuration: 60 };
 const BASE = '/polar-questions-data';
 const BACKUP = '/polar-questions-migration-backup';
 const prefix = (name) => String(name || '').split('@')[0];
+const participantId = (value) => {
+  const match = /^S(\d+)(?:_\d+)*$/i.exec(String(value || '').trim());
+  return match ? `S${match[1]}` : null;
+};
 const owner = (id) => {
   const n = Number(/^S(\d+)$/i.exec(id)?.[1]);
   return n >= 1 && n <= 61 ? 'iphillips' : n >= 63 && n <= 87 ? 'egunce' : null;
@@ -22,8 +26,13 @@ async function planFolder(dbx, folderName, expectedParticipant) {
   const from = `${BASE}/${entry.name}`;
   const children = await listFolderEntries(dbx, from);
   const pkg = JSON.parse(await downloadText(dbx, `${from}/session.json`));
-  const participant = String(pkg.meta?.participant_id || '').trim().toUpperCase();
-  if (!/^S\d+$/.test(participant)) fail(`${folderName}/session.json has no valid participant ID`);
+  const metadataParticipant = participantId(pkg.meta?.participant_id);
+  const folderParticipant = participantId(folderName);
+  if (metadataParticipant && folderParticipant && metadataParticipant !== folderParticipant) {
+    fail(`${folderName}: folder name and session.json identify different participants`);
+  }
+  const participant = metadataParticipant || folderParticipant;
+  if (!participant) fail(`${folderName}/session.json has no recognizable participant ID, and its folder name cannot identify it`);
   if (expectedParticipant && expectedParticipant !== 'folder' && expectedParticipant !== participant) fail('Participant metadata changed after the preview');
   const to = `${BASE}/${participant}`;
   if (entries.some(e => e.name !== entry.name && e.name.toLowerCase() === participant.toLowerCase())) {
@@ -48,9 +57,14 @@ async function planFolder(dbx, folderName, expectedParticipant) {
       data.coder = prefix(data.coder);
       data.sessionId = participant;
     }
-    if (data.sessionId === entry.name) data.sessionId = participant;
+    if (file.name === 'session.json') {
+      data.meta = { ...data.meta, participant_id: participant };
+    }
+    for (const key of ['sessionId', 'session_id', 'participant_id']) {
+      if (Object.hasOwn(data, key)) data[key] = participant;
+    }
     if (Array.isArray(data.rows)) data.rows = data.rows.map(row => {
-      const result = { ...row };
+      const result = { ...row, participant_id: participant };
       delete result.session_id;
       if (data.coder) result.coder = data.coder;
       return result;
@@ -60,7 +74,7 @@ async function planFolder(dbx, folderName, expectedParticipant) {
       changes.push({ from: path, to: `${from}/${name}`, finalPath: `${to}/${name}`, rev: original.rev, original: original.text, contents });
     }
   }
-  return { participant, folderName, from, to, changes, revisions: children.filter(e => e.rev).map(e => [e.name, e.rev]).sort() };
+  return { participant, previousParticipant: pkg.meta?.participant_id ?? null, identitySource: metadataParticipant ? 'session.json' : 'folder name', folderName, from, to, changes, revisions: children.filter(e => e.rev).map(e => [e.name, e.rev]).sort() };
 }
 
 async function planCsv(dbx) {
@@ -74,7 +88,10 @@ async function planCsv(dbx) {
   if (coder < 0) { coder = headers.length; headers.push('coder'); for (const row of records) row.push(''); }
   const counts = {};
   for (const row of records) {
-    const participant = row[subject], expected = owner(participant), existing = prefix(row[coder]);
+    const participant = participantId(row[subject]);
+    if (!participant) fail(`CSV contains an unrecognized participant ID: ${row[subject]}`);
+    row[subject] = participant;
+    const expected = owner(participant), existing = prefix(row[coder]);
     if (expected && existing && existing !== expected) fail(`${participant} already has coder ${existing}; review before replacing attribution`);
     row[coder] = expected || existing;
     counts[row[coder] || '(blank)'] = (counts[row[coder] || '(blank)'] || 0) + 1;
