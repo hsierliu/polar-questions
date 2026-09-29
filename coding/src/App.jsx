@@ -1571,13 +1571,19 @@ function MigrationControls() {
     setBusy(true); setPlans([]); setFinished(false);
     try {
       const inventory = await DropboxService.migrationRequest();
-      const participants = [...new Set(inventory.folders.map(name => /^S\d+(?=_|$)/i.exec(name)?.[0]).filter(Boolean))];
-      if (participants.length !== inventory.folders.length) throw new Error("Duplicate or unexpected folders found. Review the Dropbox inventory before proceeding.");
       const next = [];
-      for (const participant of [...participants, "csv"]) {
-        setStatus(`Checking ${participant}…`);
-        next.push({ participant, ...await DropboxService.migrationRequest(participant) });
+      const participants = new Map();
+      for (const folderName of inventory.folders) {
+        setStatus(`Reading participant information from ${folderName}…`);
+        const plan = await DropboxService.migrationRequest("folder", undefined, folderName);
+        if (participants.has(plan.participant)) {
+          throw new Error(`Two folders contain participant ${plan.participant}: ${participants.get(plan.participant)} and ${folderName}. No changes were made.`);
+        }
+        participants.set(plan.participant, folderName);
+        next.push(plan);
       }
+      setStatus("Checking master CSV…");
+      next.push({ participant: "csv", ...await DropboxService.migrationRequest("csv") });
       setPlans(next); setStatus("Dry run complete. Review all source and destination paths below before applying.");
     } catch (error) { setStatus(error.message); }
     finally { setBusy(false); }
@@ -1586,9 +1592,8 @@ function MigrationControls() {
     setBusy(true); setFinished(true);
     try {
       for (const plan of plans) {
-        if (plan.skipped) continue;
         setStatus(`Migrating ${plan.participant}…`);
-        await DropboxService.migrationRequest(plan.participant, plan.token);
+        await DropboxService.migrationRequest(plan.participant, plan.token, plan.folderName);
       }
       setStatus("Migration completed and files verified. Refresh the admin table. Keep the Dropbox backup until you have reviewed the results.");
     } catch (error) { setStatus(`Stopped: ${error.message}. Some earlier steps may have completed; review the backups before retrying.`); }
@@ -1597,7 +1602,7 @@ function MigrationControls() {
   return (
     <details className="mt-4">
       <summary>Temporary data migration (admin only)</summary>
-      <p className="text-sm mt-3">Pause uploading and coding while migrating. Folder suffixes and the CSV session_id column will be removed. S62 stays unchanged. Dates are preserved. Originals are backed up outside the participant folder.</p>
+      <p className="text-sm mt-3">Pause uploading and coding while migrating. Folders will be named using the participant ID in session.json, and the CSV session_id column will be removed. Only existing folders are processed; skipped participant numbers are fine. Dates are preserved. Originals are backed up outside the participant folder.</p>
       <div className="flex gap-3 mt-3">
         <button className="table-action" onClick={preview} disabled={busy}>Preview migration</button>
         <button className="table-action" onClick={apply} disabled={busy || !plans.length || finished}>Apply reviewed migration</button>

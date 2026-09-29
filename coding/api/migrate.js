@@ -13,17 +13,22 @@ const owner = (id) => {
 const digest = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const fail = (message) => { throw Object.assign(new Error(message), { status: 409 }); };
 
-async function planFolder(dbx, participant) {
-  if (!/^S\d+$/i.test(participant)) fail('Invalid participant ID');
-  if (participant.toUpperCase() === 'S62') return { participant, skipped: 'S62 is unchanged', changes: [] };
+async function planFolder(dbx, folderName, expectedParticipant) {
+  if (typeof folderName !== 'string' || !folderName || folderName === '.' || folderName === '..' ||
+      [...folderName].some(char => char === '/' || char === '\\' || char.charCodeAt(0) < 32 || char.charCodeAt(0) === 127)) fail('Invalid source folder name');
   const entries = await listFolderEntries(dbx, BASE);
-  const candidates = entries.filter(e => e['.tag'] === 'folder' &&
-    e.name.split('_')[0].toLowerCase() === participant.toLowerCase());
-  if (candidates.length !== 1) fail(`Expected one folder for ${participant}; found ${candidates.length}`);
-  const entry = candidates[0], from = `${BASE}/${entry.name}`, to = `${BASE}/${participant}`;
+  const entry = entries.find(e => e['.tag'] === 'folder' && e.name === folderName);
+  if (!entry) fail(`Source folder ${folderName} no longer exists; preview again`);
+  const from = `${BASE}/${entry.name}`;
   const children = await listFolderEntries(dbx, from);
   const pkg = JSON.parse(await downloadText(dbx, `${from}/session.json`));
-  if (String(pkg.meta?.participant_id).toLowerCase() !== participant.toLowerCase()) fail('Folder and participant metadata disagree');
+  const participant = String(pkg.meta?.participant_id || '').trim().toUpperCase();
+  if (!/^S\d+$/.test(participant)) fail(`${folderName}/session.json has no valid participant ID`);
+  if (expectedParticipant && expectedParticipant !== 'folder' && expectedParticipant !== participant) fail('Participant metadata changed after the preview');
+  const to = `${BASE}/${participant}`;
+  if (entries.some(e => e.name !== entry.name && e.name.toLowerCase() === participant.toLowerCase())) {
+    fail(`Cannot rename ${folderName}: ${participant} already exists`);
+  }
   const changes = [];
   for (const file of children.filter(e => e['.tag'] === 'file' && e.name.endsWith('.json'))) {
     const path = `${from}/${file.name}`;
@@ -55,7 +60,7 @@ async function planFolder(dbx, participant) {
       changes.push({ from: path, to: `${from}/${name}`, finalPath: `${to}/${name}`, rev: original.rev, original: original.text, contents });
     }
   }
-  return { participant, from, to, changes, revisions: children.filter(e => e.rev).map(e => [e.name, e.rev]).sort() };
+  return { participant, folderName, from, to, changes, revisions: children.filter(e => e.rev).map(e => [e.name, e.rev]).sort() };
 }
 
 async function planCsv(dbx) {
@@ -70,7 +75,6 @@ async function planCsv(dbx) {
   const counts = {};
   for (const row of records) {
     const participant = row[subject], expected = owner(participant), existing = prefix(row[coder]);
-    if (String(participant).toUpperCase() === 'S62') continue;
     if (expected && existing && existing !== expected) fail(`${participant} already has coder ${existing}; review before replacing attribution`);
     row[coder] = expected || existing;
     counts[row[coder] || '(blank)'] = (counts[row[coder] || '(blank)'] || 0) + 1;
@@ -106,7 +110,7 @@ export default async function handler(req, res) {
     }
     if (!['GET', 'POST'].includes(req.method)) return res.status(405).json({ error: 'GET or POST required' });
     const body = req.method === 'POST' ? await readJson(req) : req.query;
-    const plan = body.participant === 'csv' ? await planCsv(dbx) : await planFolder(dbx, body.participant);
+    const plan = body.participant === 'csv' ? await planCsv(dbx) : await planFolder(dbx, body.folderName, body.participant);
     const token = digest(plan);
     if (req.method === 'GET') {
       const summary = { ...plan };
@@ -118,7 +122,6 @@ export default async function handler(req, res) {
     }
     if (body.token !== token) fail('Dropbox changed after the dry run. Run the dry run again.');
     if (body.confirm !== 'APPLY REVIEWED MIGRATION') fail('Explicit migration confirmation is required');
-    if (plan.skipped) return res.status(200).json({ skipped: plan.skipped });
     const backupPath = await backup(dbx, plan, token, body.participant);
     if (body.participant === 'csv') {
       await dbx.filesUpload({ path: plan.path, contents: plan.contents, mode: { '.tag': 'update', update: plan.rev }, autorename: false, strict_conflict: true });
