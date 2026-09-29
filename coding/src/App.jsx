@@ -1,12 +1,14 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import * as DropboxService from "./dropbox.js";
+import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import * as DropboxService from "./services.js";
 import {
   firebaseConfigurationError,
   getAccessProfile,
   observeAuth,
   signInWithGoogle,
   signOutUser,
-} from "./auth.js";
+} from "./services.js";
 
 const ORDER_DEFS = {
   "1": [
@@ -257,7 +259,7 @@ function RangePlayer({ fileURL, start, end }) {
       <video ref={ref} src={fileURL} className="w-full rounded-xl shadow" />
       <button 
         onClick={handleReplay}
-        className="w-full px-4 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+        className="w-full bg-blue-600 transition-colors"
       >
         ▶️ Play clip
       </button>
@@ -423,25 +425,55 @@ function SplitTimeline({
         <canvas ref={canvasRef} width={800} height={64} style={{ width: "100%", height: "64px", display: "block", borderRadius: "12px" }} />
       </div>
 
-      <div className="flex items-center gap-2 text-sm">
-        <button className="px-3 py-1.5 rounded-xl bg-black text-white" onClick={() => splitAt(current)} disabled={!duration}>
+      <div className="timeline-controls flex items-center gap-2 text-sm">
+        <button className="bg-black" onClick={() => splitAt(current)} disabled={!duration}>
           Split at {timeToStrMs(current)}
         </button>
-        <button className="px-3 py-1.5 rounded-xl bg-black text-white" onClick={() => removeNearestCut(current)} disabled={cuts.length <= 2}>
+        <button className="bg-black" onClick={() => removeNearestCut(current)} disabled={cuts.length <= 2}>
           Remove Nearest Split
         </button>
 
         <div className="ml-4 inline-flex gap-2">
-          <button className="px-3 py-1.5 rounded-xl bg-black text-white" onClick={() => zoomAround(0.5)}>
+          <button className="bg-black" onClick={() => zoomAround(0.5)}>
             Zoom In
           </button>
-          <button className="px-3 py-1.5 rounded-xl bg-black text-white" onClick={() => zoomAround(2)}>
+          <button className="bg-black" onClick={() => zoomAround(2)}>
           Zoom Out
           </button>
-          <button className="px-3 py-1.5 rounded-xl bg-black text-white" onClick={fit}>
+          <button className="bg-black" onClick={fit}>
             Fit
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function formatAnswerColumns(questions, segmentId, prefix, answers) {
+  const values = answers[segmentId] || {};
+  const columns = {};
+  for (const question of questions) {
+    columns[`${prefix}_${question.id}`] = values[question.id] ?? "";
+    if (question.hasDropdown) {
+      const dropdown = values[`${question.id}_dropdown`] ?? "";
+      columns[`${prefix}_${question.id}_dropdown`] = dropdown === "Other"
+        ? values[`${question.id}_dropdown_other`] ?? ""
+        : dropdown;
+    }
+  }
+  return columns;
+}
+
+function StatusMessage({ status }) {
+  if (!status.message) return null;
+  const color = { loading: "bg-blue-600", success: "bg-green-600", error: "bg-red-600" }[status.type] || "bg-gray-600";
+  return (
+    <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-4 rounded-xl shadow-lg max-w-2xl w-auto text-white ${color}`}>
+      <div className="flex items-center gap-3">
+        {status.type === "loading" && <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />}
+        {status.type === "success" && <span className="text-xl">✓</span>}
+        {status.type === "error" && <span className="text-xl">✗</span>}
+        <span className="font-medium">{status.message}</span>
       </div>
     </div>
   );
@@ -639,9 +671,9 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
   return (
     <div className="space-y-6">
       {/* Step 1: Two columns - Participant Info (left) and Video Status (right) */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 session-panels">
         {/* LEFT: Participant Info */}
-        <div className="p-6 border-2 bg-white shadow-sm">
+        <div className="p-6 surface-panel">
           <h3 className="text-lg font-semibold mb-5 flex items-center gap-2">
             <span className="text-2xl">①</span> Enter participant information
           </h3>
@@ -649,7 +681,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
             <div className="grid grid-cols-12 gap-4 items-center">
               <label className="col-span-3 text-sm font-medium text-gray-700 text-right">Participant ID:</label>
               <input 
-                className="col-span-9 border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none" 
+                className="form-control col-span-9 px-4 py-2.5 "
                 value={meta.participant_id} 
                 onChange={(e) => setMeta({ ...meta, participant_id: e.target.value })} 
                 placeholder="e.g., S001"
@@ -658,7 +690,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
             <div className="grid grid-cols-12 gap-4 items-center">
               <label className="col-span-3 text-sm font-medium text-gray-700 text-right">Age (months):</label>
               <input 
-                className="col-span-9 border-2 border-gray-300 rounded-lg px-4 py-2.5 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none" 
+                className="form-control col-span-9 px-4 py-2.5 "
                 type="number"
                 value={meta.age_months} 
                 onChange={(e) => setMeta({ ...meta, age_months: e.target.value })} 
@@ -668,7 +700,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
             <div className="grid grid-cols-12 gap-4 items-center">
               <label className="col-span-3 text-sm font-medium text-gray-700 text-right">Order:</label>
               <select 
-                className={`col-span-9 border border-gray-300 rounded-lg px-4 py-2.5 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none bg-white cursor-pointer ${!meta.order ? 'text-gray-400' : 'text-gray-900'}`}
+                className={`form-control col-span-9 px-4 py-2.5 bg-white cursor-pointer ${!meta.order ? 'text-gray-400' : 'text-gray-900'}`}
                 value={meta.order} 
                 onChange={(e) => setMeta({ ...meta, order: e.target.value })}
               >
@@ -694,9 +726,9 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
             <button 
               onClick={refreshUploaderSessions}
               disabled={loadingUploader}
-              className="px-3 py-1.5 rounded-lg bg-gray-300 hover:bg-gray-400 transition-colors text-gray-800 text-xs font-medium"
+              className="transition-colors"
             >
-              🔄 Refresh
+              Refresh
             </button>
           </div>
           {uploaderSessions.length === 0 && !loadingUploader && (
@@ -710,29 +742,24 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
             </div>
           )}
           {uploaderSessions.length > 0 && (
-            <div style={{ maxHeight: "200px" }} className="overflow-y-auto border border-gray-300 rounded-lg">
+            <div className="table-scroll uploader-table-scroll rounded-lg" tabIndex={0} role="region" aria-label="Uploaded videos">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 sticky top-0">
                   <tr className="border-b-2 border-gray-300">
                     <th className="text-left py-2 px-3 font-semibold text-gray-700">ID</th>
-                    <th className="text-left py-2 px-3 font-semibold text-gray-700">Status</th>
+                    <th className="text-left py-2 px-3 font-semibold text-gray-700">Age (months)</th>
                     <th className="text-left py-2 px-3 font-semibold text-gray-700">Uploaded</th>
-                    <th className="text-left py-2 px-3 font-semibold text-gray-700">Coded</th>
                   </tr>
                 </thead>
                 <tbody>
                   {uploaderSessions.map((s) => {
                     const uploadDate = formatDate(s.savedAt);
-                    const completedDate = formatDate(s.progress?.completedAt);
-                    const statusText = s.status === 'completed' ? 'Completed' : 'Uncoded';
-                    const statusColor = s.status === 'completed' ? 'text-green-700' : 'text-gray-600';
 
                     return (
                       <tr key={s.id} className="border-b border-gray-200 hover:bg-gray-50">
                         <td className="py-2 px-3 font-medium">{s.meta?.participant_id || s.id}</td>
-                        <td className={`py-2 px-3 ${statusColor}`}>{statusText}</td>
+                        <td className="py-2 px-3 text-gray-600">{s.meta?.age_months ?? "—"}</td>
                         <td className="py-2 px-3 text-gray-600">{uploadDate}</td>
-                        <td className="py-2 px-3 text-gray-600">{completedDate}</td>
                       </tr>
                     );
                   })}
@@ -744,7 +771,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
       </div>
 
       {/* Step 2: Upload video & split into segments */}
-      <div className="p-6 border-2 bg-white shadow-sm">
+      <div className="p-6 surface-panel">
         <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
           <span className="text-2xl">②</span> Upload and segment video
         </h3>
@@ -759,7 +786,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
         )}
         
             {videoURL && (
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6 session-panels">
             {/* LEFT: Video & Split Controls */}
             <div>
               <video ref={videoRef} src={videoURL} controls className="w-full rounded-xl shadow-lg" />
@@ -800,12 +827,12 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
               return (
                 <div
                   key={s.index}
-                    className={`p-4 rounded-xl border-2 text-sm cursor-pointer transition-all ${
+                    className={`segment-card p-4 rounded-xl border text-sm cursor-pointer transition-all ${
                       isSelected 
                         ? "border-blue-600 bg-blue-50 shadow-md" 
                         : s.type && s.pairId 
-                        ? "border-gray-300 hover:border-gray-500 hover:shadow bg-gray-100" 
-                        : "border-gray-300 hover:border-gray-500 hover:shadow bg-white"
+                        ? "border-gray-300 bg-gray-100"
+                        : "border-gray-300 bg-white"
                     }`}
                   onClick={() => setSelectedSeg(s.index)}
                   >
@@ -825,7 +852,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
                         <div className="flex items-center gap-3">
                           <label className="text-xs font-medium text-gray-700 whitespace-nowrap">Type:</label>
                         <select
-                            className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none bg-white"
+                            className="form-control flex-1 px-3 py-2 text-sm bg-white"
                           value={s.type || ""}
                           onChange={(e) => setSegAssign(s.index, { type: e.target.value })}
                         >
@@ -835,7 +862,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
                             <option value="other">Other</option>
                         </select>
                           <button
-                            className="px-4 py-2 rounded-lg bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition-colors whitespace-nowrap"
+                            className="bg-blue-600 transition-colors whitespace-nowrap"
                             onClick={(e) => {
                               e.stopPropagation();
                               seek(s.start);
@@ -848,7 +875,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
                         <div className="flex items-center gap-3">
                           <label className="text-xs font-medium text-gray-700 whitespace-nowrap">Pair:</label>
                         <select
-                            className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none disabled:bg-gray-100 disabled:cursor-not-allowed bg-white"
+                            className="form-control flex-1 px-3 py-2 text-sm disabled:bg-gray-100 disabled:cursor-not-allowed bg-white"
                           value={s.pairId || ""}
                           onChange={(e) => setSegAssign(s.index, { pairId: Number(e.target.value) || undefined })}
                           disabled={s.type === "other" || !pairs.length}
@@ -885,25 +912,25 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
 
       {/* Step 3: Upload to Dropbox */}
       {videoURL && segments.length > 0 && (
-        <div className="p-6 border-2 bg-white shadow-sm">
+        <div className="p-6 surface-panel">
           <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
             <span className="text-2xl">③</span> Save video
           </h3>
             <button
             onClick={saveToDropbox} 
-            className="px-6 py-3.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-base" 
+            className="bg-blue-600 transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!pairs.length || !meta.participant_id || uploaderSessions.some(s => s.meta?.participant_id === meta.participant_id)}
           >
             Upload to dropbox
             </button>
           <div className="mt-4">
             {!meta.participant_id && (
-              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
+              <div className="error-message">
                 ⚠️ Please enter participant ID first
           </div>
             )}
             {!pairs.length && meta.participant_id && (
-              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
+              <div className="error-message">
                 ⚠️ Please select an order to load pairs
         </div>
             )}
@@ -914,7 +941,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
               
               if (existingSession) {
                 return (
-                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
+                  <div className="error-message">
                     ⚠️ This video has already been uploaded before (participant ID: {meta.participant_id}).
                   </div>
                 );
@@ -927,23 +954,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
       )}
       
       {/* Upload Status Bar */}
-      {uploadStatus.message && (
-        <div className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 px-6 py-4 rounded-xl shadow-lg max-w-2xl w-auto ${
-          uploadStatus.type === "loading" ? "bg-blue-600 text-white" :
-          uploadStatus.type === "success" ? "bg-green-600 text-white" :
-          uploadStatus.type === "error" ? "bg-red-600 text-white" :
-          "bg-gray-600 text-white"
-        }`}>
-          <div className="flex items-center gap-3">
-            {uploadStatus.type === "loading" && (
-              <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-            )}
-            {uploadStatus.type === "success" && <span className="text-xl">✓</span>}
-            {uploadStatus.type === "error" && <span className="text-xl">✗</span>}
-            <span className="font-medium">{uploadStatus.message}</span>
-          </div>
-        </div>
-      )}
+      <StatusMessage status={uploadStatus} />
     </div>
   );
 }
@@ -987,8 +998,16 @@ function Coder({ videoURL = "", initialPkg = null }) {
     if (initialPkg) setPkg((currentPkg) => currentPkg || initialPkg);
   }, [initialPkg]);
 
-  const uncodedSessions = savedSessions.filter(s => s.status !== 'completed');
-  const completedSessions = savedSessions.filter(s => s.status === 'completed');
+  const orderedSessions = [...savedSessions].sort((a, b) =>
+    String(a.meta?.participant_id || a.label || a.id).localeCompare(
+      String(b.meta?.participant_id || b.label || b.id), undefined, { numeric: true, sensitivity: 'base' }
+    )
+  );
+  const uncodedSessions = orderedSessions.filter(s => s.status !== 'completed');
+  const completedSessions = orderedSessions.filter(s => s.status === 'completed').reverse();
+  const currentSession = savedSessions.find(s => s.id === sessionId);
+  const isAlreadySaved = Boolean(currentSession?.progress?.completedAt);
+  const isMissingSessionId = !sessionId;
 
   const buildQueueInOrder = (
     type,
@@ -1071,52 +1090,15 @@ function Coder({ videoURL = "", initialPkg = null }) {
   
   const shouldShowQuestion = (question, segId) => {
     const segAnswers = answers[segId] || {};
-    
-    // Check simple dependsOn condition
-    if (question.dependsOn) {
-      let dependsOnMet = true;
-      for (const [depQId, requiredValue] of Object.entries(question.dependsOn)) {
-        const answer = segAnswers[depQId];
-        if (Array.isArray(requiredValue)) {
-          if (!requiredValue.includes(answer)) {
-            dependsOnMet = false;
-            break;
-          }
-        } else {
-          if (answer !== requiredValue) {
-            dependsOnMet = false;
-            break;
-          }
-        }
-      }
-      if (dependsOnMet) return true;
-    }
-    
-    // Check dependsOnOr condition (for questions with "Both" case)
-    if (question.dependsOnOr) {
-      let orConditionMet = true;
-      for (const [depQId, requiredValue] of Object.entries(question.dependsOnOr)) {
-        const answer = segAnswers[depQId];
-        if (Array.isArray(requiredValue)) {
-          if (!requiredValue.includes(answer)) {
-            orConditionMet = false;
-            break;
-          }
-        } else {
-          if (answer !== requiredValue) {
-            orConditionMet = false;
-            break;
-          }
-        }
-      }
-      if (orConditionMet) return true;
-    }
-    
-    // If no dependencies, show the question
-    if (!question.dependsOn && !question.dependsOnOr) return true;
-    
-    // If we have dependencies but neither condition was met, don't show
-    return false;
+    const conditions = [question.dependsOn, question.dependsOnOr].filter(Boolean);
+
+    return conditions.length === 0 || conditions.some(condition =>
+      Object.entries(condition).every(([questionId, required]) =>
+        Array.isArray(required)
+          ? required.includes(segAnswers[questionId])
+          : segAnswers[questionId] === required
+      )
+    );
   };
 
   const areAllRequiredQuestionsAnswered = () => {
@@ -1163,6 +1145,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
   };
 
   const saveResponsesToDropbox = async () => {
+    if (saveStatus.type === "loading") return;
     if (!pkg) {
       setSaveStatus({ message: "⚠️ Error: Session data is missing. Please reload the video.", type: "error" });
       setTimeout(() => setSaveStatus({ message: "", type: "" }), 5000);
@@ -1175,27 +1158,12 @@ function Coder({ videoURL = "", initialPkg = null }) {
       return;
     }
     
-    const existingCompletedSession = savedSessions.find(s => 
-      s.meta?.participant_id === pkg.meta.participant_id && 
-      s.progress?.completedAt &&
-      s.id !== sessionId
-    );
-    
-    if (existingCompletedSession) {
-      setSaveStatus({ message: `⚠️ Responses have already been saved for this participant ID (${pkg.meta.participant_id}). Cannot save duplicate responses.`, type: "error" });
+    if (isAlreadySaved) {
+      setSaveStatus({ message: `⚠️ Responses have already been saved for this session.`, type: "error" });
       setTimeout(() => setSaveStatus({ message: "", type: "" }), 5000);
       return;
     }
     
-    const currentSession = savedSessions.find(s => s.id === sessionId);
-    if (currentSession?.progress?.completedAt) {
-      setSaveStatus({ message: `⚠️ Responses have already been saved for this session. Cannot save duplicate responses.`, type: "error" });
-      setTimeout(() => setSaveStatus({ message: "", type: "" }), 5000);
-      return;
-    }
-    
-    const childQs = CHILD_QUESTIONS;
-    const parentQs = PARENT_QUESTIONS;
 
     const pairIds = Array.from(new Set(pkg.pairs.map((p) => p.pairId)));
     const rows = pairIds.map((pid) => {
@@ -1210,48 +1178,24 @@ function Coder({ videoURL = "", initialPkg = null }) {
       };
       const childSeg = pkg.segments.find((s) => s.pairId === pid && s.type === "child_response");
       const parentSeg = pkg.segments.find((s) => s.pairId === pid && s.type === "parent_question");
-      const childAns = childQs.map((q) => answers[childSeg?.id]?.[q.id] ?? "");
-      const parentAns = parentQs.map((q) => answers[parentSeg?.id]?.[q.id] ?? "");
-      const obj = { ...base };
-      childAns.forEach((v, i) => {
-        obj[`child_${childQs[i].id}`] = v;
-        if (childQs[i].hasDropdown) {
-          const dropdownValue = answers[childSeg?.id]?.[`${childQs[i].id}_dropdown`] ?? "";
-          if (dropdownValue === "Other") {
-            const otherText = answers[childSeg?.id]?.[`${childQs[i].id}_dropdown_other`] ?? "";
-            obj[`child_${childQs[i].id}_dropdown`] = otherText;
-          } else {
-            obj[`child_${childQs[i].id}_dropdown`] = dropdownValue;
-          }
-        }
-      });
-      parentAns.forEach((v, i) => {
-        obj[`parent_${parentQs[i].id}`] = v;
-        if (parentQs[i].hasDropdown) {
-          const dropdownValue = answers[parentSeg?.id]?.[`${parentQs[i].id}_dropdown`] ?? "";
-          if (dropdownValue === "Other") {
-            const otherText = answers[parentSeg?.id]?.[`${parentQs[i].id}_dropdown_other`] ?? "";
-            obj[`parent_${parentQs[i].id}_dropdown`] = otherText;
-          } else {
-            obj[`parent_${parentQs[i].id}_dropdown`] = dropdownValue;
-          }
-        }
-      });
-      return obj;
+      return {
+        ...base,
+        ...formatAnswerColumns(CHILD_QUESTIONS, childSeg?.id, "child", answers),
+        ...formatAnswerColumns(PARENT_QUESTIONS, parentSeg?.id, "parent", answers),
+      };
     });
 
     try {
       setSaveStatus({ message: "Saving responses to dropbox...", type: "loading" });
       
-      await DropboxService.saveCompletion(sessionId, {
+      const completion = await DropboxService.saveCompletion(sessionId, {
         phase: 3,
-        idx,
         answers,
         phaseOrders,
-        completedAt: new Date().toISOString(),
-      });
-
-      await DropboxService.appendToMasterSpreadsheet(rows);
+      }, rows);
+      setSavedSessions((previous) => previous.map((session) => session.id === sessionId
+        ? { ...session, status: "completed", progress: { completedAt: completion.completedAt } }
+        : session));
       
       setSaveStatus({ message: "Responses saved to dropbox successfully!", type: "success" });
       setTimeout(() => setSaveStatus({ message: "", type: "" }), 5000);
@@ -1275,11 +1219,14 @@ function Coder({ videoURL = "", initialPkg = null }) {
     setPkg(sess.pkg);
       setSessionId(selectedId);
       
-      setPhase(0);
+      setPhase(sess.pendingSubmission ? 3 : 0);
       setIdx(0);
-      setAnswers({});
-      setPhaseOrders({});
+      setAnswers(sess.pendingSubmission?.answers || {});
+      setPhaseOrders(sess.pendingSubmission?.phaseOrders || {});
       setQueue([]);
+      setSaveStatus(sess.pendingSubmission
+        ? { message: "Please try saving your responses again.", type: "error" }
+        : { message: "", type: "" });
     } catch (error) {
       alert(`Load failed: ${error.message}`);
     } finally {
@@ -1290,15 +1237,15 @@ function Coder({ videoURL = "", initialPkg = null }) {
   return (
     <div className="space-y-6">
       {/* Video Selection Panel - Two columns */}
-      <div className="grid grid-cols-2 gap-6" style={{ gridAutoRows: "1fr" }}>
+      <div className="grid grid-cols-2 gap-6 session-panels" style={{ gridAutoRows: "1fr" }}>
         {/* LEFT: Videos to Code */}
-        <div className="p-6 border bg-white shadow-sm flex flex-col" style={{ maxHeight: "420px" }}>
+        <div className="p-6 surface-panel flex flex-col" style={{ maxHeight: "420px" }}>
           <h3 className="text-lg font-semibold mb-5 flex items-center gap-2">
             <span className="text-2xl">①</span> Select a video to code
             {loading && <span className="text-sm text-gray-500">Loading...</span>}
           </h3>
             
-          <div className="overflow-y-auto pr-2 mb-4 flex-1 min-h-0">
+          <div className="table-scroll pr-2 mb-4 flex-1 min-h-0" tabIndex={0} role="region" aria-label="Videos to code">
             {!loading && uncodedSessions.length === 0 && savedSessions.length === 0 && (
               <div className="text-center py-8 text-gray-500 text-sm">
                 <p>No videos available yet</p>
@@ -1318,10 +1265,10 @@ function Coder({ videoURL = "", initialPkg = null }) {
                 return (
                   <div
                     key={s.id}
-                    className={`p-3 rounded-lg border-2 cursor-pointer transition-all ${
+                    className={`session-card p-3 rounded-lg border cursor-pointer transition-all ${
                       selectedId === s.id 
                         ? 'border-gray-500 bg-gray-200' 
-                        : 'border-gray-300 hover:border-gray-400 bg-white'
+                        : 'border-gray-300 bg-white'
                     }`}
                     onClick={() => setSelectedId(s.id)}
                   >
@@ -1338,25 +1285,24 @@ function Coder({ videoURL = "", initialPkg = null }) {
 
           <div className="flex gap-3">
             <button 
-              className="flex-1 px-4 py-3 rounded-xl bg-blue-600 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors shadow-md text-base" 
+              className="flex-1 bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               onClick={loadFromDropbox}
               disabled={!selectedId || loading}
             >
               Load selected video
                 </button>
-            <button 
-              className="px-4 py-3 rounded-xl bg-gray-300 hover:bg-gray-400 transition-colors text-gray-800 font-medium" 
-              onClick={refreshSessions}
-              disabled={loading}
-            >
-              🔄 Refresh
-                </button>
+
               </div>
             </div>
 
         {/* RIGHT: Completed Videos */}
         <div className="p-6 bg-gray-100 flex flex-col" style={{ maxHeight: "420px" }}>
-          <h3 className="text-lg font-semibold mb-5 flex items-center gap-2">Completed videos</h3>
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <h3 className="text-lg font-semibold">Your completed videos</h3>
+            <button className="transition-colors" onClick={refreshSessions} disabled={loading}>
+              Refresh
+            </button>
+          </div>
           
           {loading && (
             <div className="text-center py-8 text-gray-500 text-sm">
@@ -1369,7 +1315,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
             </div>
           )}
           {!loading && completedSessions.length > 0 && (
-            <div className="overflow-y-auto border border-gray-300 rounded-lg flex-1 min-h-0">
+            <div className="table-scroll rounded-lg flex-1 min-h-0" tabIndex={0} role="region" aria-label="Completed videos">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 sticky top-0">
                   <tr className="border-b-2 border-gray-300">
@@ -1402,18 +1348,18 @@ function Coder({ videoURL = "", initialPkg = null }) {
         <div>
           {/* Phase 0: Ready to code */}
             {phase === 0 && (
-            <div className="p-6 border bg-white shadow-sm">
+            <div className="p-6 surface-panel">
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                  <span className="text-2xl">②</span> Code selected video
             </h3>
               <div className="text-center py-12">
                 <div className="text-gray-500 mb-4">
-                  <p className="mb-2"><span className="font-medium">Participant:</span> {pkg.meta.participant_id}</p>
-                  <p className="mb-2 text-sm text-gray-600">Responses are saved only when you finish coding and select “Save responses to dropbox”. Leaving or reloading starts this session over.</p>
+                  <p className="mb-2 text-gray-900"><span className="font-medium">Participant:</span> {pkg.meta.participant_id}</p>
+                  <p className="mb-2 text-sm text-gray-600">Please make sure to save your responses after you finish coding. No progress is saved midway, so please do not reload this website until you save your responses.</p>
                   <br/>
                 </div>
                 <button 
-                  className="px-6 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors text-lg" 
+                  className="bg-blue-600 transition-colors"
                   onClick={() => startPhase(1)}
                 >
                   ▶ Start coding
@@ -1424,7 +1370,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
 
           {/* Phase 1 & 2: Coding interface with video on left, questions on right */}
             {phase > 0 && phase < 3 && current && (
-            <div className="p-6 border bg-white shadow-sm">
+            <div className="p-6 surface-panel">
               <h2 className="text-xl font-semibold mb-6">
                 {phase === 1 ? 'Phase 1: Child responses' : 'Phase 2: Parent questions'}
               </h2>
@@ -1471,7 +1417,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
                                   value={currentAnswer}
                                   onChange={(e) => setAns(current.seg.id, q.id, e.target.value)}
                                   placeholder={q.placeholder || ""}
-                                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none resize-y"
+                                  className="form-control w-full px-3 py-2 text-sm resize-y"
                                   rows={3}
                                 />
                                 {q.instruction && (
@@ -1503,14 +1449,14 @@ function Coder({ videoURL = "", initialPkg = null }) {
                                         value={dropdownValue}
                                         onChange={(e) => setAns(current.seg.id, dropdownId, e.target.value)}
                                         placeholder={q.dropdownPlaceholder || q.dropdownLabel}
-                                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none"
+                                        className="form-control w-full px-3 py-2 text-sm "
                                       />
                                     ) : (
                                       <>
                                         <select
                                           value={dropdownValue}
                                           onChange={(e) => setAns(current.seg.id, dropdownId, e.target.value)}
-                                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none bg-white"
+                                          className="form-control w-full px-3 py-2 text-sm bg-white"
                                         >
                                           <option value="">— Select —</option>
                                           {q.dropdownOptions?.map((opt) => (
@@ -1529,7 +1475,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
                                               value={otherTextValue}
                                               onChange={(e) => setAns(current.seg.id, otherTextId, e.target.value)}
                                               placeholder="Type here..."
-                                              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none"
+                                              className="form-control w-full px-3 py-2 text-sm "
                                             />
                                           </div>
                                         )}
@@ -1545,7 +1491,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
                 </div>
                   </div>
                   <button 
-                    className="w-full px-4 py-3 rounded-xl bg-black text-white font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-black" 
+                    className="w-full bg-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     onClick={nextClip}
                     disabled={!areAllRequiredQuestionsAnswered()}
                   >
@@ -1558,7 +1504,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
 
           {/* Phase 3: Completed */}
             {phase === 3 && (
-            <div className="p-6 border bg-white shadow-sm">
+            <div className="p-6 surface-panel">
               <h2 className="text-xl font-semibold mb-6">Coding complete!</h2>
               <div className="text-center py-12">
                 <div className="text-4xl mb-4">🎉</div>
@@ -1566,33 +1512,24 @@ function Coder({ videoURL = "", initialPkg = null }) {
                 <br/>
                 
                 {(() => {
-                  const existingCompletedSession = savedSessions.find(s => 
-                    s.meta?.participant_id === pkg?.meta.participant_id && 
-                    s.progress?.completedAt &&
-                    s.id !== sessionId
-                  );
-                  
-                  const currentSession = savedSessions.find(s => s.id === sessionId);
-                  const isAlreadySaved = currentSession?.progress?.completedAt || existingCompletedSession;
-                  const isMissingSessionId = !sessionId;
                   
                   return (
                     <>
                       <button 
-                        className="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed" 
+                        className="bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         onClick={saveResponsesToDropbox}
-                        disabled={isAlreadySaved || isMissingSessionId}
+                        disabled={isAlreadySaved || isMissingSessionId || saveStatus.type === "loading"}
                       >
                         Save responses to dropbox
                       </button>
                       {isMissingSessionId && (
-                        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
+                        <div className="mt-4 error-message">
                           ⚠️ Error: Session ID is missing. Please reload the video from the list above.
                         </div>
                       )}
                       {isAlreadySaved && !isMissingSessionId && (
-                        <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
-                          ⚠️ Responses have already been saved for this participant ID ({pkg?.meta.participant_id}).
+                        <div className="mt-4 error-message">
+                          Your responses have already been saved for this video.
                         </div>
                       )}
                       {!isAlreadySaved && !isMissingSessionId && (
@@ -1608,23 +1545,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
       )}
       
       {/* Save Status Bar */}
-      {saveStatus.message && (
-        <div className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 px-6 py-4 rounded-xl shadow-lg max-w-2xl w-auto ${
-          saveStatus.type === "loading" ? "bg-blue-600 text-white" :
-          saveStatus.type === "success" ? "bg-green-600 text-white" :
-          saveStatus.type === "error" ? "bg-red-600 text-white" :
-          "bg-gray-600 text-white"
-        }`}>
-          <div className="flex items-center gap-3">
-            {saveStatus.type === "loading" && (
-              <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-            )}
-            {saveStatus.type === "success" && <span className="text-xl">✓</span>}
-            {saveStatus.type === "error" && <span className="text-xl">✗</span>}
-            <span className="font-medium">{saveStatus.message}</span>
-          </div>
-        </div>
-      )}
+      <StatusMessage status={saveStatus} />
     </div>
   );
 }
@@ -1637,6 +1558,139 @@ function AppFooter() {
         {" "}hsierliu@fas.harvard.edu. Happy coding :)
       </p>
     </div>
+  );
+}
+
+// Temporary admin-only controls for the participant-folder migration.
+function MigrationControls() {
+  const [plans, setPlans] = useState([]);
+  const [status, setStatus] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [finished, setFinished] = useState(false);
+  const preview = async () => {
+    setBusy(true); setPlans([]); setFinished(false);
+    try {
+      const inventory = await DropboxService.migrationRequest();
+      const participants = [...new Set(inventory.folders.map(name => /^S\d+(?=_|$)/i.exec(name)?.[0]).filter(Boolean))];
+      if (participants.length !== inventory.folders.length) throw new Error("Duplicate or unexpected folders found. Review the Dropbox inventory before proceeding.");
+      const next = [];
+      for (const participant of [...participants, "csv"]) {
+        setStatus(`Checking ${participant}…`);
+        next.push({ participant, ...await DropboxService.migrationRequest(participant) });
+      }
+      setPlans(next); setStatus("Dry run complete. Review all source and destination paths below before applying.");
+    } catch (error) { setStatus(error.message); }
+    finally { setBusy(false); }
+  };
+  const apply = async () => {
+    setBusy(true); setFinished(true);
+    try {
+      for (const plan of plans) {
+        if (plan.skipped) continue;
+        setStatus(`Migrating ${plan.participant}…`);
+        await DropboxService.migrationRequest(plan.participant, plan.token);
+      }
+      setStatus("Migration completed and files verified. Refresh the admin table. Keep the Dropbox backup until you have reviewed the results.");
+    } catch (error) { setStatus(`Stopped: ${error.message}. Some earlier steps may have completed; review the backups before retrying.`); }
+    finally { setBusy(false); }
+  };
+  return (
+    <details className="mt-4">
+      <summary>Temporary data migration (admin only)</summary>
+      <p className="text-sm mt-3">Pause uploading and coding while migrating. Folder suffixes and the CSV session_id column will be removed. S62 stays unchanged. Dates are preserved. Originals are backed up outside the participant folder.</p>
+      <div className="flex gap-3 mt-3">
+        <button className="table-action" onClick={preview} disabled={busy}>Preview migration</button>
+        <button className="table-action" onClick={apply} disabled={busy || !plans.length || finished}>Apply reviewed migration</button>
+      </div>
+      <p role="status" className="text-sm">{status}</p>
+      {plans.length > 0 && <pre style={{ maxHeight: "240px", overflow: "auto", fontSize: "12px" }}>{JSON.stringify(plans, null, 2)}</pre>}
+    </details>
+  );
+}
+
+function AdminPanel() {
+  const dialog = useRef(null);
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const refresh = async () => {
+    setLoading(true);
+    setError("");
+    setResult(null);
+    try {
+      setResult(await DropboxService.loadAdminStatus());
+    } catch (error) {
+      setError(error.message || "Could not load coding status.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <button type="button" className="admin-tab px-4 py-2 rounded-lg bg-white border shadow text-sm"
+        onClick={() => { dialog.current.showModal(); refresh(); }}>
+        Admin
+      </button>
+      <dialog ref={dialog} className="admin-status-dialog" aria-labelledby="admin-status-heading">
+        <MigrationControls />
+        <div className="flex justify-between items-center gap-4 mb-4">
+          <h2 id="admin-status-heading" className="text-xl font-semibold">Upload and coding status</h2>
+          <div className="flex gap-2">
+            <button type="button" className="table-action" onClick={refresh} disabled={loading}>Refresh</button>
+            <button type="button" className="table-action" onClick={() => dialog.current.close()} autoFocus>Close</button>
+          </div>
+        </div>
+        {loading && <p role="status">Loading status…</p>}
+        {error && <p role="alert" className="text-red-700">{error}</p>}
+        {result?.sessions.loadWarnings?.length > 0 && (
+          <div role="alert" className="text-red-700 mb-4">
+            Some sessions could not be checked:
+            <ul>{result.sessions.loadWarnings.map((warning) => <li key={warning.id}>{warning.id}: {warning.reason}</li>)}</ul>
+          </div>
+        )}
+        {result && (
+          <>
+            {result.sessions.some((session) => session.hasLegacyResponse) && (
+              <p className="text-sm text-gray-600 mb-4">Older shared response files are preserved. They are not assigned to an email or counted as individual coding here.</p>
+            )}
+            <div className="table-scroll admin-table-scroll" tabIndex={0} role="region" aria-label="Upload and coding status table">
+              <table className="w-full text-sm admin-status-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Subject #</th>
+                    <th scope="col">Age (months)</th>
+                    <th scope="col">Uploaded</th>
+                    {result.emails.map((email) => <th scope="col" key={email}>{email}</th>)}
+                  </tr>
+                </thead>
+                <tbody>
+                  {result.sessions.map((session) => (
+                    <tr key={session.id}>
+                      <th scope="row">
+                        {session.meta.participant_id || session.id}
+                      </th>
+                      <td>{session.meta.age_months ?? "—"}</td>
+                      <td>{formatDate(session.savedAt)}</td>
+                      {result.emails.map((email) => (
+                        <td key={email}>
+                          {session.completions[email]
+                            ? <time dateTime={session.completions[email]} title={new Date(session.completions[email]).toLocaleString()}>{formatDate(session.completions[email])}</time>
+                            : "-"}
+                          {session.pending.includes(email) && <div className="text-xs text-red-700">Save needs retry</div>}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {result.sessions.length === 0 && <p className="mt-4">No uploaded sessions to display.</p>}
+          </>
+        )}
+      </dialog>
+    </>
   );
 }
 
@@ -1707,14 +1761,14 @@ function AuthenticatedApp() {
     return (
       <div className="min-h-screen bg-gray-100 flex flex-col p-6">
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-full mx-auto" style={{ maxWidth: "700px" }}>
+          <div className="w-full mx-auto" style={{ maxWidth: "800px" }}>
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold mb-3">
                 Welcome to Polar Questions!
               </h1>
             </div>
             <div
-              className="w-full mx-auto p-8 border-2 border-gray-300 bg-white shadow-sm text-center"
+              className="w-full mx-auto p-8 surface-panel text-center"
               style={{ maxWidth: "500px" }}
             >
               <p className="text-gray-600 mb-8">
@@ -1741,7 +1795,7 @@ function AuthenticatedApp() {
                   <button
                     type="button"
                     onClick={handleSignOut}
-                    className="w-full px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium"
+                    className="button-dark w-full px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium"
                   >
                     Sign out
                   </button>
@@ -1759,7 +1813,7 @@ function AuthenticatedApp() {
     return (
       <div className="min-h-screen bg-gray-100 flex flex-col p-6">
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-full mx-auto" style={{ maxWidth: "700px" }}>
+          <div className="w-full mx-auto" style={{ maxWidth: "800px" }}>
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-3">Welcome to Polar Questions!</h1>
             <p className="text-gray-600">
@@ -1767,30 +1821,24 @@ function AuthenticatedApp() {
             </p>
           </div>
           
-          <div className="p-8 border-2 border-gray-300 bg-white shadow-sm">
-            <div className="grid grid-cols-2 gap-4">
-              <button
-                onClick={() => handleRoleSelect("uploader")}
-                disabled={!accessProfile.roles.includes("uploader")}
-                className="p-6 rounded-xl border-2 border-gray-300 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all"
-              >
-                <h2 className="text-2xl font-semibold mb-2">Uploader</h2>
-                <p className="text-gray-600 text-sm">Upload and separate the clips for coding</p>
-            </button>
-              
-              <button
-                onClick={() => handleRoleSelect("coder")}
-                disabled={!accessProfile.roles.includes("coder")}
-                className="p-6 rounded-xl border-2 border-gray-300 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all"
-              >
-                <h2 className="text-2xl font-semibold mb-2">Coder</h2>
-                <p className="text-gray-600 text-sm">Code child and parent responses</p>
-            </button>
+          <div className="p-8 surface-panel role-selection">
+            <div className="grid grid-cols-2 gap-4 session-panels">
+              {[
+                { role: "uploader", title: "Uploader", description: "Upload and separate the clips for coding" },
+                { role: "coder", title: "Coder", description: "Code child and parent responses" },
+              ].map(({ role, title, description }) => (
+                <button key={role} onClick={() => handleRoleSelect(role)}
+                  disabled={!accessProfile.roles.includes(role)}
+                  className="p-6 rounded-xl border border-gray-300 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all">
+                  <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+                  <p className={`text-gray-600 text-sm ${role === "uploader" ? "whitespace-nowrap" : ""}`}>{description}</p>
+                </button>
+              ))}
             </div>
             <button
               type="button"
               onClick={handleSignOut}
-              className="mt-6 w-full px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium"
+              className="button-dark mt-6 w-full px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium"
             >
               Sign out
             </button>
@@ -1798,12 +1846,13 @@ function AuthenticatedApp() {
         </div>
         </div>
         <AppFooter />
+        {accessProfile.roles.includes("admin") && <AdminPanel />}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col p-6">
+    <div className="coding-workspace min-h-screen bg-gray-100 flex flex-col p-6">
       <div className="flex-1 w-full max-w-6xl mx-auto">
         <div className="flex items-center justify-center mb-6 relative">
           <h1 className="text-2xl font-bold text-center">
@@ -1811,7 +1860,7 @@ function AuthenticatedApp() {
           </h1>
           <button 
             onClick={() => setMode(null)}
-            className="absolute right-0 px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400 text-gray-800 text-sm font-medium transition-colors"
+            className="absolute right-0 px-4 py-2 rounded-lg text-gray-800 text-sm font-medium transition-colors"
           >
             ← Back to Selection
           </button>
@@ -1825,6 +1874,7 @@ function AuthenticatedApp() {
 
       </div>
       <AppFooter />
+        {accessProfile.roles.includes("admin") && <AdminPanel />}
     </div>
   );
 }
@@ -1851,3 +1901,9 @@ export default function App() {
 
   return <AuthenticatedApp />;
 }
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);

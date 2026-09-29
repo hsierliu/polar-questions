@@ -27,3 +27,6 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Local code-checking configuration
+/coding/eslint.config.js

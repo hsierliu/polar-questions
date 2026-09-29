@@ -1,4 +1,114 @@
-import { requireRole } from "./me.js";
+import { createRemoteJWKSet, jwtVerify } from "jose";
+
+const projectId =
+  process.env.FIREBASE_PROJECT_ID || process.env.VITE_FIREBASE_PROJECT_ID;
+
+if (!projectId) {
+  throw new Error("FIREBASE_PROJECT_ID is not configured");
+}
+
+const firebaseKeys = createRemoteJWKSet(
+  new URL(
+    "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com",
+  ),
+);
+
+async function verifyFirebaseToken(token) {
+  const { payload } = await jwtVerify(token, firebaseKeys, {
+    algorithms: ["RS256"],
+    audience: projectId,
+    issuer: `https://securetoken.google.com/${projectId}`,
+  });
+
+  if (!payload.sub || typeof payload.sub !== "string") {
+    throw new Error("Firebase token has no subject");
+  }
+
+  return {
+    ...payload,
+    uid: payload.sub,
+  };
+}
+
+
+function parseEmails(value) {
+  return new Set(
+    String(value || "")
+      .split(/[\s,;]+/)
+      .map((email) => email.trim().toLowerCase())
+      .filter(Boolean),
+  );
+}
+
+function configuredCoders() {
+  return [...parseEmails(process.env.CODER_EMAILS)].sort();
+}
+
+function rolesForEmail(email) {
+  const normalized = email.toLowerCase();
+  const roles = new Set();
+
+  if (parseEmails(process.env.ADMIN_EMAILS).has(normalized)) {
+    roles.add("admin");
+    roles.add("uploader");
+    roles.add("coder");
+  }
+  if (parseEmails(process.env.UPLOADER_EMAILS).has(normalized)) {
+    roles.add("uploader");
+  }
+  if (parseEmails(process.env.CODER_EMAILS).has(normalized)) {
+    roles.add("coder");
+  }
+
+  return [...roles];
+}
+
+async function authenticate(req) {
+  const authorization = req.headers.authorization || "";
+  if (!authorization.startsWith("Bearer ")) {
+    const error = new Error("Authentication required");
+    error.status = 401;
+    throw error;
+  }
+
+  let decoded;
+  try {
+    decoded = await verifyFirebaseToken(authorization.slice(7));
+  } catch {
+    const error = new Error("Authentication failed");
+    error.status = 401;
+    throw error;
+  }
+  if (!decoded.email || decoded.email_verified !== true) {
+    const error = new Error("A verified email address is required");
+    error.status = 403;
+    throw error;
+  }
+
+  const roles = rolesForEmail(decoded.email);
+  if (roles.length === 0) {
+    const error = new Error("This account is not authorized");
+    error.status = 403;
+    throw error;
+  }
+
+  return {
+    uid: decoded.uid,
+    email: decoded.email.toLowerCase(),
+    name: decoded.name || decoded.email,
+    roles,
+  };
+}
+
+async function requireRole(req, allowedRoles) {
+  const user = await authenticate(req);
+  if (!allowedRoles.some((role) => user.roles.includes(role))) {
+    const error = new Error("You do not have permission for this action");
+    error.status = 403;
+    throw error;
+  }
+  return user;
+}
 
 export const config = {
   api: { bodyParser: false },
@@ -194,91 +304,153 @@ async function uploadJson(dbx, path, value) {
 
 
 
-async function listSessions(dbx, cursor) {
-  // Finish each page before Vercel's request deadline, regardless of library size.
+function isMissing(error) {
+  return error?.status === 409 && error.detail?.includes("not_found");
+}
+
+function isConflict(error) {
+  return error?.status === 409 && error.detail?.includes("conflict");
+}
+
+function coderName(email) {
+  return email.includes("@") ? email.slice(0, email.lastIndexOf("@")) : email;
+}
+
+function coderFilename(email, legacy = false) {
+  const name = legacy ? email : coderName(email);
+  if (!name || (!legacy && ["session", "progress"].includes(name.toLowerCase()))) {
+    const error = new Error("This email prefix conflicts with a reserved session filename");
+    error.status = 409;
+    throw error;
+  }
+  const filename = `${encodeURIComponent(name).replaceAll("%40", "@").replaceAll("%2B", "+")}.json`;
+  if (filename.length > 255) {
+    const error = new Error("Email address is too long for a response filename");
+    error.status = 400;
+    throw error;
+  }
+  return filename;
+}
+
+async function readOptionalFile(dbx, path) {
+  try {
+    const { result } = await dbx.filesDownload({ path });
+    return { text: Buffer.from(result.fileBinary).toString("utf8"), rev: result.rev };
+  } catch (error) {
+    if (isMissing(error)) return null;
+    throw error;
+  }
+}
+
+async function readCoderResponse(dbx, sessionId, email, uid) {
+  for (const legacy of [false, true]) {
+    const path = sessionPath(sessionId, coderFilename(email, legacy));
+    const file = await readOptionalFile(dbx, path);
+    if (!file) continue;
+    const data = JSON.parse(file.text);
+    const migratedOwner = data.migratedFromLegacy === true &&
+      configuredCoders().filter((account) => coderName(account) === data.coder).length === 1 &&
+      configuredCoders().includes(email) && data.coder === coderName(email);
+    if ((data.coder !== email && !(data.coder === coderName(email) && data.modifiedBy === uid) && !migratedOwner) || data.sessionId !== sessionId) {
+      const error = new Error("This email prefix already belongs to another response. No file was overwritten.");
+      error.status = 409;
+      throw error;
+    }
+    return { data, rev: file.rev, path };
+  }
+  return null;
+}
+
+async function listFolderEntries(dbx, path) {
+  let page = await dbx.filesListFolder({ path });
+  const entries = [...page.result.entries];
+  while (page.result.has_more) {
+    page = await dbx.filesListFolderContinue({ cursor: page.result.cursor });
+    entries.push(...page.result.entries);
+  }
+  return entries;
+}
+
+async function adminStatus(dbx, sessionId, data) {
+  const entries = await listFolderEntries(dbx, sessionPath(sessionId));
+  const completions = {};
+  const pending = [];
+  // Read only per-coder response files; never send answers to the status table.
+  for (const entry of entries) {
+    if (entry[".tag"] !== "file" || ["session.json", "progress.json"].includes(entry.name) || !entry.name.endsWith(".json")) continue;
+    const response = JSON.parse(await downloadText(dbx, sessionPath(sessionId, entry.name)));
+    if (typeof response.coder !== "string" || response.sessionId !== sessionId ||
+        coderName(decodeURIComponent(entry.name.slice(0, -5))) !== coderName(response.coder)) continue;
+    if (response.completedAt) completions[coderName(response.coder)] = response.completedAt;
+    else pending.push(coderName(response.coder));
+  }
+  return {
+    uploadedBy: data.uploadedBy || null,
+    completions,
+    pending,
+    hasLegacyResponse: entries.some((entry) => entry.name === "progress.json"),
+  };
+}
+
+async function listSessions(dbx, cursor, user, admin = false) {
+  // Bound each request so libraries can grow without one long-running request.
   let response;
   if (cursor) {
     response = await dbx.filesListFolderContinue({ cursor });
   } else {
     try {
-      response = await dbx.filesListFolder({ path: BASE_PATH, limit: 4 });
+      response = await dbx.filesListFolder({ path: BASE_PATH, limit: admin ? 2 : 8 });
     } catch (error) {
-      if (error?.status !== 409 || !error.detail?.includes("path/not_found")) {
-        throw error;
-      }
-      return { sessions: [], skipped: [], cursor: null };
+      if (!isMissing(error)) throw error;
+      return { sessions: [], skipped: [], cursor: null, ...(admin ? { emails: configuredCoders() } : {}) };
     }
   }
-  const entries = response.result.entries;
-
-  const folders = entries.filter((entry) => entry[".tag"] === "folder");
+  const folders = response.result.entries.filter((entry) => entry[".tag"] === "folder");
   const skipped = [];
   const loadEntry = async (entry) => {
     try {
       assertSessionId(entry.name);
-      const dataText = await downloadText(
-        dbx,
-        sessionPath(entry.name, "session.json"),
-      );
-      const progress = await downloadText(
-        dbx,
-        sessionPath(entry.name, "progress.json"),
-      )
-        .then((text) => JSON.parse(text))
-        .catch((error) => {
-          if (error?.status !== 409) {
-            console.warn(
-              "Progress unavailable; listing session without status",
-              entry.name,
-              error,
-            );
-          }
-          return null;
-        });
-      const data = JSON.parse(dataText);
-      return {
+      const data = JSON.parse(await downloadText(dbx, sessionPath(entry.name, "session.json")));
+      const session = {
         id: entry.name,
         label: `${data.meta?.participant_id || "Unknown"} | Order ${data.meta?.order || "?"}`,
         meta: data.meta || {},
         savedAt: data.savedAt || entry.client_modified || null,
-        // Legacy partial saves are ignored; final submissions remain visible.
-        progress: progress?.completedAt ? progress : null,
-        status: progress?.completedAt ? "completed" : "uncoded",
+      };
+      if (admin) return { ...session, ...await adminStatus(dbx, entry.name, data) };
+      const response = user.roles.includes("coder")
+        ? await readCoderResponse(dbx, entry.name, user.email, user.uid)
+        : null;
+      // Only the requesting coder's completion can remove a video from their queue.
+      const completedAt = response?.data.completedAt || null;
+      return {
+        ...session,
+        progress: completedAt ? { completedAt } : null,
+        status: completedAt ? "completed" : "uncoded",
+        syncPending: Boolean(response && !completedAt),
       };
     } catch (error) {
-      console.warn("Skipping invalid Dropbox session entry", entry.name, error);
-      let reason = "storage error";
-      if (error?.status === 409) {
-        reason = "session.json is missing";
-      } else if (error instanceof SyntaxError) {
-        reason = "session.json contains invalid JSON";
-      } else if (error?.status === 400) {
-        reason = "folder name is not supported";
-      } else if (error?.status) {
-        reason = `storage error (HTTP ${error.status})`;
-      }
+      console.warn("Skipping unavailable Dropbox session entry", entry.name, error);
+      const reason = isMissing(error) ? "session.json is missing" : "session or response status could not be read";
       skipped.push({ id: entry.name, reason });
       return null;
     }
   };
-
   const sessions = [];
-  const concurrency = 2;
+  const concurrency = admin ? 2 : 4;
   for (let index = 0; index < folders.length; index += concurrency) {
-    const batch = await Promise.all(
-      folders.slice(index, index + concurrency).map(loadEntry),
-    );
+    const batch = await Promise.all(folders.slice(index, index + concurrency).map(loadEntry));
     sessions.push(...batch.filter(Boolean));
   }
   return {
     sessions,
     cursor: response.result.has_more ? response.result.cursor : null,
     skipped: skipped.sort((a, b) => a.id.localeCompare(b.id)),
+    ...(admin ? { emails: configuredCoders() } : {}),
   };
 }
 
-
-function createSessionId(participantId, timestamp = Date.now()) {
+function createSessionId(participantId) {
   const subject = typeof participantId === "string" ? participantId.trim() : "";
   if (!/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(subject)) {
     const error = new Error(
@@ -287,14 +459,14 @@ function createSessionId(participantId, timestamp = Date.now()) {
     error.status = 400;
     throw error;
   }
-  return `${subject}_${timestamp}`;
+  return subject;
 }
 
 function actionFor(req) {
   return typeof req.query.action === "string" ? req.query.action : "";
 }
 
-async function readBody(req, maxBytes = 3 * 1024 * 1024) {
+async function readBody(req, maxBytes = 4 * 1024 * 1024) {
   const chunks = [];
   let size = 0;
   for await (const chunk of req) {
@@ -339,54 +511,159 @@ function csvCell(value) {
     : text;
 }
 
-async function appendCsv(dbx, rows) {
-  if (!Array.isArray(rows) || rows.length === 0 || rows.length > 1000) {
-    const error = new Error("Invalid response rows");
+function parseCsv(text) {
+  const rows = [];
+  let row = [], cell = "", quoted = false;
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    if (quoted) {
+      if (char === '"' && text[i + 1] === '"') { cell += '"'; i += 1; }
+      else if (char === '"') quoted = false;
+      else cell += char;
+    } else if (char === '"' && cell === "") quoted = true;
+    else if (char === ",") { row.push(cell); cell = ""; }
+    else if (char === "\n" || char === "\r") {
+      if (char === "\r" && text[i + 1] === "\n") i += 1;
+      row.push(cell);
+      if (row.some((value) => value !== "")) rows.push(row);
+      row = []; cell = "";
+    } else cell += char;
+  }
+  if (quoted) throw new Error("The existing master CSV has an unterminated quoted field");
+  if (cell !== "" || row.length) { row.push(cell); rows.push(row); }
+  return rows;
+}
+
+async function appendCsv(dbx, rows, email) {
+  const path = `${BASE_PATH}/master_responses.csv`;
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const existing = await readOptionalFile(dbx, path);
+    const records = existing ? parseCsv(existing.text.replace(/^\uFEFF/, "")) : [];
+    const headers = records.shift() || [];
+    if (new Set(headers).size !== headers.length || records.some((row) => row.length !== headers.length)) {
+      throw new Error("The existing master CSV has inconsistent columns");
+    }
+    // Participant + coder is the save identity; keep internal session IDs out of the CSV.
+    const sessionIndex = headers.indexOf("session_id");
+    if (sessionIndex >= 0) {
+      headers.splice(sessionIndex, 1);
+      for (const row of records) row.splice(sessionIndex, 1);
+    }
+    const coderIndex = headers.indexOf("coder");
+    const participantIndex = headers.indexOf("participant_id");
+    const participant = String(rows[0]?.participant_id || "");
+    if (!participant || rows.some((row) => String(row.participant_id) !== participant)) {
+      throw new Error("A submission must belong to one participant");
+    }
+    if (coderIndex >= 0) {
+      for (const row of records) row[coderIndex] = coderName(row[coderIndex]);
+    }
+    const alreadySaved = coderIndex >= 0 && participantIndex >= 0 && records.some((row) =>
+      row[coderIndex] === coderName(email) && row[participantIndex] === participant);
+    const originalWidth = headers.length;
+    for (const name of [...new Set(rows.flatMap((row) => Object.keys(row))), "coder"]) {
+      if (name !== "session_id" && !headers.includes(name)) headers.push(name);
+    }
+    for (const row of records) {
+      for (let i = originalWidth; i < headers.length; i += 1) row.push("");
+    }
+    const newRows = alreadySaved ? [] : rows.map((row) => headers.map((header) =>
+      header === "coder" ? coderName(email) : row[header]));
+    const contents = [headers, ...records, ...newRows]
+      .map((row) => row.map(csvCell).join(",")).join("\n");
+    if (existing && !existing.rev) throw new Error("The master CSV revision is missing");
+    try {
+      await dbx.filesUpload({
+        path, contents,
+        mode: existing ? { ".tag": "update", update: existing.rev } : { ".tag": "add" },
+        autorename: false, strict_conflict: true,
+      });
+      return;
+    } catch (error) {
+      if (!isConflict(error)) throw error;
+    }
+  }
+  const error = new Error("Other responses are being saved. Please try saving again.");
+  error.status = 409;
+  throw error;
+}
+
+async function saveCompletion(dbx, sessionId, user, data, rows) {
+  if (!data || data.phase !== 3 || !data.answers || typeof data.answers !== "object" ||
+      Array.isArray(data.answers) || !Array.isArray(rows) || !rows.length || rows.length > 1000 ||
+      rows.some((row) => !row || typeof row !== "object" || Array.isArray(row) ||
+        Object.values(row).some((value) => value != null && !["string", "number", "boolean"].includes(typeof value)))) {
+    const error = new Error("Only completed responses and their CSV rows can be saved");
     error.status = 400;
     throw error;
   }
-  const path = `${BASE_PATH}/master_responses.csv`;
-  let existingLines = [];
-  let headers = null;
-  try {
-    const existing = await downloadText(dbx, path);
-    existingLines = existing.split("\n").filter((line) => line.trim());
-    if (existingLines.length) headers = existingLines.shift().split(",");
-  } catch (error) {
-    if (error?.status !== 409) throw error;
+  const path = sessionPath(sessionId, coderFilename(user.email));
+  let saved = await readCoderResponse(dbx, sessionId, user.email, user.uid);
+  if (!saved) {
+    const pkg = JSON.parse(await downloadText(dbx, sessionPath(sessionId, "session.json")));
+    const pending = {
+      phase: 3, answers: data.answers, phaseOrders: data.phaseOrders || {},
+      coder: coderName(user.email), modifiedBy: user.uid, sessionId,
+      submittedAt: new Date().toISOString(), completedAt: null,
+      rows: rows.map((row) => ({ ...row,
+        participant_id: pkg.meta?.participant_id || "",
+        age_months: pkg.meta?.age_months ?? "", order: pkg.meta?.order || "",
+        coder: coderName(user.email),
+      })),
+    };
+    try {
+      const result = await dbx.filesUpload({
+        path, contents: JSON.stringify(pending, null, 2),
+        mode: { ".tag": "add" }, autorename: false, strict_conflict: true,
+      });
+      saved = { data: pending, rev: result.result.rev, path };
+    } catch (error) {
+      if (!isConflict(error)) throw error;
+      saved = await readCoderResponse(dbx, sessionId, user.email, user.uid);
+      if (!saved) throw error;
+    }
   }
-  headers ||= Object.keys(rows[0]);
-  const newLines = rows.map((row) =>
-    headers.map((header) => csvCell(row[header])).join(","),
-  );
-  await dbx.filesUpload({
-    path,
-    contents: [headers.join(","), ...existingLines, ...newLines].join("\n"),
-    mode: { ".tag": "overwrite" },
-  });
+  if (saved.data.completedAt) return { ok: true, completedAt: saved.data.completedAt };
+  // The first submission is immutable. A retry finishes that same submission.
+  await appendCsv(dbx, saved.data.rows, user.email);
+  const completedAt = saved.data.submittedAt;
+  if (!saved.rev) throw new Error("The response file revision is missing");
+  try {
+    await dbx.filesUpload({
+      path: saved.path, contents: JSON.stringify({ ...saved.data, coder: coderName(user.email), rows: saved.data.rows.map((row) => ({ ...row, coder: coderName(user.email) })), completedAt }, null, 2),
+      mode: { ".tag": "update", update: saved.rev }, autorename: false, strict_conflict: true,
+    });
+  } catch (error) {
+    if (!isConflict(error)) throw error;
+    const latest = await readCoderResponse(dbx, sessionId, user.email, user.uid);
+    if (!latest?.data.completedAt) throw error;
+    return { ok: true, completedAt: latest.data.completedAt };
+  }
+  return { ok: true, completedAt };
 }
 
 async function handleGet(req, res, action, dbx) {
-  if (action === "list") {
-    await requireRole(req, ["uploader", "coder", "admin"]);
-    const cursor =
-      typeof req.query.cursor === "string" ? req.query.cursor : undefined;
-    return res.status(200).json(await listSessions(dbx, cursor));
+  if (action === "list" || action === "admin-status") {
+    const admin = action === "admin-status";
+    const user = await requireRole(req, admin ? ["admin"] : ["uploader", "coder", "admin"]);
+    const cursor = typeof req.query.cursor === "string" ? req.query.cursor : undefined;
+    return res.status(200).json(await listSessions(dbx, cursor, user, admin));
   }
 
   const sessionId = assertSessionId(req.query.sessionId);
   if (action === "session") {
-    await requireRole(req, ["coder", "admin"]);
-    const pkg = JSON.parse(
-      await downloadText(dbx, sessionPath(sessionId, "session.json")),
-    );
-    const temporaryLink = await dbx.filesGetTemporaryLink({
-      path: sessionPath(sessionId, "video.mp4"),
-    });
+    const user = await requireRole(req, ["coder", "admin"]);
+    const [sessionText, response, temporaryLink] = await Promise.all([
+      downloadText(dbx, sessionPath(sessionId, "session.json")),
+      readCoderResponse(dbx, sessionId, user.email, user.uid),
+      dbx.filesGetTemporaryLink({ path: sessionPath(sessionId, "video.mp4") }),
+    ]);
+    const pkg = JSON.parse(sessionText);
     return res.status(200).json({
-      id: sessionId,
-      pkg,
-      videoURL: temporaryLink.result.link,
+      id: sessionId, pkg, videoURL: temporaryLink.result.link,
+      pendingSubmission: response && !response.data.completedAt ? {
+        answers: response.data.answers, phaseOrders: response.data.phaseOrders, rows: response.data.rows,
+      } : null,
     });
   }
 
@@ -414,12 +691,6 @@ async function handlePost(req, res, action, dbx) {
 
   const body = await readJson(req);
 
-  if (action === "append-csv") {
-    await requireRole(req, ["coder", "admin"]);
-    await appendCsv(dbx, body.rows);
-    return res.status(200).json({ ok: true });
-  }
-
   const sessionId = assertSessionId(body.sessionId);
 
   if (action === "upload-finish") {
@@ -445,7 +716,7 @@ async function handlePost(req, res, action, dbx) {
   }
 
   if (action === "session-data") {
-    await requireRole(req, ["uploader", "admin"]);
+    const user = await requireRole(req, ["uploader", "admin"]);
     if (!body.data || typeof body.data !== "object") {
       const error = new Error("Invalid session data");
       error.status = 400;
@@ -453,6 +724,7 @@ async function handlePost(req, res, action, dbx) {
     }
     await uploadJson(dbx, sessionPath(sessionId, "session.json"), {
       ...body.data,
+      uploadedBy: user.email,
       savedAt: new Date().toISOString(),
     });
     return res.status(200).json({ ok: true });
@@ -460,24 +732,7 @@ async function handlePost(req, res, action, dbx) {
 
   if (action === "completion") {
     const user = await requireRole(req, ["coder", "admin"]);
-    if (
-      !body.data ||
-      body.data.phase !== 3 ||
-      !body.data.answers ||
-      typeof body.data.answers !== "object" ||
-      Array.isArray(body.data.answers)
-    ) {
-      const error = new Error("Only completed responses can be saved");
-      error.status = 400;
-      throw error;
-    }
-    await uploadJson(dbx, sessionPath(sessionId, "progress.json"), {
-      ...body.data,
-      completedAt: new Date().toISOString(),
-      lastModified: new Date().toISOString(),
-      modifiedBy: user.uid,
-    });
-    return res.status(200).json({ ok: true });
+    return res.status(200).json(await saveCompletion(dbx, sessionId, user, body.data, body.rows));
   }
 
   const error = new Error("Unknown operation");
@@ -522,6 +777,20 @@ export default async function handler(req, res) {
   res.setHeader("X-Content-Type-Options", "nosniff");
   try {
     const action = actionFor(req);
+    // Account access must work even when Dropbox is unavailable.
+    if (action === "me") {
+      if (req.method !== "GET") {
+        res.setHeader("Allow", "GET");
+        return res.status(405).json({ error: "Method not allowed" });
+      }
+      try {
+        return res.status(200).json(await authenticate(req));
+      } catch (error) {
+        return res.status(error.status || 401).json({
+          error: error.status === 403 ? error.message : "Authentication failed",
+        });
+      }
+    }
     const dbx = await getDropbox();
     if (req.method === "GET") return await handleGet(req, res, action, dbx);
     if (req.method === "POST") return await handlePost(req, res, action, dbx);
@@ -532,3 +801,6 @@ export default async function handler(req, res) {
     return res.status(statusFor(error)).json({ error: safeMessage(error) });
   }
 }
+
+// Used by the temporary, admin-only migration endpoint.
+export { requireRole, getDropbox, listFolderEntries, downloadText, readOptionalFile, parseCsv, csvCell, rpc, readJson };

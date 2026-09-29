@@ -1,9 +1,11 @@
 # Polar Questions
 
-This repository contains code for a blind-coding website and our analyses for our study on polar question. The study preregistration is available on [OSF](https://osf.io/fngb6). This website allows a researcher to upload videos and split them into segments, and another researcher to blind-code child responses and parent questions. Video segments and responses (in CSV format) are saved on Dropbox.
+This repository contains code for a blind-coding website and the analyses for our polar questions study. THe preregistration for this study can be found on [OSF](https://osf.io/fngb6). For context, the blind-coding website allows a researcher to upload videos and split them into segments, and other researchers to blind-code child responses and parent questions. Video segments and responses (in CSV format) are saved on Dropbox.
+
+**Who to contact:** vgomes@fas.harvard.edu, hsierliu@fas.harvard.edu
 
 > [!NOTE]
-> Access to the website requires an authorized Google account. Please contact hsierliu@fas.harvard.edu to gain access and if you run into any issues! For any questions about the study itself, feel free to contact Victor (vgomes@fas.harvard.edu) or Hsi-Er.
+> Access to the website requires an authorized Google account. Please contact Hsi-Er to gain access and if you run into any issues! For any questions about the study itself, feel free to contact Victor and/or Hsi-Er.
 
 ## Repository structure
 
@@ -11,31 +13,24 @@ This repository contains code for a blind-coding website and our analyses for ou
 pq-coding/
 ├── coding/                         # blind-coding website
 │   ├── api/
-│   │   ├── dropbox.js              # server-side uploads, sessions, and responses
-│   │   └── me.js                   # sign-in verification and access permissions
+│   │   └── dropbox.js              # server authentication, permissions, and Dropbox storage
 │   ├── public/
-│   │   └── pbear.png               # website icon
+│   │   └── pbear.png               # polar bear :) browser-tab icon
 │   ├── src/
-│   │   ├── App.jsx                 # uploader and coder interfaces
-│   │   ├── auth.js                 # google sign-in and access-profile requests
-│   │   ├── dropbox.js              # browser requests to the storage API
-│   │   ├── index.css               # website styles
-│   │   └── main.jsx                # app startup and loading screen
-│   ├── eslint.config.js            # code-checking rules
-│   ├── index.html                  # website HTML entry point
+│   │   ├── App.jsx                 # app startup, uploader, coder, and admin interfaces
+│   │   ├── index.css               # website styles and responsive layouts
+│   │   └── services.js             # browser sign-in and server API requests
+│   ├── index.html                  # HTML entry point and startup error fallback
 │   ├── package.json                # dependencies and development commands
-│   ├── package-lock.json           # dependency versions
-│   └── vite.config.js              # react development and build settings
+│   ├── package-lock.json           # exact dependency versions
+│   └── vite.config.js              # React development and build settings
 ├── data-analysis/                  # study analyses (to be added)
-│   ├── .gitkeep                    # keeps the empty folder in Git (gonna remove this)
-│   ├── code.R                      # R analysis code (to be added)
-│   └── figure1.png                 # figure (to be added)
-├── poster.pdf                      # BUCLD poster (to be added)
-└── README.md                       # Project overview and coding instructions
+│   └── .gitkeep                    # keeps the empty folder in Git (gonna remove this)
+└── README.md                       # project overview and instructions
 ```
 
 
-## Coding steps:
+## Coding steps
 
 **Gain access**
 
@@ -43,7 +38,7 @@ pq-coding/
    - **ADMIN**: people who can use both the uploader and coder
    - **UPLOADER**: people who can only upload and segment videos
    - **CODER**: people who can only code videos
-2. Open https://pq-coding.vercel.app/ on Chrome.
+2. Open https://pq-coding.vercel.app/ on Chrome
 
 **Upload videos**
 1. Enter participant information (ID, age in months, order)

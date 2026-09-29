@@ -7,7 +7,17 @@
     <title>P&Q Coder</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="root">Loading…</div>
+    <script type="module">
+      import('/src/App.jsx').catch((error) => {
+        console.error('Application startup failed:', error);
+        const root = document.getElementById('root');
+        const heading = document.createElement('h1');
+        heading.textContent = 'Application startup failed';
+        const detail = document.createElement('p');
+        detail.textContent = error?.message || 'Unknown startup error';
+        root.replaceChildren(heading, detail);
+      });
+    </script>
   </body>
 </html>
