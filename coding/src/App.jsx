@@ -85,6 +85,12 @@ const ORDER_DEFS = {
   ],
 };
 
+const CHECK_QUESTIONS = [
+  { id: "look", text: "Did the child look towards the book?", options: ["Yes", "No"] },
+  { id: "action", text: "Did the child try doing something else? (e.g., getting up, flip ahead)", options: ["Yes", "No"] },
+  { id: "comments", text: "Any comments or notes?", type: "text", optional: true },
+];
+
 const CHILD_QUESTIONS = [
   {
     id: "q1",
@@ -959,7 +965,7 @@ function Uploader({ onVideoLoaded, onPackageReady }) {
   );
 }
 
-function Coder({ videoURL = "", initialPkg = null }) {
+function Coder({ videoURL = "", initialPkg = null, check = false }) {
   const [vURL, setVURL] = useState(videoURL || "");
   const [pkg, setPkg] = useState(initialPkg || null);
   const [sessionId, setSessionId] = useState("");
@@ -973,10 +979,10 @@ function Coder({ videoURL = "", initialPkg = null }) {
   const [loading, setLoading] = useState(false);
   const [saveStatus, setSaveStatus] = useState({ message: "", type: "" });
 
-  const refreshSessions = async () => {
+  const refreshSessions = useCallback(async () => {
     setLoading(true);
     try {
-      const sessions = await DropboxService.listSessions();
+      const sessions = await DropboxService.listSessions(check);
       setSavedSessions(sessions);
       reportSessionLoadWarnings(sessions);
     } catch (error) {
@@ -985,11 +991,11 @@ function Coder({ videoURL = "", initialPkg = null }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [check]);
 
   useEffect(() => {
     refreshSessions();
-  }, []);
+  }, [refreshSessions]);
 
   useEffect(() => {
     if (videoURL) setVURL((currentURL) => currentURL || videoURL);
@@ -1028,7 +1034,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
       .sort((a, b) => a.sortKey - b.sortKey);
     const orderedSegments =
       savedSegments.length > 0 ? [...savedSegments, ...newSegments] : newSegments;
-    const qset = type === "child_response" ? CHILD_QUESTIONS : PARENT_QUESTIONS;
+    const qset = check ? CHECK_QUESTIONS : type === "child_response" ? CHILD_QUESTIONS : PARENT_QUESTIONS;
     return {
       queue: orderedSegments.map((segment) => ({
         seg: segment,
@@ -1042,6 +1048,10 @@ function Coder({ videoURL = "", initialPkg = null }) {
     if (!pkg) return;
     const type = p === 1 ? "child_response" : "parent_question";
     const result = buildQueueInOrder(type);
+    if (check && result.queue.length === 0) {
+      setSaveStatus({ message: "This video has no child response clips to check.", type: "error" });
+      return;
+    }
     setPhaseOrders((previous) => ({
       ...previous,
       [type]: result.order,
@@ -1109,7 +1119,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
     const questions = current.questions || [];
     
     for (const q of questions) {
-      if (!shouldShowQuestion(q, segId)) continue;
+      if (q.optional || !shouldShowQuestion(q, segId)) continue;
       
       const answer = segAnswers[q.id];
       
@@ -1139,7 +1149,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
     if (idx + 1 < queue.length) {
       setIdx(idx + 1);
     } else {
-      if (phase === 1) startPhase(2);
+      if (phase === 1 && !check) startPhase(2);
       else setPhase(3);
     }
   };
@@ -1166,7 +1176,10 @@ function Coder({ videoURL = "", initialPkg = null }) {
     
 
     const pairIds = Array.from(new Set(pkg.pairs.map((p) => p.pairId)));
-    const rows = pairIds.map((pid) => {
+    const rows = check ? pkg.segments.filter((seg) => seg.type === "child_response").map((seg) => {
+      const pair = pkg.pairs.find((p) => p.pairId === seg.pairId) || {};
+      return { participant_id: pkg.meta.participant_id || "", age_months: pkg.meta.age_months ?? "", order: pkg.meta.order || "", book: pair.book || "", question: pair.question || "", target: pair.target || "", clip_id: seg.id, look: answers[seg.id]?.look || "", action: answers[seg.id]?.action || "", comments: answers[seg.id]?.comments || "" };
+    }) : pairIds.map((pid) => {
       const p = pkg.pairs.find((pp) => pp.pairId === pid) || { book: "", question: "", target: "" };
       const base = {
         participant_id: pkg.meta.participant_id || "",
@@ -1192,7 +1205,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
         phase: 3,
         answers,
         phaseOrders,
-      }, rows);
+      }, rows, check);
       setSavedSessions((previous) => previous.map((session) => session.id === sessionId
         ? { ...session, status: "completed", progress: { completedAt: completion.completedAt } }
         : session));
@@ -1212,7 +1225,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
     
     setLoading(true);
     try {
-      const sess = await DropboxService.loadSession(selectedId);
+      const sess = await DropboxService.loadSession(selectedId, check);
     if (!sess) return alert("Load failed.");
       
       setVURL(sess.videoURL);
@@ -1320,13 +1333,13 @@ function Coder({ videoURL = "", initialPkg = null }) {
                 <thead className="bg-gray-50 sticky top-0">
                   <tr className="border-b-2 border-gray-300">
                     <th className="text-left py-2 px-3 font-semibold text-gray-700">ID</th>
-                    <th className="text-left py-2 px-3 font-semibold text-gray-700">Uploaded</th>
-                    <th className="text-left py-2 px-3 font-semibold text-gray-700">Coded</th>
+                    <th className="text-left py-2 px-3 font-semibold text-gray-700">{check ? "Coded" : "Uploaded"}</th>
+                    <th className="text-left py-2 px-3 font-semibold text-gray-700">{check ? "Check" : "Coded"}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {completedSessions.map((s) => {
-                    const uploadDate = formatDate(s.savedAt);
+                    const uploadDate = formatDate(check ? s.codedAt : s.savedAt);
                     const codedDate = formatDate(s.progress?.completedAt);
                     return (
                       <tr key={s.id} className="border-b border-gray-200 hover:bg-gray-50">
@@ -1533,7 +1546,7 @@ function Coder({ videoURL = "", initialPkg = null }) {
                         </div>
                       )}
                       {!isAlreadySaved && !isMissingSessionId && (
-                        <p className="text-xs text-gray-500 mt-3">Responses will be added to the master spreadsheet</p>
+                        <p className="text-xs text-gray-500 mt-3">Responses will be added to the {check ? "inattentiveness" : "master"} spreadsheet</p>
                       )}
                     </>
                   );
@@ -1615,6 +1628,7 @@ function AdminPanel() {
                     <th scope="col">Age (months)</th>
                     <th scope="col">Uploaded</th>
                     {result.emails.map((email) => <th scope="col" key={email}>{email}</th>)}
+                    <th scope="col">Check</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1633,6 +1647,12 @@ function AdminPanel() {
                           {session.pending.includes(email) && <div className="text-xs text-red-700">Save needs retry</div>}
                         </td>
                       ))}
+                      <td>
+                        {session.checkCompletedAt
+                          ? <time dateTime={session.checkCompletedAt} title={new Date(session.checkCompletedAt).toLocaleString()}>{formatDate(session.checkCompletedAt)}</time>
+                          : "-"}
+                        {session.checkPending && <div className="text-xs text-red-700">Save needs retry</div>}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -1778,9 +1798,10 @@ function AuthenticatedApp() {
               {[
                 { role: "uploader", title: "Uploader", description: "Upload and separate the clips for coding" },
                 { role: "coder", title: "Coder", description: "Code child and parent responses" },
+                { role: "check", title: "Check", description: "Check child attention during responses" },
               ].map(({ role, title, description }) => (
                 <button key={role} onClick={() => handleRoleSelect(role)}
-                  disabled={!accessProfile.roles.includes(role)}
+                  disabled={!accessProfile.roles.includes(role === "check" ? "coder" : role)}
                   className="p-6 rounded-xl border border-gray-300 bg-gray-50 hover:border-blue-500 hover:bg-white hover:shadow-lg transition-all">
                   <h2 className="text-2xl font-semibold mb-2">{title}</h2>
                   <p className={`text-gray-600 text-sm ${role === "uploader" ? "whitespace-nowrap" : ""}`}>{description}</p>
@@ -1808,7 +1829,7 @@ function AuthenticatedApp() {
       <div className="flex-1 w-full max-w-6xl mx-auto">
         <div className="flex items-center justify-center mb-6 relative">
           <h1 className="text-2xl font-bold text-center">
-            {mode === "uploader" ? "Video Uploader" : "Video Coder"}
+            {mode === "uploader" ? "Video Uploader" : mode === "check" ? "Video Check" : "Video Coder"}
           </h1>
           <button 
             onClick={() => setMode(null)}
@@ -1821,7 +1842,7 @@ function AuthenticatedApp() {
         {mode === "uploader" ? (
           <Uploader onVideoLoaded={setSharedVideoURL} onPackageReady={setSharedPkg} />
         ) : (
-          <Coder videoURL={sharedVideoURL} initialPkg={sharedPkg} />
+          <Coder key={mode} videoURL={sharedVideoURL} initialPkg={sharedPkg} check={mode === "check"} />
         )}
 
       </div>

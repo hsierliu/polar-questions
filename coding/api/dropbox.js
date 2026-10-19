@@ -318,7 +318,7 @@ function coderName(email) {
 
 function coderFilename(email, legacy = false) {
   const name = legacy ? email : coderName(email);
-  if (!name || (!legacy && ["session", "progress"].includes(name.toLowerCase()))) {
+  if (!name || (!legacy && ["session", "progress", "check"].includes(name.toLowerCase()))) {
     const error = new Error("This email prefix conflicts with a reserved session filename");
     error.status = 409;
     throw error;
@@ -361,6 +361,17 @@ async function readCoderResponse(dbx, sessionId, email, uid) {
   return null;
 }
 
+async function readCheckResponse(dbx, sessionId) {
+  const path = sessionPath(sessionId, "check.json");
+  const file = await readOptionalFile(dbx, path);
+  if (!file) return null;
+  const data = JSON.parse(file.text);
+  if (data.sessionId !== sessionId || data.kind !== "check") {
+    throw new Error("The existing check.json is not a Check submission. No file was overwritten.");
+  }
+  return { data, rev: file.rev, path };
+}
+
 async function listFolderEntries(dbx, path) {
   let page = await dbx.filesListFolder({ path });
   const entries = [...page.result.entries];
@@ -377,14 +388,17 @@ async function adminStatus(dbx, sessionId, data) {
   const pending = [];
   // Read only per-coder response files; never send answers to the status table.
   for (const entry of entries) {
-    if (entry[".tag"] !== "file" || ["session.json", "progress.json"].includes(entry.name) || !entry.name.endsWith(".json")) continue;
+    if (entry[".tag"] !== "file" || ["session.json", "progress.json", "check.json"].includes(entry.name) || !entry.name.endsWith(".json")) continue;
     const response = JSON.parse(await downloadText(dbx, sessionPath(sessionId, entry.name)));
     if (typeof response.coder !== "string" || response.sessionId !== sessionId ||
         coderName(decodeURIComponent(entry.name.slice(0, -5))) !== coderName(response.coder)) continue;
     if (response.completedAt) completions[coderName(response.coder)] = response.completedAt;
     else pending.push(coderName(response.coder));
   }
+  const checkResponse = await readCheckResponse(dbx, sessionId);
   return {
+    checkCompletedAt: checkResponse?.data.completedAt || null,
+    checkPending: Boolean(checkResponse && !checkResponse.data.completedAt),
     uploadedBy: data.uploadedBy || null,
     completions,
     pending,
@@ -392,7 +406,7 @@ async function adminStatus(dbx, sessionId, data) {
   };
 }
 
-async function listSessions(dbx, cursor, user, admin = false) {
+async function listSessions(dbx, cursor, user, admin = false, check = false) {
   // Bound each request so libraries can grow without one long-running request.
   let response;
   if (cursor) {
@@ -418,13 +432,15 @@ async function listSessions(dbx, cursor, user, admin = false) {
         savedAt: data.savedAt || entry.client_modified || null,
       };
       if (admin) return { ...session, ...await adminStatus(dbx, entry.name, data) };
-      const response = user.roles.includes("coder")
+      const response = check ? await readCheckResponse(dbx, entry.name) : user.roles.includes("coder")
         ? await readCoderResponse(dbx, entry.name, user.email, user.uid)
         : null;
       // Only the requesting coder's completion can remove a video from their queue.
       const completedAt = response?.data.completedAt || null;
+      const codedResponse = check ? await readCoderResponse(dbx, entry.name, user.email, user.uid) : null;
       return {
         ...session,
+        ...(check ? { codedAt: codedResponse?.data.completedAt || null } : {}),
         progress: completedAt ? { completedAt } : null,
         status: completedAt ? "completed" : "uncoded",
         syncPending: Boolean(response && !completedAt),
@@ -534,8 +550,8 @@ function parseCsv(text) {
   return rows;
 }
 
-async function appendCsv(dbx, rows, email) {
-  const path = `${BASE_PATH}/master_responses.csv`;
+async function appendCsv(dbx, rows, email, check = false) {
+  const path = `${BASE_PATH}/${check ? "inattentiveness" : "master_responses"}.csv`;
   for (let attempt = 0; attempt < 5; attempt += 1) {
     const existing = await readOptionalFile(dbx, path);
     const records = existing ? parseCsv(existing.text.replace(/^\uFEFF/, "")) : [];
@@ -559,7 +575,7 @@ async function appendCsv(dbx, rows, email) {
       for (const row of records) row[coderIndex] = coderName(row[coderIndex]);
     }
     const alreadySaved = coderIndex >= 0 && participantIndex >= 0 && records.some((row) =>
-      row[coderIndex] === coderName(email) && row[participantIndex] === participant);
+      (check || row[coderIndex] === coderName(email)) && row[participantIndex] === participant);
     const originalWidth = headers.length;
     for (const name of [...new Set(rows.flatMap((row) => Object.keys(row))), "coder"]) {
       if (name !== "session_id" && !headers.includes(name)) headers.push(name);
@@ -588,7 +604,7 @@ async function appendCsv(dbx, rows, email) {
   throw error;
 }
 
-async function saveCompletion(dbx, sessionId, user, data, rows) {
+async function saveCompletion(dbx, sessionId, user, data, rows, check = false) {
   if (!data || data.phase !== 3 || !data.answers || typeof data.answers !== "object" ||
       Array.isArray(data.answers) || !Array.isArray(rows) || !rows.length || rows.length > 1000 ||
       rows.some((row) => !row || typeof row !== "object" || Array.isArray(row) ||
@@ -597,11 +613,35 @@ async function saveCompletion(dbx, sessionId, user, data, rows) {
     error.status = 400;
     throw error;
   }
-  const path = sessionPath(sessionId, coderFilename(user.email));
-  let saved = await readCoderResponse(dbx, sessionId, user.email, user.uid);
+  const path = sessionPath(sessionId, check ? "check.json" : coderFilename(user.email));
+  const readResponse = () => check ? readCheckResponse(dbx, sessionId) : readCoderResponse(dbx, sessionId, user.email, user.uid);
+  let saved = await readResponse();
   if (!saved) {
     const pkg = JSON.parse(await downloadText(dbx, sessionPath(sessionId, "session.json")));
+    if (check) {
+      const segments = (pkg.segments || []).filter((segment) => segment.type === "child_response");
+      if (!segments.length || segments.some((segment) =>
+        !["Yes", "No"].includes(data.answers[segment.id]?.look) ||
+        !["Yes", "No"].includes(data.answers[segment.id]?.action) ||
+        (data.answers[segment.id]?.comments != null && typeof data.answers[segment.id].comments !== "string"))) {
+        const error = new Error("Answer look and action for every child response clip before saving");
+        error.status = 400;
+        throw error;
+      }
+      // Derive Check rows from the uploaded child clips, never from caller-supplied rows.
+      rows = segments.map((segment) => {
+        const pair = (pkg.pairs || []).find((item) => item.pairId === segment.pairId) || {};
+        const answer = data.answers[segment.id];
+        return { book: pair.book || "", question: pair.question || "", target: pair.target || "",
+          clip_id: segment.id, look: answer.look, action: answer.action, comments: answer.comments || "" };
+      });
+      data = { ...data, answers: Object.fromEntries(segments.map((segment) => [segment.id, {
+        look: data.answers[segment.id].look, action: data.answers[segment.id].action,
+        comments: data.answers[segment.id].comments || "",
+      }])), phaseOrders: { child_response: data.phaseOrders?.child_response || [] } };
+    }
     const pending = {
+      ...(check ? { kind: "check" } : {}),
       phase: 3, answers: data.answers, phaseOrders: data.phaseOrders || {},
       coder: coderName(user.email), modifiedBy: user.uid, sessionId,
       submittedAt: new Date().toISOString(), completedAt: null,
@@ -619,23 +659,24 @@ async function saveCompletion(dbx, sessionId, user, data, rows) {
       saved = { data: pending, rev: result.result.rev, path };
     } catch (error) {
       if (!isConflict(error)) throw error;
-      saved = await readCoderResponse(dbx, sessionId, user.email, user.uid);
+      saved = await readResponse();
       if (!saved) throw error;
     }
   }
   if (saved.data.completedAt) return { ok: true, completedAt: saved.data.completedAt };
   // The first submission is immutable. A retry finishes that same submission.
-  await appendCsv(dbx, saved.data.rows, user.email);
+  await appendCsv(dbx, saved.data.rows, check ? saved.data.coder : user.email, check);
   const completedAt = saved.data.submittedAt;
+  const responseCoder = check ? saved.data.coder : coderName(user.email);
   if (!saved.rev) throw new Error("The response file revision is missing");
   try {
     await dbx.filesUpload({
-      path: saved.path, contents: JSON.stringify({ ...saved.data, coder: coderName(user.email), rows: saved.data.rows.map((row) => ({ ...row, coder: coderName(user.email) })), completedAt }, null, 2),
+      path: saved.path, contents: JSON.stringify({ ...saved.data, coder: responseCoder, rows: saved.data.rows.map((row) => ({ ...row, coder: responseCoder })), completedAt }, null, 2),
       mode: { ".tag": "update", update: saved.rev }, autorename: false, strict_conflict: true,
     });
   } catch (error) {
     if (!isConflict(error)) throw error;
-    const latest = await readCoderResponse(dbx, sessionId, user.email, user.uid);
+    const latest = await readResponse();
     if (!latest?.data.completedAt) throw error;
     return { ok: true, completedAt: latest.data.completedAt };
   }
@@ -643,19 +684,19 @@ async function saveCompletion(dbx, sessionId, user, data, rows) {
 }
 
 async function handleGet(req, res, action, dbx) {
-  if (action === "list" || action === "admin-status") {
+  if (action === "list" || action === "check-list" || action === "admin-status") {
     const admin = action === "admin-status";
-    const user = await requireRole(req, admin ? ["admin"] : ["uploader", "coder", "admin"]);
+    const user = await requireRole(req, admin ? ["admin"] : action === "check-list" ? ["coder", "admin"] : ["uploader", "coder", "admin"]);
     const cursor = typeof req.query.cursor === "string" ? req.query.cursor : undefined;
-    return res.status(200).json(await listSessions(dbx, cursor, user, admin));
+    return res.status(200).json(await listSessions(dbx, cursor, user, admin, action === "check-list"));
   }
 
   const sessionId = assertSessionId(req.query.sessionId);
-  if (action === "session") {
+  if (action === "session" || action === "check-session") {
     const user = await requireRole(req, ["coder", "admin"]);
     const [sessionText, response, temporaryLink] = await Promise.all([
       downloadText(dbx, sessionPath(sessionId, "session.json")),
-      readCoderResponse(dbx, sessionId, user.email, user.uid),
+      action === "check-session" ? readCheckResponse(dbx, sessionId) : readCoderResponse(dbx, sessionId, user.email, user.uid),
       dbx.filesGetTemporaryLink({ path: sessionPath(sessionId, "video.mp4") }),
     ]);
     const pkg = JSON.parse(sessionText);
@@ -730,9 +771,9 @@ async function handlePost(req, res, action, dbx) {
     return res.status(200).json({ ok: true });
   }
 
-  if (action === "completion") {
+  if (action === "completion" || action === "check-completion") {
     const user = await requireRole(req, ["coder", "admin"]);
-    return res.status(200).json(await saveCompletion(dbx, sessionId, user, body.data, body.rows));
+    return res.status(200).json(await saveCompletion(dbx, sessionId, user, body.data, body.rows, action === "check-completion"));
   }
 
   const error = new Error("Unknown operation");

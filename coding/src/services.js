@@ -143,21 +143,21 @@ export async function saveSessionData(sessionId, data) {
   });
 }
 
-export async function saveCompletion(sessionId, data, rows) {
-  return apiRequest("completion", {
+export async function saveCompletion(sessionId, data, rows, check = false) {
+  return apiRequest(check ? "check-completion" : "completion", {
     method: "POST",
     json: { sessionId, data, rows },
   });
 }
 
-export async function listSessions() {
+export async function listSessions(check = false) {
   return collectSessions((cursor) =>
-    apiRequest("list", { query: cursor ? { cursor } : {} }),
+    apiRequest(check ? "check-list" : "list", { query: cursor ? { cursor } : {} }),
   );
 }
 
-export async function loadSession(sessionId) {
-  return apiRequest("session", { query: { sessionId } });
+export async function loadSession(sessionId, check = false) {
+  return apiRequest(check ? "check-session" : "session", { query: { sessionId } });
 }
 
 export async function loadAdminStatus() {

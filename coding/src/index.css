@@ -245,3 +245,8 @@ input[type="text"], input[type="number"], input:not([type]), select, textarea { 
 .form-control { border: 1px solid #e5e7eb; border-radius: .5rem; outline: none; transition: all .3s ease; }
 .form-control:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgb(191 219 254 / 50%); }
 .error-message { padding: .75rem; background: #fef2f2; border: 1px solid #fecaca; border-radius: .5rem; font-size: .875rem; line-height: 1.25rem; color: #991b1b; }
+
+@media (min-width: 761px) {
+  .role-selection .session-panels { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .role-selection .whitespace-nowrap { white-space: normal; }
+}
