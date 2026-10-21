@@ -628,12 +628,12 @@ async function saveCompletion(dbx, sessionId, user, data, rows, check = false) {
         error.status = 400;
         throw error;
       }
-      // Derive Check rows from the uploaded child clips, never from caller-supplied rows.
-      rows = segments.map((segment) => {
-        const pair = (pkg.pairs || []).find((item) => item.pairId === segment.pairId) || {};
-        const answer = data.answers[segment.id];
+      // Keep every trial, including trials with no uploaded child-response clip.
+      rows = (pkg.pairs || []).map((pair) => {
+        const segment = segments.find((item) => item.pairId === pair.pairId);
+        const answer = data.answers[segment?.id] || {};
         return { book: pair.book || "", question: pair.question || "", target: pair.target || "",
-          clip_id: segment.id, look: answer.look, action: answer.action, comments: answer.comments || "" };
+          clip_id: segment?.id || "", look: answer.look || "", action: answer.action || "", comments: answer.comments || "" };
       });
       data = { ...data, answers: Object.fromEntries(segments.map((segment) => [segment.id, {
         look: data.answers[segment.id].look, action: data.answers[segment.id].action,
@@ -646,6 +646,7 @@ async function saveCompletion(dbx, sessionId, user, data, rows, check = false) {
       coder: coderName(user.email), modifiedBy: user.uid, sessionId,
       submittedAt: new Date().toISOString(), completedAt: null,
       rows: rows.map((row) => ({ ...row,
+        question: row.question === "an car?" ? "a car?" : row.question,
         participant_id: pkg.meta?.participant_id || "",
         age_months: pkg.meta?.age_months ?? "", order: pkg.meta?.order || "",
         coder: coderName(user.email),
@@ -700,6 +701,10 @@ async function handleGet(req, res, action, dbx) {
       dbx.filesGetTemporaryLink({ path: sessionPath(sessionId, "video.mp4") }),
     ]);
     const pkg = JSON.parse(sessionText);
+    // Normalize old session labels in memory without rewriting uploaded files.
+    pkg.pairs = (pkg.pairs || []).map((pair) => ({
+      ...pair, question: pair.question === "an car?" ? "a car?" : pair.question,
+    }));
     return res.status(200).json({
       id: sessionId, pkg, videoURL: temporaryLink.result.link,
       pendingSubmission: response && !response.data.completedAt ? {

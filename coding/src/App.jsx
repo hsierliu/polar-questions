@@ -1176,9 +1176,15 @@ function Coder({ videoURL = "", initialPkg = null, check = false }) {
     
 
     const pairIds = Array.from(new Set(pkg.pairs.map((p) => p.pairId)));
-    const rows = check ? pkg.segments.filter((seg) => seg.type === "child_response").map((seg) => {
-      const pair = pkg.pairs.find((p) => p.pairId === seg.pairId) || {};
-      return { participant_id: pkg.meta.participant_id || "", age_months: pkg.meta.age_months ?? "", order: pkg.meta.order || "", book: pair.book || "", question: pair.question || "", target: pair.target || "", clip_id: seg.id, look: answers[seg.id]?.look || "", action: answers[seg.id]?.action || "", comments: answers[seg.id]?.comments || "" };
+    const rows = check ? pkg.pairs.map((pair) => {
+      const seg = pkg.segments.find((segment) => segment.type === "child_response" && segment.pairId === pair.pairId);
+      const answer = answers[seg?.id] || {};
+      return {
+        participant_id: pkg.meta.participant_id || "", age_months: pkg.meta.age_months ?? "",
+        order: pkg.meta.order || "", book: pair.book || "", question: pair.question || "",
+        target: pair.target || "", clip_id: seg?.id || "",
+        look: answer.look || "", action: answer.action || "", comments: answer.comments || "",
+      };
     }) : pairIds.map((pid) => {
       const p = pkg.pairs.find((pp) => pp.pairId === pid) || { book: "", question: "", target: "" };
       const base = {
@@ -1798,7 +1804,7 @@ function AuthenticatedApp() {
               {[
                 { role: "uploader", title: "Uploader", description: "Upload and separate the clips for coding" },
                 { role: "coder", title: "Coder", description: "Code child and parent responses" },
-                { role: "check", title: "Check", description: "Check child attention during responses" },
+                { role: "check", title: "Check", description: "Check clips of child responses" },
               ].map(({ role, title, description }) => (
                 <button key={role} onClick={() => handleRoleSelect(role)}
                   disabled={!accessProfile.roles.includes(role === "check" ? "coder" : role)}
