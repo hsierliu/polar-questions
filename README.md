@@ -24,8 +24,19 @@ pq-coding/
 │   ├── package.json                # dependencies and development commands
 │   ├── package-lock.json           # exact dependency versions
 │   └── vite.config.js              # React development and build settings
-├── data-analysis/                  # study analyses (to be added)
-│   └── .gitkeep                    # keeps the empty folder in Git (gonna remove this)
+├── data-analysis/                  # study analyses and data
+│   ├── analysis.Rmd                # analysis code
+│   ├── analysis.md                 # viewable analysis
+│   ├── initialD.csv                # first-coder dataset
+│   ├── secondD.csv                 # second-coder dataset
+│   ├── finalD.csv                  # final dataset
+│   ├── mainFig.png                 # main figure: verbal responses and gestures
+│   └── other-figures/              # figures used in the analysis report
+├── materials/                      # study materials
+│   ├── books - order 1 and 2.pdf   # stimulus books for orders 1 and 2
+│   ├── books - order 3 and 4.pdf   # stimulus books for orders 3 and 4
+│   └── coding questions.pdf       # coding questions
+├── BUCLD51_Poster.pdf               # BUCLD 51 poster
 └── README.md                       # project overview and instructions
 ```
 

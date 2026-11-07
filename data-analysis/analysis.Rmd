@@ -1,0 +1,566 @@
+---
+title: "Polar Questions Analyses"
+output:
+  github_document:
+    toc: true
+    toc_depth: 4
+---
+
+## Setup
+
+Load in relevant libraries and set up some default settings.
+
+```{r setup, message = FALSE, warning = FALSE}
+
+## set working directory to current folder
+setwd(dirname(rstudioapi::getActiveDocumentContext()$`path`))
+
+## set rmd settings 
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.path = "other-figures/")
+
+## load libraries
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(lme4)
+library(emmeans)
+
+## set plotting preferences
+ggplot2::theme_set(theme_bw(base_size = 16))
+ggplot2::theme_update(
+  panel.grid = element_line(colour = "grey90", linewidth = 0.3),
+  panel.border = element_rect(colour = "grey30", fill = NA, linewidth = 0.7),
+  panel.spacing = grid::unit(18, "pt"),
+  axis.ticks = element_line(colour = "grey30", linewidth = 0.7, lineend = "butt"),
+  axis.title = element_text(size = 14),
+  axis.title.x = element_text(margin = margin(t = 8)),
+  axis.title.y = element_text(margin = margin(r = 12)),
+  strip.background = element_blank(),
+  strip.text = element_text(size = 18, face = "bold", margin = margin(b = 8)),
+  plot.margin = margin(10, 12, 8, 10),
+  legend.key = element_blank(),
+  legend.position = "bottom",
+  legend.spacing.x = grid::unit(60, "pt"), legend.box.spacing = grid::unit(22, "pt"),
+  legend.margin = margin(0, 0, 0, 0), legend.box.margin = margin(0, 0, 0, 0),
+  legend.text = element_text(size = 10), legend.title = element_text(size = 11)
+)
+options(ggplot2.discrete.colour = c("#95001a", "#01256e")) # alternative: "#f2c100"
+options(ggplot2.discrete.fill = getOption("ggplot2.discrete.colour"))
+
+```
+
+## Data
+
+Read in dataset, add new variables, and apply exclusion criteria.
+
+```{r data}
+
+## read in data
+mainD <- read.csv("initialD.csv")
+dim(mainD)
+str(mainD)
+
+## reformat
+mainD$target <- factor(mainD$target, levels = c("No", "Yes"), labels = c("false", "true"))
+mainD$participant_id <- factor(mainD$participant_id)
+mainD$question <- factor(mainD$question)
+mainD$parent_p1 <- factor(mainD$parent_p1, labels = c("neither", "true", "false"),
+  levels = c("Neither, could go either way", "A true trial", "A false trial"))
+
+## add age-group variable
+mainD$ageBin <- factor(ifelse(mainD$age_months < 20, "16-19", ifelse(mainD$age_months > 27, "28-32", "21-26")), levels = c("16-19", "21-26", "28-32"))
+aggregate(participant_id ~ ageBin, data = mainD, FUN = function(x) length(unique(x))) #count by age group
+
+## add response variables
+mainD$no <- ifelse(mainD$child_q5=="Yes", 1, 0) #verbally say a variation of "no"?
+mainD$yes <- ifelse(mainD$child_q4=="Yes", 1, 0) #verbally say a variation of "yes"?
+mainD$noGest <- ifelse(mainD$child_q7=="Yes", 1, 0) #give other nonverbal indicator of negation?
+mainD$yesGest <- ifelse(mainD$child_q6_dropdown=="Nod", 1, 0) #dropdown menu of nonverbal indicator of affirmation
+mainD$deny <- ifelse(mainD$no == 1 | (mainD$noGest == 1 & mainD$yes == 0), 1, 0) #broad negation
+mainD$affirm <- ifelse(mainD$yes == 1 | (mainD$yesGest == 1 & mainD$no == 0), 1, 0) #broad affirmation
+
+## add accuracy variables
+mainD$correctWord <- ifelse(mainD$no & mainD$target=="false", 1, ifelse(mainD$yes & mainD$target=="true", 1, 0)) 
+mainD$correctBroad <- ifelse(mainD$deny & mainD$target=="false", 1, ifelse(mainD$affirm & mainD$target=="true", 1, 0))
+
+## add other variables
+mainD$parent_bias <- ifelse((mainD$parent_p1 == "true" & mainD$target == "true") | (mainD$parent_p1 == "false" & mainD$target == "false"), 1, 0)
+mainD$neg_restyp <- factor(ifelse(mainD$deny == 0, "None", ifelse(mainD$no == 0, "Gesture only", ifelse(mainD$noGest == 0, "Verbal only", "Verbal + gesture"))), levels = c("Verbal only", "Verbal + gesture", "Gesture only", "None")) #for plotting
+mainD$aff_restyp <- factor(ifelse(mainD$affirm == 0, "None", ifelse(mainD$yes == 0, "Gesture only", ifelse(mainD$yesGest == 0, "Verbal only", "Verbal + gesture"))), levels = c("Verbal only", "Verbal + gesture", "Gesture only", "None")) #for plotting
+
+## exclude participants when parents do not ask questions for >=4 trials (blank child_q1), S40 excluded
+mainD <- mainD %>% filter(sum(child_q1 == "") < 4, .by = participant_id)
+
+## exclude inattentive participants >=4 trials, S41 S74 S75 excluded
+mainD <- mainD %>% filter(sum(look == "No", na.rm = TRUE) < 4, .by = participant_id)
+
+## select first 6 participants in each age-group/order
+mainD <- mainD %>%
+  filter(participant_id %in% head(unique(participant_id), 6), .by = c(ageBin, order))
+mainD %>% distinct(participant_id, ageBin, order) %>% with(table(ageBin, order)) 
+
+## mean age
+aggregate(age_months ~ ageBin, distinct(mainD, participant_id, ageBin, age_months), mean)
+
+## cleaned dataset for analyses
+finalD <- mainD %>%
+  filter(!exclude_trial %in% 1) %>% #exclude no-response and unknown word trials
+  select(participant_id, age_months, order, book, question, target, ageBin,
+         exclude_cdi, parent_p1, parent_bias, no, yes, noGest, yesGest, deny, affirm, 
+         child_q4_dropdown, child_q5_dropdown, child_q6_dropdown, child_q7_dropdown, 
+         neg_restyp, aff_restyp)
+finalD$age_c <- finalD$age_months - mean(finalD$age_months) #center age
+
+## view dataset
+aggregate(cbind(Total = 1, no, yes, deny, affirm) ~ ageBin, finalD, sum) #resp for each age group
+table(finalD$target, finalD$child_q5_dropdown) %>% {.[, order(colSums(.), decreasing = TRUE)]} #types of verbal negated responses
+table(finalD$target, finalD$child_q4_dropdown) %>% {.[, order(colSums(.), decreasing = TRUE)]} #types of verbal aff responses
+table(finalD$target, finalD$child_q7_dropdown) %>% {.[, order(colSums(.), decreasing = TRUE)]} #types of nonverbal negated responses
+table(finalD$target, finalD$child_q6_dropdown) %>% {.[, order(colSums(.), decreasing = TRUE)]} #types of nonverbal aff responses
+head(finalD)
+
+## export dataset
+write.csv(finalD, "finalD.csv", row.names = FALSE)
+
+```
+
+## Section 1: response ~ target for each age group
+
+response ~ target + (1 + target | participant_id) + (1 + target | question) <br>
+response ~ target + (1 + target | participant_id) + (1 | question) <br>
+response ~ target + (1 | participant_id) + (1 | question) <br>
+response ~ target + (1 | participant_id) + question <br>
+wilcoxon
+
+### Youngest age-group
+
+```{r analysis1-young}
+
+youngData <- finalD[finalD$ageBin == "16-19",]
+
+### DV1: verbal negation "no"
+young_vneg <- glmer(no ~ target + (1 | participant_id) + (1 | question), data = youngData, family = binomial(link = "logit")) #failed to converge; singular; ok
+summary(young_vneg)
+
+### DV2: verbal affirmation "yes"
+young_vaff <- glmer(yes ~ target + (1 | participant_id) + question, data = youngData, family = binomial(link = "logit"), control = glmerControl(optimizer = "bobyqa")) #singular; does not converge; ok, switch optimizer, no vaff for pig
+summary(young_vaff)
+
+### DV3: broad negation "deny"
+young_bneg <- glmer(deny ~ target + (1 + target | participant_id) + (1 | question), data = youngData, family = binomial(link = "logit")) #failed to converge; ok 
+summary(young_bneg)
+
+### DV4: broad affirmation "affirm"
+young_baff <- glmer(affirm ~ target + (1 | participant_id) + question, data = youngData, family = binomial(link = "logit"), control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 200000))) #failed to converge; singular; singular; failed to converge; ok, switch optimizer, similar with nlminbwrap
+summary(young_baff)
+
+```
+
+### Middle age-group
+
+```{r analysis1-middle}
+
+middleData <- finalD[finalD$ageBin == "21-26",]
+
+### DV1: verbal negation "no"
+middle_vneg <- glmer(no ~ target + (1 + target | participant_id) + (1 | question), data = middleData, family = binomial(link = "logit")) #failed to converge; ok
+summary(middle_vneg)
+
+### DV2: verbal affirmation "yes"
+middle_vaff <- glmer(yes ~ target + (1 + target | participant_id) + (1 | question), data = middleData, family = binomial(link = "logit")) #singular; ok
+summary(middle_vaff)
+
+### DV3: broad negation "deny"
+middle_bneg <- glmer(deny ~ target + (1 + target | participant_id) + (1 | question), data = middleData, family = binomial(link = "logit")) #singular; ok
+summary(middle_bneg)
+
+### DV4: broad affirmation "affirm"
+middle_baff <- glmer(affirm ~ target + (1 + target | participant_id) + (1 + target | question), data = middleData, family = binomial(link = "logit"))
+summary(middle_baff)
+
+```
+
+### Oldest age-group
+
+```{r analysis1-oldest}
+
+oldData <- finalD[finalD$ageBin == "28-32",]
+
+### DV1: verbal negation "no"
+old_vneg <- glmer(no ~ target + (1 + target | participant_id) + (1 | question), data = oldData, family = binomial(link = "logit")) #singular; ok
+summary(old_vneg)
+
+### DV2: verbal affirmation "yes"
+old_vaff <- glmer(yes ~ target + (1 + target | participant_id) + (1 + target | question), data = oldData, family = binomial(link = "logit")) 
+summary(old_vaff)
+
+### DV3: broad negation "deny"
+old_bneg <- glmer(deny ~ target + (1 + target | participant_id) + (1 | question), data = oldData, family = binomial(link = "logit")) #failed to converge; ok
+summary(old_bneg)
+
+### DV4: broad affirmation "affirm"
+old_baff <- glmer(affirm ~ target + (1 + target | participant_id) + (1 | question), data = oldData, family = binomial(link = "logit")) #singular; ok
+summary(old_baff)
+
+```
+
+### Figure: broad responses by age group
+
+```{r figure1-broad, fig.width = 12, fig.height = 6.5}
+
+## proportions for each child
+plotD <- finalD %>%
+  pivot_longer(c(neg_restyp, aff_restyp), names_to = "Response", values_to = "restyp") %>%
+  mutate(Response = factor(Response, c("neg_restyp", "aff_restyp"))) %>%
+  group_by(participant_id, target, ageBin, Response) %>%
+  count(restyp) %>% complete(restyp, fill = list(n = 0)) %>% mutate(value = n / sum(n)) %>% ungroup() %>%
+  filter(restyp != "None")
+
+## p-values from analysis 1
+fig1_sig <- plotD %>%
+  summarise(value = sum(value), .by = c(participant_id, Response, ageBin, target)) %>%
+  group_by(Response, ageBin) %>%
+  rstatix::get_y_position(value ~ target, fun = "mean_se") %>%
+  arrange(Response, ageBin) %>%
+  mutate(p = sapply(list(young_bneg, middle_bneg, old_bneg, young_baff, middle_baff, old_baff), function(m) coef(summary(m))["targettrue", "Pr(>|z|)"])) %>%
+  filter(p < .05) %>%
+  mutate(label = ifelse(p < .001, "***", ifelse(p < .01, "**", "*")))
+
+## the main plot
+fig1 <- ggplot(plotD, aes(x = as.numeric(ageBin) + ifelse(target == "false", -0.19, 0.19), y = value, fill = target)) +
+  stat_summary(aes(alpha = restyp, group = restyp), fun = mean, geom = "col", position = position_stack(reverse = TRUE), width = 0.36) +
+  stat_summary(data = plotD %>% summarise(value = sum(value), .by = c(participant_id, Response, ageBin, target)), fun.data = mean_se, geom = "errorbar", inherit.aes = TRUE, width = 0.08) +
+  facet_wrap(~ Response, nrow = 1, labeller = as_labeller(c(neg_restyp = "Negated Responses", aff_restyp = "Affirmative Responses"))) +
+  scale_x_continuous(breaks = 1:3, labels = c("16-19", "21-26", "28-32")) +
+  scale_alpha_manual(values = c("Verbal only" = 1, "Verbal + gesture" = 0.55, "Gesture only" = 0.2)) +
+  scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
+  labs(x = "Age Group (months)", y = "Proportion of responses", fill = "Trial Type", alpha = "Response Type") +
+  guides(fill = guide_legend(order = 2, override.aes = list(alpha = 1)),
+         alpha = guide_legend(order = 1, override.aes = list(fill = "grey20"))) +
+  ggsignif::geom_signif(data = fig1_sig,
+    aes(xmin = as.numeric(ageBin) - 0.19, xmax = as.numeric(ageBin) + 0.19, annotations = label, y_position = y.position),
+    manual = TRUE, inherit.aes = FALSE, tip_length = 0.015, textsize = 6)
+
+fig1
+
+```
+
+## Section 2: Nonverbal responses (exploratory)
+
+```{r explore-nonverbal}
+
+## datasets for gestures
+youngGestD <- mainD %>% filter(!exclude_trial %in% 1) %>% filter(ageBin == "16-19")
+middleGestD <- mainD %>% filter(!exclude_trial %in% 1) %>% filter(ageBin == "21-26")
+oldGestD <- mainD %>% filter(!exclude_trial %in% 1) %>% filter(ageBin == "28-32")
+
+## young: no sig effect
+young_ngest <- glmer((child_q7 == "Yes") ~ target + (1 | participant_id) + (1 | question), data = youngGestD, family = binomial)
+young_agest <- glmer((child_q6_dropdown == "Nod") ~ target + (1 | participant_id) + (1 | question), data = youngGestD, family = binomial, control = glmerControl(optimizer = "bobyqa"))
+summary(young_ngest)
+summary(young_agest)
+
+## middle
+middle_ngest <- glmer((child_q7 == "Yes") ~ target + (1 + target | participant_id) + (1 | question), data = middleGestD, family = binomial, control = glmerControl(optimizer = "bobyqa"))
+middle_agest <- glmer((child_q6_dropdown == "Nod") ~ target + (1 | participant_id) + (1 | question), data = middleGestD, family = binomial)
+summary(middle_ngest)
+summary(middle_agest)
+
+## old: negative gestures on 46/192 false trials versus 2/190 true trials
+old_ngest <- glmer((child_q7 == "Yes") ~ target + (1 | participant_id) + question, data = oldGestD, family = binomial, control = glmerControl(optimizer = "bobyqa", tolPwrss = 1e-10, optCtrl = list(maxfun = 200000))) #not identifiable
+old_ngestD <- oldGestD %>% summarise(value = mean(child_q7 == "Yes"), .by = c(participant_id, target)) %>% pivot_wider(names_from = target, values_from = value)
+old_ngest_w <- with(old_ngestD, wilcox.test(false, true, paired = TRUE, exact = FALSE))
+old_ngest_w #wilcoxon
+old_agest <- glmer((child_q6_dropdown == "Nod") ~ target + (1 | participant_id) + (1 | question), data = oldGestD, family = binomial)
+summary(old_agest)
+
+```
+
+### Figure: verbal responses and gestures (BUCLD)
+
+```{r figure2-verbal-gesture, fig.width = 12, fig.height = 10}
+
+fig2_childD <- finalD %>%
+  pivot_longer(c(no, yes, noGest, yesGest), names_to = "Response", values_to = "value") %>%
+  mutate(Response = factor(Response, c("no", "yes", "noGest", "yesGest"), labels = c("Productions of verbal negation", "Productions of verbal affirmation", "Gestures of negation", "Gestures of affirmation"))) %>%
+  summarise(value = mean(value), .by = c(participant_id, ageBin, target, Response))
+
+fig2D <- fig2_childD %>%
+  summarise(SE = sd(value) / sqrt(n()), value = mean(value), .by = c(ageBin, target, Response))
+
+fig2_sig <- fig2_childD %>%
+  group_by(Response, ageBin) %>%
+  rstatix::get_y_position(value ~ target, fun = "mean_se") %>%
+  arrange(Response, ageBin) %>%
+  mutate(p = sapply(list(young_vneg, middle_vneg, old_vneg, young_vaff, middle_vaff, old_vaff, young_ngest, middle_ngest, old_ngest_w, young_agest, middle_agest, old_agest), function(m) if (inherits(m, "htest")) m$p.value else coef(summary(m))["targettrue", "Pr(>|z|)"])) %>%
+  filter(p < .05) %>%
+  mutate(label = ifelse(p < .001, "***", ifelse(p < .01, "**", "*")))
+
+fig2 <- ggplot(fig2D, aes(as.numeric(ageBin) + ifelse(target == "false", -0.2, 0.2), value, fill = target)) +
+  geom_col(width = 0.36) +
+  geom_errorbar(aes(ymin = pmax(0, value - SE), ymax = value + SE), width = 0.15) +
+  facet_wrap(~ Response, ncol = 2, scales = "free_y") +
+  geom_blank(data = fig2D %>% distinct(Response) %>% mutate(value = ifelse(grepl("^Gestures", Response), 0.45, 0.95)), aes(x = 1, y = value), inherit.aes = FALSE) +
+  scale_x_continuous(breaks = 1:3, labels = levels(finalD$ageBin)) +
+  scale_fill_manual(values = c("false" = "#95001a", "true" = "#01256e"), breaks = c("false", "true"), labels = c("No", "Yes")) +
+  scale_y_continuous(limits = c(0, NA), expand = c(0, 0)) +
+  theme(legend.position = "top") +
+  labs(x = "Age Group (months)", y = "Proportion of responses", fill = "Expected target") +
+  ggsignif::geom_signif(data = fig2_sig, aes(group = ageBin, xmin = as.numeric(ageBin) - 0.2, xmax = as.numeric(ageBin) + 0.2, annotations = label, y_position = y.position), manual = TRUE, inherit.aes = FALSE, tip_length = 0.015, textsize = 6)
+fig2
+
+ggsave("mainFig.png", fig2, width = 12, height = 6.5, dpi = 300, bg = "white")
+
+```
+
+## Section 3: response ~ target * age
+
+### Fitting models
+
+```{r analysis2-models}
+
+### DV1: verbal negation "no"
+all_vneg_m1 <- glmer(no ~ target + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) #failed to converge; ok
+all_vneg_m2 <- glmer(no ~ target + age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) 
+all_vneg_m3 <- glmer(no ~ target * age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit"), control = glmerControl(optimizer = "bobyqa")) #failed to converge; ok
+#summary(all_vneg_m1)
+#summary(all_vneg_m2)
+#summary(all_vneg_m3)
+anova(all_vneg_m1, all_vneg_m2, all_vneg_m3)
+
+### DV2: verbal affirmation "yes"
+all_vaff_m1 <- glmer(yes ~ target + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) #ok; for consistency
+all_vaff_m2 <- glmer(yes ~ target + age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) #failed to converge; ok
+all_vaff_m3 <- glmer(yes ~ target * age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) #failed to converge; ok
+#summary(all_vaff_m1)
+#summary(all_vaff_m2)
+#summary(all_vaff_m3)
+anova(all_vaff_m1, all_vaff_m2, all_vaff_m3)
+
+### DV3: broad negation "deny"
+all_bneg_m1 <- glmer(deny ~ target + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) #singular; ok
+all_bneg_m2 <- glmer(deny ~ target + age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit"))
+all_bneg_m3 <- glmer(deny ~ target * age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit"))
+#summary(all_bneg_m1)
+#summary(all_bneg_m2)
+#summary(all_bneg_m3)
+anova(all_bneg_m1, all_bneg_m2, all_bneg_m3)
+
+### DV4: broad affirmation "affirm"
+all_baff_m1 <- glmer(affirm ~ target + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit")) #failed to converge; ok
+all_baff_m2 <- glmer(affirm ~ target + age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit"))
+all_baff_m3 <- glmer(affirm ~ target * age_c + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial(link = "logit"))
+#summary(all_baff_m1)
+#summary(all_baff_m2)
+#summary(all_baff_m3)
+anova(all_baff_m1, all_baff_m2, all_baff_m3)
+
+### Table of final M3 results
+all_models <- list("Verbal negation" = all_vneg_m3, "Verbal affirmation" = all_vaff_m3, "Broad negation" = all_bneg_m3, "Broad affirmation" = all_baff_m3)
+knitr::kable(bind_rows(lapply(all_models, function(m) {
+  x <- as.data.frame(coef(summary(m))[-1, ])
+  data.frame(Term = rownames(x), x, row.names = NULL)}), .id = "DV") %>%
+  setNames(c("DV", "Term", "Estimate", "SE", "z", "p")) %>%
+  mutate(p = format.pval(p, digits = 3, eps = 0.001)), digits = 3)
+
+### Age slopes by trial type
+age_slopes <- lapply(all_models, function(m) emtrends(m, ~ target, var = "age_c"))
+lapply(age_slopes, summary, infer = c(TRUE, TRUE))
+
+```
+
+### Figure with age being continuous
+
+```{r analysis2-fig, fig.width = 12, fig.height = 8}
+
+fig2D <- bind_rows(lapply(all_models, function(m)
+  as.data.frame(emmeans(m, ~ age_c * target,
+    at = list(age_c = seq(16, 32, 0.1) - mean(finalD$age_months)), type = "response"))), .id = "Response") %>%
+  mutate(age_months = age_c + mean(finalD$age_months), Response = factor(Response, names(all_models)))
+
+fig2_obs <- finalD %>% pivot_longer(c(no, yes, deny, affirm), names_to = "Response", values_to = "prob") %>%
+  mutate(Response = factor(Response, levels = c("no", "yes", "deny", "affirm"), labels = names(all_models))) %>%
+  summarise(prob = mean(prob), .by = c(participant_id, age_months, target, Response))
+
+fig2 <- ggplot(fig2D, aes(age_months, prob, colour = target, fill = target)) +
+  geom_ribbon(aes(ymin = asymp.LCL, ymax = asymp.UCL), alpha = 0.15, colour = NA) +
+  geom_point(data = fig2_obs, alpha = 0.4, size = 1.5) +
+  geom_line(linewidth = 1) +
+  facet_wrap(~ Response, ncol = 2) +
+  scale_x_continuous(breaks = seq(16, 32, 4), limits = c(16, 32), expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 1, 0.25), limits = c(0, 1)) +
+  labs(x = "Age (months)", y = "Proportion of responses", colour = "Trial Type", fill = "Trial Type")
+fig2
+
+```
+
+## Section 4: Secondary and exploratory analyses
+
+### Parental bias
+
+`r sprintf("%.2f", 100 * mean(finalD$parent_p1 == "neither"))`% of trials were coded as neither. Parental bias was not significant for any of the four final models.
+
+```{r explore-parent}
+
+## counts
+knitr::kable(count(finalD, parent_p1))
+
+## verbal negation
+bias_vneg_m1 <- glmer(no ~ target + parent_bias + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial) #singular; ok
+bias_vneg_m2 <- glmer(no ~ target + age_c + parent_bias + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial) 
+bias_vneg_m3 <- glmer(no ~ target * age_c + parent_bias + (1 + target | participant_id) + (1 | question), data = finalD, family = binomial) 
+anova(bias_vneg_m1, bias_vneg_m2, bias_vneg_m3)
+
+## verbal affirmation
+bias_vaff_m1 <- glmer(yes ~ target + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #failed to converge; ok; for consistency
+bias_vaff_m2 <- glmer(yes ~ target + age_c + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #ok; for consistency
+bias_vaff_m3 <- glmer(yes ~ target * age_c + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #failed to converge; ok
+anova(bias_vaff_m1, bias_vaff_m2, bias_vaff_m3)
+
+## broad negation
+bias_bneg_m1 <- glmer(deny ~ target + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #failed to converge; ok; for consistency
+bias_bneg_m2 <- glmer(deny ~ target + age_c + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #ok; for consistency
+bias_bneg_m3 <- glmer(deny ~ target * age_c + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #failed to converge; ok
+anova(bias_bneg_m1, bias_bneg_m2, bias_bneg_m3)
+
+## broad affirmation
+bias_baff_m1 <- glmer(affirm ~ target + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #failed to converge; ok; for consistency
+bias_baff_m2 <- glmer(affirm ~ target + age_c + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #ok; for consistency
+bias_baff_m3 <- glmer(affirm ~ target * age_c + parent_bias + (1 | participant_id) + (1 | question), data = finalD, family = binomial) #failed to converge; ok
+anova(bias_baff_m1, bias_baff_m2, bias_baff_m3)
+
+## parental bias in the final models
+knitr::kable(as.data.frame(t(sapply(list("Verbal negation" = bias_vneg_m3, "Verbal affirmation" = bias_vaff_m3, "Broad negation" = bias_bneg_m3, "Broad affirmation" = bias_baff_m3), function(m) coef(summary(m))["parent_bias", ]))), digits = 3, col.names = c("Estimate", "SE", "z", "p"))
+
+```
+
+### Labeling for false trials
+
+```{r explore-label}
+
+## counts for false trials
+label_counts <- mainD %>% filter(target == "false") %>%
+  summarise(Total = n(), Correct = sum(label_correct %in% 1), Incorrect = sum(label_correct %in% 0), .by = ageBin)
+knitr::kable(label_counts)
+
+## analysis: correct labels on false trials with age
+labelD <- mainD %>% filter(target == "false") %>%
+  mutate(correct_label = as.integer(label_correct %in% 1), age_c = age_months - mean(age_months))
+label_m <- glmer(correct_label ~ age_c + (1 | participant_id) + (1 | question), data = labelD, family = binomial)
+summary(label_m)
+
+## figure: categorical
+ggplot(label_counts, aes(ageBin)) +
+  geom_col(aes(y = Correct), fill = "#01256e", width = 0.6) +
+  geom_col(aes(y = Correct + Incorrect), fill = NA, colour = "#01256e", width = 0.6) +
+  scale_y_continuous(expand = c(0, .05), limits = c(0, 195)) +
+  labs(x = "Age group (months)", y = "Number of false trials")
+
+## figure: continuous (more like analysis)
+label_pred <- as.data.frame(emmeans(label_m, ~ age_c, at = list(age_c = seq(min(labelD$age_months), max(labelD$age_months), 0.1) - mean(labelD$age_months)), type = "response")) %>%
+  mutate(age_months = age_c + mean(labelD$age_months))
+ggplot(label_pred, aes(age_months, prob)) +
+  geom_ribbon(aes(ymin = asymp.LCL, ymax = asymp.UCL), alpha = 0.15) + geom_line() +
+  geom_point(data = labelD %>% summarise(value = mean(correct_label), .by = c(participant_id, age_months)), aes(y = value), alpha = 0.5) +
+  scale_y_continuous(limits = c(0, 1), expand = c(0, 0)) +
+  labs(x = "Age (months)", y = "Proportion of correct label")
+
+## analysis: correct labels on false than true trials with age
+label_targetD <- mainD %>% filter(child_q1 %in% c("Yes", "No")) %>%
+  mutate(labeled = as.integer(label_correct %in% c(0, 1)), age_c = age_months - mean(age_months))
+label_young <- glmer((label_correct %in% 1) ~ target + (1 + target | participant_id) + (1 + target | question), data = subset(label_targetD, ageBin == "16-19"), family = binomial, control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 200000)))
+label_middle <- glmer((label_correct %in% 1) ~ target + (1 | participant_id) + question, data = subset(label_targetD, ageBin == "21-26"), family = binomial, control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 200000))) #singular; ok
+label_old <- glmer((label_correct %in% 1) ~ target + (1 + target | participant_id) + (1 | question), data = subset(label_targetD, ageBin == "28-32"), family = binomial, control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 200000))) #singular; ok
+
+## percentages
+label_targetD %>%
+  summarise(Correct = paste0(round(100 * mean(label_correct %in% 1)), "%"), .by = c(ageBin, target)) %>%
+  mutate(target = factor(target, c("true", "false"), c("Target yes", "Target no"))) %>%
+  pivot_wider(names_from = target, values_from = Correct, names_sort = TRUE) %>% arrange(ageBin) %>%
+  mutate(`Significant?` = ifelse(sapply(list(label_young, label_middle, label_old), function(m) coef(summary(m))["targettrue", "Pr(>|z|)"]) < .05, "Yes", "No")) %>% knitr::kable()
+
+## analysis: with age
+label_target_m <- glmer(labeled ~ target + age_c + (1 + target | participant_id) + (1 + target | question), data = label_targetD, family = binomial, control = glmerControl(optimizer = "bobyqa"))
+summary(label_target_m)
+
+```
+
+### Vocabulary
+
+Note that for the oldest age group, all parents reported that their child understands all 16 trial items.
+
+```{r explore-vocab}
+
+## dataset for vocab checks
+cdiD <- mainD %>%
+  mutate(words_known = n_distinct(question[exclude_cdi == 0]), .by = participant_id) %>%
+  filter(exclude_base == 0) %>%
+  mutate(age_c = age_months - mean(age_months), words_c = words_known - mean(words_known))
+youngcdiD <- cdiD[cdiD$ageBin == "16-19",]
+youngcdi_nrD <- mainD %>% filter(ageBin == "16-19", child_q1 %in% c("Yes", "No")) %>%
+  mutate(words_known = n_distinct(question[exclude_cdi == 0]), .by = participant_id) 
+
+## do children in the *youngest group* who know more words respond more accurately? no
+youngcdi_ver_acc <- glmer(correctWord ~ words_known + (1 | participant_id), data = youngcdiD, family = binomial)
+youngcdi_bro_acc <- glmer(correctBroad ~ words_known + (1 | participant_id), data = youngcdiD, family = binomial)
+summary(youngcdi_ver_acc)
+summary(youngcdi_bro_acc)
+
+## do children in the *youngest group* who know more words respond more? no
+youngcdi_ver <- glmer((child_q1 == "Yes") ~ words_known + (1 | participant_id), data = youngcdi_nrD, family = binomial)
+summary(youngcdi_ver)
+
+## check: do children respond more accurately when they know the word? yes. does it differ by age? did not improve fit.
+cdi_ver1 <- glmer(correctWord ~ exclude_cdi + age_c + (1 | participant_id), data = cdiD, family = binomial)
+cdi_bro1 <- glmer(correctBroad ~ exclude_cdi + age_c + (1 | participant_id), data = cdiD, family = binomial, control = glmerControl(optimizer = "bobyqa"))
+summary(cdi_ver1)
+summary(cdi_bro1)
+
+cdi_ver2 <- glmer(correctWord ~ exclude_cdi * age_c + (1 | participant_id), data = cdiD, family = binomial)
+anova(cdi_ver1, cdi_ver2)
+cdi_bro2 <- glmer(correctBroad ~ exclude_cdi * age_c + (1 | participant_id), data = cdiD, family = binomial)
+anova(cdi_bro1, cdi_bro2)
+
+## out of curiosity: responses to unknown words, including no response
+cdi_unknown <- mainD %>% filter(child_q1 %in% c("Yes", "No"), exclude_cdi == 1, ageBin %in% c("16-19", "21-26")) %>%
+  summarise(Trials = n(), across(c(no, deny, yes, affirm), sum), no_response = sum(child_q1 == "No"), .by = c(ageBin, target)) %>%
+  pivot_longer(c(no, deny, yes, affirm, no_response), names_to = "DV", values_to = "n") %>%
+  mutate(value = n / Trials, DV = factor(DV, levels = c("no", "deny", "yes", "affirm", "no_response"), labels = c("Verbal negation", "Broad negation", "Verbal affirmation", "Broad affirmation", "No response")))
+
+ggplot(cdi_unknown, aes(DV, value, fill = target)) +
+  geom_col(position = "dodge", width = 0.65) +
+  facet_wrap(~ ageBin, ncol = 1) +
+  scale_x_discrete(labels = c("Verbal\nnegation", "Broad\nnegation", "Verbal\naffirmation", "Broad\naffirmation", "No\nresponse")) +
+  scale_y_continuous(limits = c(0, 1), expand = c(0, 0)) +
+  labs(x = NULL, y = "Proportion of unknown-word trials", fill = "Trial type")
+
+```
+
+## Inter-coder reliability
+
+```{r checks}
+
+## second-coder responses
+secondD <- read.csv("secondD.csv") %>%
+  transmute(participant_id, question, target = ifelse(target == "Yes", "true", "false"), no = child_q5 == "Yes", yes = child_q4 == "Yes",
+            deny = no | (child_q7 == "Yes" & !yes), affirm = yes | (child_q6_dropdown == "Nod" & !no)) %>%
+  mutate(across(c(no, yes, deny, affirm), as.integer))
+ 
+## match trials across coders
+reliabilityD <- inner_join(finalD %>% select(participant_id, question, target, no, yes, deny, affirm) %>% 
+    pivot_longer(c(no, yes, deny, affirm), names_to = "DV", values_to = "First"),
+  secondD %>% pivot_longer(c(no, yes, deny, affirm), names_to = "DV", values_to = "Second"), by = c("participant_id", "question", "target", "DV"))
+
+## percent agreement and Cohen's kappa
+reliabilityD %>%
+  summarise(Trials = n(), Disagreements = sum(First != Second), Agreement = mean(First == Second), Expected = mean(First) * mean(Second) + (1 - mean(First)) * (1 - mean(Second)), .by = DV) %>%
+  mutate(Kappa = (Agreement - Expected) / (1 - Expected), Percent_agreement = 100 * Agreement) %>%
+  select(DV, Trials, Disagreements, Percent_agreement, Kappa) %>% knitr::kable(digits = 3) #agreement
+
+## opposite response codes
+reliabilityD %>% pivot_wider(names_from = DV, values_from = c(First, Second)) %>%
+  mutate(Verbal_opposite = (First_no & !First_yes & Second_yes & !Second_no) | (First_yes & !First_no & Second_no & !Second_yes),
+         Broad_opposite = (First_deny & !First_affirm & Second_affirm & !Second_deny) | (First_affirm & !First_deny & Second_deny & !Second_affirm)) %>%
+  filter(Verbal_opposite | Broad_opposite) %>% knitr::kable() #opposite
+
+```

@@ -1,0 +1,1361 @@
+participant_id,age_months,order,book,question,target,child_q1,child_q1_transcription,child_q2,child_q3,child_q4,child_q4_dropdown,child_q5,child_q5_dropdown,child_q6,child_q6_dropdown,child_q7,child_q7_dropdown,child_q8,child_q8_dropdown,parent_p1,exclude_cdi,exclude_base,exclude_trial,book_item
+S01,24,1,busy-babies,a cat?,No,Yes,"""no, bunny""",Verbal response,,No,,Yes,No,,,,,No,"""bunny""",A false trial,0,0,0,bunny
+S01,24,1,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,horse
+S01,24,1,busy-babies,a bird?,Yes,Yes,"""wah""",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,bird
+S01,24,1,busy-babies,a pig?,No,Yes,"""no, doggy"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""doggy""","Neither, could go either way",0,0,0,dog
+S01,24,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,bear
+S01,24,1,busy-babies,a cow?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,cow
+S01,24,1,busy-babies,a dog?,No,Yes,"""a pig, not dog""",Verbal response,,No,,Yes,Not,,,,,Yes,"""a pig""","Neither, could go either way",0,0,0,pig
+S01,24,1,busy-babies,a bunny?,No,Yes,"""it's a cat""",Verbal response,,No,,No,,,,,,Yes,"""it's a cat""",A false trial,0,0,0,cat
+S01,24,1,new-house,a ball?,No,Yes,"""no, bear""",Verbal response,,No,,Yes,No,,,,,Yes,"""bear""",A false trial,0,0,0,teddy bear
+S01,24,1,new-house,a block?,Yes,Yes,"""a bear..bah""",Verbal response,,No,,No,,,,,,Yes,"""it's a bear""","Neither, could go either way",0,0,0,block
+S01,24,1,new-house,a teddy bear?,No,Yes,"""no ball""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,ball
+S01,24,1,new-house,a cookie?,No,Yes,"""a monkey""",Verbal response,,No,,No,,,,,,Yes,"""a monkey""","Neither, could go either way",0,0,0,bottle
+S01,24,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,apple
+S01,24,1,new-house,a bottle?,No,Yes,"""no kiki""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,cookie
+S01,24,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S01,24,1,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S02,22,2,new-house,a ball?,No,Yes,"""neh""",Verbal response,,No,,Yes,"""neh""",,,,,No,,A false trial,0,0,0,teddy bear
+S02,22,2,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,block
+S02,22,2,new-house,a teddy bear?,No,Yes,"""no...no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,ball
+S02,22,2,new-house,a cookie?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A true trial,0,0,0,bottle
+S02,22,2,new-house,an apple?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,apple
+S02,22,2,new-house,a bottle?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A true trial,0,0,0,cookie
+S02,22,2,new-house,a cup?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A true trial,0,0,0,cup
+S02,22,2,new-house,a car?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S02,22,2,busy-babies,a cat?,No,Yes,"""nooo""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S02,22,2,busy-babies,a horse?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A true trial,0,0,0,horse
+S02,22,2,busy-babies,a bird?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S02,22,2,busy-babies,a pig?,No,Yes,"""no, no""",Verbal response,,No,,Yes,No,,,,,No,,A true trial,0,0,0,dog
+S02,22,2,busy-babies,a bear?,Yes,Yes,"""no, baba""",Verbal response,,No,,Yes,No,,,,,Yes,"""baba""","Neither, could go either way",0,0,0,bear
+S02,22,2,busy-babies,a cow?,Yes,Yes,"""no, bluh""",Non-verbal response,,,,,,No,,No,,,,"Neither, could go either way",0,0,0,cow
+S02,22,2,busy-babies,a dog?,No,Yes,"""piece...piece""",Verbal response,,No,,No,,,,,,Yes,"""piece""",A true trial,0,0,0,pig
+S02,22,2,busy-babies,a bunny?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cat
+S03,31,3,busy-babies,a bunny?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bunny
+S03,31,3,busy-babies,a bear?,No,Yes,"*shook head* ""a horsie""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,"""a horsie""",A false trial,0,0,0,horse
+S03,31,3,busy-babies,a cow?,No,Yes,"*shook head* ""a __""*unintelligible*",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,*unintelligible*,"Neither, could go either way",0,0,0,bird
+S03,31,3,busy-babies,a dog?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,dog
+S03,31,3,busy-babies,a horse?,No,Yes,"*shook head* ""a bear""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,"""a bear""","Neither, could go either way",0,0,0,bear
+S03,31,3,busy-babies,a bird?,No,Yes,"*shook head* ""it's a cow""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,"""it's a cow""","Neither, could go either way",0,0,0,cow
+S03,31,3,busy-babies,a pig?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,pig
+S03,31,3,busy-babies,a cat?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cat
+S03,31,3,new-house,a teddy bear?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,A true trial,0,0,0,teddy bear
+S03,31,3,new-house,a cup?,No,Yes,"*nodded* *shook head* ""no"" ",Both verbal and non-verbal responses,Nonverbal first,No,,Yes,No,Yes,Nod,Yes,Shook head,No,,"Neither, could go either way",0,0,0,block
+S03,31,3,new-house,a ball?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,A true trial,0,0,0,ball
+S03,31,3,new-house,a bottle?,Yes,Yes,*shook head* *nods*,Non-verbal response,,,,,,Yes,Nod,Yes,Shook head,,,"Neither, could go either way",0,0,0,bottle
+S03,31,3,new-house,a car?,No,Yes,"""oh it's an apple""",Verbal response,,No,,No,,,,,,Yes,"""it's an apple""","Neither, could go either way",0,0,0,apple
+S03,31,3,new-house,a cookie?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,A true trial,0,0,0,cookie
+S03,31,3,new-house,a block?,No,Yes,"""oh, it's a cup""",Verbal response,,No,,No,,,,,,Yes,"""it's a cup""","Neither, could go either way",0,0,0,cup
+S03,31,3,new-house,an apple?,No,Yes,"""no, it's a car""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,car
+S04,23,4,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S04,23,4,new-house,a cup?,No,Yes,"""it's a number, that's a number A""",Verbal response,,No,,No,,,,,,Yes,"""it's a number, that's a number A""","Neither, could go either way",0,0,0,block
+S04,23,4,new-house,a ball?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S04,23,4,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S04,23,4,new-house,a car?,No,Yes,"""no, that's a apple""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a apple""","Neither, could go either way",0,0,0,apple
+S04,23,4,new-house,a cookie?,Yes,Yes,"""yeah, it's a cookie""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""it's a cookie""","Neither, could go either way",0,0,0,cookie
+S04,23,4,new-house,a block?,No,Yes,"""no, that's a cup""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cup""","Neither, could go either way",0,0,0,cup
+S04,23,4,new-house,an apple?,No,Yes,"""no, that's a"" *unintelligible*",Verbal response,,No,,Yes,No,,,,,Yes,*unintelligible*,"Neither, could go either way",0,0,0,car
+S04,23,4,busy-babies,a bunny?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S04,23,4,busy-babies,a bear?,No,Yes,"""no that's a horse""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a horse""","Neither, could go either way",0,0,0,horse
+S04,23,4,busy-babies,a cow?,No,Yes,"""no, that's a bird""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a bird""",A false trial,0,0,0,bird
+S04,23,4,busy-babies,a dog?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S04,23,4,busy-babies,a horse?,No,Yes,"""no, that's a dog""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a dog""",A true trial,0,0,0,bear
+S04,23,4,busy-babies,a bird?,No,Yes,"""no that's a cow""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cow""","Neither, could go either way",0,0,0,cow
+S04,23,4,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A true trial,0,0,0,pig
+S04,23,4,busy-babies,a cat?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S05,24,3,busy-babies,a bunny?,Yes,Yes,"""bunny""",Verbal response,,No,,No,,,,,,Yes,"""bunny""","Neither, could go either way",0,0,0,bunny
+S05,24,3,busy-babies,a bear?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S05,24,3,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,bird
+S05,24,3,busy-babies,a dog?,Yes,Yes,"""book""",Verbal response,,No,,No,,,,,,Yes,"""book""",A false trial,0,0,0,dog
+S05,24,3,busy-babies,a horse?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,bear
+S05,24,3,busy-babies,a bird?,No,Yes,"""nope""",Verbal response,,No,,Yes,"""nope""",,,,,No,,"Neither, could go either way",0,0,0,cow
+S05,24,3,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S05,24,3,busy-babies,a cat?,Yes,Yes,"""cat"" ""yeah""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""cat""","Neither, could go either way",0,0,0,cat
+S05,24,3,new-house,a teddy bear?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,teddy bear
+S05,24,3,new-house,a cup?,No,Yes,"""nope""",Verbal response,,No,,Yes,"""nope""",,,,,No,,"Neither, could go either way",0,0,0,block
+S05,24,3,new-house,a ball?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,ball
+S05,24,3,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S05,24,3,new-house,a car?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S05,24,3,new-house,a cookie?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S05,24,3,new-house,a block?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cup
+S05,24,3,new-house,an apple?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S06,30,4,new-house,a teddy bear?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,teddy bear
+S06,30,4,new-house,a cup?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,block
+S06,30,4,new-house,a ball?,Yes,Yes,"""no, that's a __"" *unintelligible*",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""that's a __"" *unintelligible*",A false trial,0,0,0,ball
+S06,30,4,new-house,a bottle?,Yes,Yes,"""no, kitchen"" *point*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,point,No,,Yes,"""kitchen""","Neither, could go either way",0,0,0,bottle
+S06,30,4,new-house,a car?,No,Yes,"""no, apple"" *point*",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S06,30,4,new-house,a cookie?,Yes,Yes,"""no, this called cookie""*points*",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""cookie""",A false trial,0,0,0,cookie
+S06,30,4,new-house,a block?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cup
+S06,30,4,new-house,an apple?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,car
+S06,30,4,busy-babies,a bunny?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,bunny
+S06,30,4,busy-babies,a bear?,No,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,horse
+S06,30,4,busy-babies,a cow?,No,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,bird
+S06,30,4,busy-babies,a dog?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,dog
+S06,30,4,busy-babies,a horse?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S06,30,4,busy-babies,a bird?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S06,30,4,busy-babies,a pig?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,pig
+S06,30,4,busy-babies,a cat?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,cat
+S07,29,1,busy-babies,a cat?,No,Yes,"""a bunny""",Verbal response,,No,,No,,,,,,Yes,"""a bunny""","Neither, could go either way",0,0,0,bunny
+S07,29,1,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S07,29,1,busy-babies,a bird?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S07,29,1,busy-babies,a pig?,No,Yes,unintelligible,Verbal response,,No,,No,,,,,,Yes,unintelligible,"Neither, could go either way",0,0,0,dog
+S07,29,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S07,29,1,busy-babies,a cow?,Yes,Yes,"""um...um yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S07,29,1,busy-babies,a dog?,No,Yes,"""no...veely""",Verbal response,,No,,Yes,No,,,,,Yes,"""veely""","Neither, could go either way",0,0,0,pig
+S07,29,1,busy-babies,a bunny?,No,Yes,"""nuh""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,cat
+S07,29,1,new-house,a ball?,No,Yes,"""nemm...bear""",Verbal response,,No,,No,,,,,,Yes,"""bear""","Neither, could go either way",0,0,0,teddy bear
+S07,29,1,new-house,a block?,Yes,Yes,"""um..ya""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S07,29,1,new-house,a teddy bear?,No,Yes,"""uh..ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S07,29,1,new-house,a cookie?,No,Yes,*unintelligible*,Verbal response,,No,,No,,,,,,Yes,unintelligible,"Neither, could go either way",0,0,0,bottle
+S07,29,1,new-house,an apple?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S07,29,1,new-house,a bottle?,No,Yes,"""no, cookies""",Verbal response,,No,,Yes,No,,,,,Yes,"""cookies""","Neither, could go either way",0,0,0,cookie
+S07,29,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S07,29,1,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S08,23,1,busy-babies,a cat?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S08,23,1,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S08,23,1,busy-babies,a bird?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S08,23,1,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,dog
+S08,23,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S08,23,1,busy-babies,a cow?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S08,23,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S08,23,1,busy-babies,a bunny?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,cat
+S08,23,1,new-house,a ball?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S08,23,1,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S08,23,1,new-house,a teddy bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,ball
+S08,23,1,new-house,a cookie?,No,Yes,"""no,wawa""",Verbal response,,No,,Yes,No,,,,,Yes,"""wawa""","Neither, could go either way",0,0,0,bottle
+S08,23,1,new-house,an apple?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,apple
+S08,23,1,new-house,a bottle?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S08,23,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S08,23,1,new-house,a car?,Yes,Yes,"""ya""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S09,16,1,busy-babies,a cat?,No,Yes,"""nah..no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bunny
+S09,16,1,busy-babies,a horse?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,horse
+S09,16,1,busy-babies,a bird?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,bird
+S09,16,1,busy-babies,a pig?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,A false trial,0,0,0,dog
+S09,16,1,busy-babies,a bear?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,bear
+S09,16,1,busy-babies,a cow?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cow
+S09,16,1,busy-babies,a dog?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,A false trial,0,0,0,pig
+S09,16,1,busy-babies,a bunny?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cat
+S09,16,1,new-house,a ball?,No,No,,,,,,,,,,,,,,A false trial,0,1,1,teddy bear
+S09,16,1,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,block
+S09,16,1,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S09,16,1,new-house,a cookie?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,bottle
+S09,16,1,new-house,an apple?,Yes,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",1,0,1,apple
+S09,16,1,new-house,a bottle?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cookie
+S09,16,1,new-house,a cup?,Yes,Yes,"""nom nom""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cup
+S09,16,1,new-house,a car?,Yes,Yes,"""car""",Verbal response,,No,,No,,,,,,Yes,"""car""","Neither, could go either way",0,0,0,car
+S10,24,2,new-house,a ball?,No,Yes,"""no, ball""",Verbal response,,No,,Yes,No,,,,,Yes,"""ball""",A false trial,0,0,0,teddy bear
+S10,24,2,new-house,a block?,Yes,Yes,"""yack,  yack""",Verbal response,,No,,No,,,,,,Yes,"""yack""","Neither, could go either way",0,0,0,block
+S10,24,2,new-house,a teddy bear?,No,Yes,*point* unintelligible,Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,unintelligible,"Neither, could go either way",1,0,1,ball
+S10,24,2,new-house,a cookie?,No,Yes,*point* unintelligible,Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,unintelligible,"Neither, could go either way",1,0,1,bottle
+S10,24,2,new-house,an apple?,Yes,Yes,"""apple"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S10,24,2,new-house,a bottle?,No,Yes,unintelligible,Verbal response,,No,,No,,,,,,Yes,unintelligible,"Neither, could go either way",1,0,1,cookie
+S10,24,2,new-house,a cup?,Yes,Yes,"""agua"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""agua""","Neither, could go either way",0,0,0,cup
+S10,24,2,new-house,a car?,Yes,Yes,"""garage""",Verbal response,,No,,No,,,,,,Yes,"""garage""","Neither, could go either way",0,0,0,car
+S10,24,2,busy-babies,a cat?,No,Yes,"""bunny""",Verbal response,,No,,No,,,,,,Yes,"""bunny""","Neither, could go either way",0,0,0,bunny
+S10,24,2,busy-babies,a horse?,Yes,Yes,"""yesh""",Verbal response,,Yes,"""yesh""",No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S10,24,2,busy-babies,a bird?,Yes,Yes,"""yuh"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yuh,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S10,24,2,busy-babies,a pig?,No,Yes,"""dog"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""dog""","Neither, could go either way",0,0,0,dog
+S10,24,2,busy-babies,a bear?,Yes,Yes,"""yeah"" *nod* ""arden""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,Yes,"""arden""","Neither, could go either way",0,0,0,bear
+S10,24,2,busy-babies,a cow?,Yes,Yes,"""drow""",Verbal response,,No,,No,,,,,,Yes,"""drow""","Neither, could go either way",0,0,0,cow
+S10,24,2,busy-babies,a dog?,No,Yes,"""nuh""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,pig
+S10,24,2,busy-babies,a bunny?,No,Yes,"""bunneh""",Verbal response,,No,,No,,,,,,Yes,"""bunneh""","Neither, could go either way",0,0,0,cat
+S11,29,2,new-house,a ball?,No,Yes,"""ya"" *point* ""that's a daddy bear""",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,point,No,,Yes,"""that's a daddy bear""","Neither, could go either way",0,0,0,teddy bear
+S11,29,2,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,A false trial,0,0,0,block
+S11,29,2,new-house,a teddy bear?,No,Yes,"""no, a bahh"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""a bahh""",A false trial,0,0,0,ball
+S11,29,2,new-house,a cookie?,No,Yes,"""no, that milk"" *non*",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,Nod,No,,Yes,"""that milk""","Neither, could go either way",0,0,0,bottle
+S11,29,2,new-house,an apple?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,apple
+S11,29,2,new-house,a bottle?,No,Yes,"""no, a __"" unintelligible *nod*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,Nod,No,,Yes,unintelligible,"Neither, could go either way",0,0,0,cookie
+S11,29,2,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S11,29,2,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S11,29,2,busy-babies,a cat?,No,Yes,"""no, a mouse""",Verbal response,,No,,Yes,No,,,,,Yes,"""a mouse""","Neither, could go either way",0,0,0,bunny
+S11,29,2,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S11,29,2,busy-babies,a bird?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S11,29,2,busy-babies,a pig?,No,Yes,"""no, a dog""",Verbal response,,No,,Yes,No,,,,,Yes,"""a dog""","Neither, could go either way",0,0,0,dog
+S11,29,2,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S11,29,2,busy-babies,a cow?,Yes,Yes,"""yeah, a gow-ool"" ",Verbal response,,Yes,Yah,No,,,,,,Yes,"""a gow-ool""","Neither, could go either way",0,0,0,cow
+S11,29,2,busy-babies,a dog?,No,Yes,"""no a pig"" *nod*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,pig
+S11,29,2,busy-babies,a bunny?,No,Yes,"""no, a"" unintelligible ""a"" unintelligible *nod*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,Nod,No,,Yes,unintelligible,"Neither, could go either way",0,0,0,cat
+S12,22,3,busy-babies,a bunny?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bunny
+S12,22,3,busy-babies,a bear?,No,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,horse
+S12,22,3,busy-babies,a cow?,No,Yes,"*nod* ""no""",Both verbal and non-verbal responses,Nonverbal first,No,,Yes,No,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S12,22,3,busy-babies,a dog?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,dog
+S12,22,3,busy-babies,a horse?,No,Yes,"""ya"" *nod* ""oh""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bear
+S12,22,3,busy-babies,a bird?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cow
+S12,22,3,busy-babies,a pig?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,pig
+S12,22,3,busy-babies,a cat?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cat
+S12,22,3,new-house,a teddy bear?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,teddy bear
+S12,22,3,new-house,a cup?,No,Yes,"""ya"" *nod* ""no""",Both verbal and non-verbal responses,Same time,Yes,Yah,Yes,No,Yes,Nod,No,,No,,"Neither, could go either way",1,0,1,block
+S12,22,3,new-house,a ball?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,ball
+S12,22,3,new-house,a bottle?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",1,0,1,bottle
+S12,22,3,new-house,a car?,No,Yes,"""ya"" *nod* ""oh""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,apple
+S12,22,3,new-house,a cookie?,Yes,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cookie
+S12,22,3,new-house,a block?,No,Yes,"""ya"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cup
+S12,22,3,new-house,an apple?,No,Yes,"""no"" *shook head* ""car""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""car""","Neither, could go either way",0,0,0,car
+S13,24,4,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,teddy bear
+S13,24,4,new-house,a cup?,No,Yes,"""yeas""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S13,24,4,new-house,a ball?,Yes,Yes,"""a boo"" *points* ""a ball""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""a boo"" ""a ball""","Neither, could go either way",0,0,0,ball
+S13,24,4,new-house,a bottle?,Yes,Yes,"""a bottle"" *points*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""a bottle""","Neither, could go either way",0,0,0,bottle
+S13,24,4,new-house,a car?,No,Yes,"""wan seeing the car""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S13,24,4,new-house,a cookie?,Yes,No,,,,,,,,,,,,,,A false trial,0,1,1,cookie
+S13,24,4,new-house,a block?,No,Yes,"""yeah"" *points*",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,point,No,,No,,A false trial,0,0,0,cup
+S13,24,4,new-house,an apple?,No,Yes,"""a car""",Verbal response,,No,,No,,,,,,Yes,"""a car""","Neither, could go either way",0,0,0,car
+S13,24,4,busy-babies,a bunny?,Yes,Yes,"""a bunny""",Verbal response,,No,,No,,,,,,Yes,"""a bunny""","Neither, could go either way",0,0,0,bunny
+S13,24,4,busy-babies,a bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S13,24,4,busy-babies,a cow?,No,No,,,,,,,,,,,,,,A false trial,0,1,1,bird
+S13,24,4,busy-babies,a dog?,Yes,Yes,"""a dog""",Verbal response,,No,,No,,,,,,Yes,"""a dog""","Neither, could go either way",0,0,0,dog
+S13,24,4,busy-babies,a horse?,No,Yes,"""a bear""",Verbal response,,No,,No,,,,,,Yes,"""a bear""","Neither, could go either way",0,0,0,bear
+S13,24,4,busy-babies,a bird?,No,Yes,"""is it that""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S13,24,4,busy-babies,a pig?,Yes,,,,,,,,,,,,,,,,0,1,1,pig
+S13,24,4,busy-babies,a cat?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,A true trial,0,0,0,cat
+S14,18,2,new-house,a ball?,No,Yes,"""mhm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S14,18,2,new-house,a block?,Yes,Yes,"""ahaaa""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,block
+S14,18,2,new-house,a teddy bear?,No,Yes,"""hmmm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S14,18,2,new-house,a cookie?,No,Yes,"""mmm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bottle
+S14,18,2,new-house,an apple?,Yes,Yes,"""hmmm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S14,18,2,new-house,a bottle?,No,Yes,"""mm mm"" *nods*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cookie
+S14,18,2,new-house,a cup?,Yes,Yes,"""mhm""",Verbal response,,Yes,mhm,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S14,18,2,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S14,18,2,busy-babies,a cat?,No,Yes,"""mmm"" *nod*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bunny
+S14,18,2,busy-babies,a horse?,Yes,Yes,"""mhm"" *nod*",Both verbal and non-verbal responses,Same time,Yes,mhm,No,,Yes,Nod,No,,No,,"Neither, could go either way",1,0,1,horse
+S14,18,2,busy-babies,a bird?,Yes,Yes,"""buhhh"" *points*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""buhh""","Neither, could go either way",0,0,0,bird
+S14,18,2,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,dog
+S14,18,2,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bear
+S14,18,2,busy-babies,a cow?,Yes,Yes,"""mhm"" *nods*",Both verbal and non-verbal responses,Same time,Yes,mhm,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cow
+S14,18,2,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S14,18,2,busy-babies,a bunny?,No,Yes,"""mm mm"" *shook head*",Both verbal and non-verbal responses,Same time,No,,No,,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cat
+S15,17,3,busy-babies,a bunny?,Yes,Yes,*points outward*,Non-verbal response,,,,,,Yes,point out,No,,,,"Neither, could go either way",0,0,0,bunny
+S15,17,3,busy-babies,a bear?,No,Yes," ""yeah"" *points*",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,points outward,No,,No,,"Neither, could go either way",1,0,1,horse
+S15,17,3,busy-babies,a cow?,No,Yes,"""ye..yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,bird
+S15,17,3,busy-babies,a dog?,Yes,Yes,"""ye..yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S15,17,3,busy-babies,a horse?,No,Yes,"""ye..yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S15,17,3,busy-babies,a bird?,No,Yes,"""ye..yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S15,17,3,busy-babies,a pig?,Yes,Yes,"""ye..yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,pig
+S15,17,3,busy-babies,a cat?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S15,17,3,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,teddy bear
+S15,17,3,new-house,a cup?,No,Yes,"""cat"" *points*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""cat""","Neither, could go either way",1,0,1,block
+S15,17,3,new-house,a ball?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S15,17,3,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S15,17,3,new-house,a car?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S15,17,3,new-house,a cookie?,Yes,Yes,"""goggy""",Verbal response,,No,,No,,,,,,Yes,"""goggy""","Neither, could go either way",0,0,0,cookie
+S15,17,3,new-house,a block?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S15,17,3,new-house,an apple?,No,Yes,"""puppy""",Verbal response,,No,,No,,,,,,Yes,"""puppy""",A false trial,0,0,0,car
+S17,29,2,new-house,a ball?,No,Yes,"""no"" *shook head* ""it's a moon""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""it's a moon""","Neither, could go either way",0,0,0,teddy bear
+S17,29,2,new-house,a block?,Yes,Yes,"""yeah that's a block""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""that's a block""","Neither, could go either way",0,0,0,block
+S17,29,2,new-house,a teddy bear?,No,Yes,"""no, that's a dot""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a dot""","Neither, could go either way",0,0,0,ball
+S17,29,2,new-house,a cookie?,No,Yes,"""no, that's a bala""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a bala""","Neither, could go either way",0,0,0,bottle
+S17,29,2,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S17,29,2,new-house,a bottle?,No,Yes,"""no, that's a cookies""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cookies""","Neither, could go either way",0,0,0,cookie
+S17,29,2,new-house,a cup?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cup
+S17,29,2,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S17,29,2,busy-babies,a cat?,No,Yes,"""no that's a bunny""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a bunny""",A false trial,0,0,0,bunny
+S17,29,2,busy-babies,a horse?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,horse
+S17,29,2,busy-babies,a bird?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S17,29,2,busy-babies,a pig?,No,Yes,"""no, that's an animal""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's an animal""",A false trial,0,0,0,dog
+S17,29,2,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S17,29,2,busy-babies,a cow?,Yes,Yes,"""no, no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S17,29,2,busy-babies,a dog?,No,Yes,"""no that's an animal""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's an animal""","Neither, could go either way",0,0,0,pig
+S17,29,2,busy-babies,a bunny?,No,Yes,"""um..no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cat
+S18,25,1,busy-babies,a cat?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S18,25,1,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S18,25,1,busy-babies,a bird?,Yes,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",0,0,0,bird
+S18,25,1,busy-babies,a pig?,No,Yes,"""no, doggy""",Verbal response,,No,,Yes,No,,,,,Yes,"""doggy""","Neither, could go either way",0,0,0,dog
+S18,25,1,busy-babies,a bear?,Yes,Yes,"""ya""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S18,25,1,busy-babies,a cow?,Yes,Yes,"""ya, moo""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S18,25,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S18,25,1,busy-babies,a bunny?,No,Yes,"""no"" *point* ""a cat""",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,point,No,,Yes,"""a cat""","Neither, could go either way",0,0,0,cat
+S18,25,1,new-house,a ball?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",0,0,0,teddy bear
+S18,25,1,new-house,a block?,Yes,Yes,"*nod* ""yeah, that"" *point*",Both verbal and non-verbal responses,Nonverbal first,Yes,Yah,No,,Yes,Nod,No,,Yes,"""that""","Neither, could go either way",0,0,0,block
+S18,25,1,new-house,a teddy bear?,No,Yes,"""no, circle""",Verbal response,,No,,Yes,No,,,,,Yes,"""circle""","Neither, could go either way",0,0,0,ball
+S18,25,1,new-house,a cookie?,No,Yes,"""no, no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S18,25,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S18,25,1,new-house,a bottle?,No,Yes,"""no..no...cookie""",Verbal response,,No,,Yes,No,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,cookie
+S18,25,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S18,25,1,new-house,a car?,Yes,Yes,"*nod* ""yeah""",Both verbal and non-verbal responses,Nonverbal first,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,car
+S19,29,4,new-house,a teddy bear?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S19,29,4,new-house,a cup?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S19,29,4,new-house,a ball?,Yes,Yes,"""uh yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S19,29,4,new-house,a bottle?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S19,29,4,new-house,a car?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,apple
+S19,29,4,new-house,a cookie?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S19,29,4,new-house,a block?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cup
+S19,29,4,new-house,an apple?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S19,29,4,busy-babies,a bunny?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S19,29,4,busy-babies,a bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S19,29,4,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S19,29,4,busy-babies,a dog?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S19,29,4,busy-babies,a horse?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S19,29,4,busy-babies,a bird?,No,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S19,29,4,busy-babies,a pig?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S19,29,4,busy-babies,a cat?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S20,18,4,new-house,a teddy bear?,Yes,Yes,"*point* ""beh""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""beh""","Neither, could go either way",0,0,0,teddy bear
+S20,18,4,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S20,18,4,new-house,a ball?,Yes,Yes,"""buh"" *point* ""buh"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""buh""","Neither, could go either way",0,0,0,ball
+S20,18,4,new-house,a bottle?,Yes,Yes,*point* *tap*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,bottle
+S20,18,4,new-house,a car?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S20,18,4,new-house,a cookie?,Yes,Yes,"""a cookie"" *point* ""a cookie""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""a cookie""","Neither, could go either way",0,0,0,cookie
+S20,18,4,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S20,18,4,new-house,an apple?,No,Yes,"""a apple"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""a apple""","Neither, could go either way",0,0,0,car
+S20,18,4,busy-babies,a bunny?,Yes,Yes,"""is a"" *point* ""bay"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,poit,No,,Yes,"""a bay""","Neither, could go either way",0,0,0,bunny
+S20,18,4,busy-babies,a bear?,No,Yes,"""eh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S20,18,4,busy-babies,a cow?,No,Yes,"""a bird"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""a bird""","Neither, could go either way",0,0,0,bird
+S20,18,4,busy-babies,a dog?,Yes,Yes,"""a gug"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""a gug""","Neither, could go either way",0,0,0,dog
+S20,18,4,busy-babies,a horse?,No,Yes,"""unintelligible"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bear
+S20,18,4,busy-babies,a bird?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S20,18,4,busy-babies,a pig?,Yes,Yes,"""a book"" *points*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""a book""","Neither, could go either way",0,0,0,pig
+S20,18,4,busy-babies,a cat?,Yes,Yes,"""kitty"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""kitty""","Neither, could go either way",0,0,0,cat
+S21,30,4,new-house,a teddy bear?,Yes,Yes,"""is that a teddy bear""",Verbal response,,No,,No,,,,,,Yes,"""teddy bear""","Neither, could go either way",0,0,0,teddy bear
+S21,30,4,new-house,a cup?,No,Yes,"""that's a cup""",Verbal response,,No,,No,,,,,,Yes,"""that's a cup""","Neither, could go either way",0,0,0,block
+S21,30,4,new-house,a ball?,Yes,Yes,"""is that a bottle""",Verbal response,,No,,No,,,,,,Yes,"""a bottle""","Neither, could go either way",0,0,0,ball
+S21,30,4,new-house,a bottle?,Yes,Yes,"""is that a bottle""",Verbal response,,No,,No,,,,,,Yes,"""a bottle""","Neither, could go either way",0,0,0,bottle
+S21,30,4,new-house,a car?,No,Yes,"""is that a car"" ""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S21,30,4,new-house,a cookie?,Yes,Yes,"""is that a cookie"" ",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,cookie
+S21,30,4,new-house,a block?,No,Yes,"""is that a block"" ""drink""",Verbal response,,No,,No,,,,,,Yes,"""drink""","Neither, could go either way",0,0,0,cup
+S21,30,4,new-house,an apple?,No,Yes,"""kyo""",Verbal response,,No,,No,,,,,,Yes,"""kyo""","Neither, could go either way",0,0,0,car
+S21,30,4,busy-babies,a bunny?,Yes,Yes,"""is that a bunny""",Verbal response,,No,,No,,,,,,Yes,"""a bunny""","Neither, could go either way",0,0,0,bunny
+S21,30,4,busy-babies,a bear?,No,Yes,"""is that a bear"" ""horse""",Verbal response,,No,,No,,,,,,Yes,"""horse""","Neither, could go either way",0,0,0,horse
+S21,30,4,busy-babies,a cow?,No,Yes,"""is that a cow"" ""bird""",Verbal response,,No,,No,,,,,,Yes,"""bird""","Neither, could go either way",0,0,0,bird
+S21,30,4,busy-babies,a dog?,Yes,Yes,"""is that a dog""",Verbal response,,No,,No,,,,,,Yes,"""dog""","Neither, could go either way",0,0,0,dog
+S21,30,4,busy-babies,a horse?,No,Yes,"""is that a bear""",Verbal response,,No,,No,,,,,,Yes,"""a bear""","Neither, could go either way",0,0,0,bear
+S21,30,4,busy-babies,a bird?,No,Yes,"""is that a cow""",Verbal response,,No,,No,,,,,,Yes,"""a cow""","Neither, could go either way",0,0,0,cow
+S21,30,4,busy-babies,a pig?,Yes,Yes,"""is that a pig"" ""oink oink""",Verbal response,,No,,No,,,,,,Yes,"""a pig""","Neither, could go either way",0,0,0,pig
+S21,30,4,busy-babies,a cat?,Yes,Yes,"""is that a cat""",Verbal response,,No,,No,,,,,,Yes,"""a cat""","Neither, could go either way",0,0,0,cat
+S22,28,3,busy-babies,a bunny?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S22,28,3,busy-babies,a bear?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,horse
+S22,28,3,busy-babies,a cow?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bird
+S22,28,3,busy-babies,a dog?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S22,28,3,busy-babies,a horse?,No,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S22,28,3,busy-babies,a bird?,No,Yes,"""no, this cow""",Verbal response,,No,,Yes,No,,,,,Yes,"""cow""","Neither, could go either way",0,0,0,cow
+S22,28,3,busy-babies,a pig?,Yes,Yes,"""no das""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S22,28,3,busy-babies,a cat?,Yes,Yes,"""yes"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yes,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cat
+S22,28,3,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S22,28,3,new-house,a cup?,No,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S22,28,3,new-house,a ball?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S22,28,3,new-house,a bottle?,Yes,Yes,"""pwes""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S22,28,3,new-house,a car?,No,Yes,"""no just apple""",Verbal response,,No,,Yes,No,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S22,28,3,new-house,a cookie?,Yes,Yes,"""yes"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yes,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cookie
+S22,28,3,new-house,a block?,No,Yes,"""untelligible"" *point* ""no""",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cup
+S22,28,3,new-house,an apple?,No,Yes,"""no this tar""",Verbal response,,No,,Yes,No,,,,,Yes,"""tar""","Neither, could go either way",0,0,0,car
+S23,29,1,busy-babies,a cat?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S23,29,1,busy-babies,a horse?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S23,29,1,busy-babies,a bird?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S23,29,1,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S23,29,1,busy-babies,a bear?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S23,29,1,busy-babies,a cow?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S23,29,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S23,29,1,busy-babies,a bunny?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cat
+S23,29,1,new-house,a ball?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S23,29,1,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S23,29,1,new-house,a teddy bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,ball
+S23,29,1,new-house,a cookie?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S23,29,1,new-house,an apple?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S23,29,1,new-house,a bottle?,No,Yes,"""a cookie""",Verbal response,,No,,No,,,,,,Yes,"""a cookie""","Neither, could go either way",0,0,0,cookie
+S23,29,1,new-house,a cup?,Yes,Yes,"""it is""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S23,29,1,new-house,a car?,Yes,Yes,"""en"" ""a car""",Verbal response,,No,,No,,,,,,Yes,"""a car""","Neither, could go either way",0,0,0,car
+S24,30,3,busy-babies,a bunny?,Yes,Yes,"""no"" ""a bunny rabbit""",Verbal response,,No,,Yes,No,,,,,Yes,"""a bunny rabbit""","Neither, could go either way",0,0,0,bunny
+S24,30,3,busy-babies,a bear?,No,Yes,"""no"" *shook head* ""that's a horsie""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""that's a horsie""","Neither, could go either way",0,0,0,horse
+S24,30,3,busy-babies,a cow?,No,Yes,"""no"" *shook head* that's a bird""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""that's a bird""","Neither, could go either way",0,0,0,bird
+S24,30,3,busy-babies,a dog?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S24,30,3,busy-babies,a horse?,No,Yes,"""no"" *shook head* ""that's a polar bear"" *point*",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,Yes,Shook head,Yes,"""that's a polar bear""","Neither, could go either way",0,0,0,bear
+S24,30,3,busy-babies,a bird?,No,Yes,"""no that's a cow""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cow""","Neither, could go either way",0,0,0,cow
+S24,30,3,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S24,30,3,busy-babies,a cat?,Yes,Yes,"""no that's a cat""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cat""","Neither, could go either way",0,0,0,cat
+S24,30,3,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S24,30,3,new-house,a cup?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,block
+S24,30,3,new-house,a ball?,Yes,Yes,"""yah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S24,30,3,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S24,30,3,new-house,a car?,No,Yes,"""no"" *shook head* ""that's a apple""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""that's a apple""","Neither, could go either way",0,0,0,apple
+S24,30,3,new-house,a cookie?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S24,30,3,new-house,a block?,No,Yes,"""no"" *shook head* ""that's a cup""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""that's a cup""","Neither, could go either way",0,0,0,cup
+S24,30,3,new-house,an apple?,No,Yes,"""no that's a car""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a car""","Neither, could go either way",0,0,0,car
+S25,30,4,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S25,30,4,new-house,a cup?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,block
+S25,30,4,new-house,a ball?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S25,30,4,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S25,30,4,new-house,a car?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,apple
+S25,30,4,new-house,a cookie?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S25,30,4,new-house,a block?,No,Yes,"""unintelligible"" *shook head*",Both verbal and non-verbal responses,Same time,No,,No,,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cup
+S25,30,4,new-house,an apple?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S25,30,4,busy-babies,a bunny?,Yes,Yes,"""yeah it's so cute""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S25,30,4,busy-babies,a bear?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,horse
+S25,30,4,busy-babies,a cow?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bird
+S25,30,4,busy-babies,a dog?,Yes,Yes,"""yeah"" *nod* ""it's so cute""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,dog
+S25,30,4,busy-babies,a horse?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bear
+S25,30,4,busy-babies,a bird?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cow
+S25,30,4,busy-babies,a pig?,Yes,Yes,"""yeah"" ""unintelligible""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S25,30,4,busy-babies,a cat?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S26,16,1,busy-babies,a cat?,No,Yes,"""da"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,bunny
+S26,16,1,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S26,16,1,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bird
+S26,16,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,dog
+S26,16,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bear
+S26,16,1,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cow
+S26,16,1,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,pig
+S26,16,1,busy-babies,a bunny?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cat
+S26,16,1,new-house,a ball?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S26,16,1,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S26,16,1,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S26,16,1,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bottle
+S26,16,1,new-house,an apple?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S26,16,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cookie
+S26,16,1,new-house,a cup?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S26,16,1,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,car
+S27,25,2,new-house,a ball?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S27,25,2,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S27,25,2,new-house,a teddy bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,ball
+S27,25,2,new-house,a cookie?,No,Yes,"""da is a bottle""",Verbal response,,No,,No,,,,,,Yes,"""bottle""","Neither, could go either way",0,0,0,bottle
+S27,25,2,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S27,25,2,new-house,a bottle?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",0,0,0,cookie
+S27,25,2,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S27,25,2,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S27,25,2,busy-babies,a cat?,No,Yes,"""it's a bunny""",Verbal response,,No,,No,,,,,,Yes,"""it's a bunny""","Neither, could go either way",0,0,0,bunny
+S27,25,2,busy-babies,a horse?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,horse
+S27,25,2,busy-babies,a bird?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S27,25,2,busy-babies,a pig?,No,Yes,"""it's a bo, doggy""",Verbal response,,No,,No,,,,,,Yes,"""doggy""",A false trial,0,0,0,dog
+S27,25,2,busy-babies,a bear?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bear
+S27,25,2,busy-babies,a cow?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S27,25,2,busy-babies,a dog?,No,Yes,"""that's piggy""",Verbal response,,No,,No,,,,,,Yes,"""that's piggy""","Neither, could go either way",0,0,0,pig
+S27,25,2,busy-babies,a bunny?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cat
+S28,22,3,busy-babies,a bunny?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bunny
+S28,22,3,busy-babies,a bear?,No,Yes,"*nod* ""ick""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,Nod,No,,No,,"Neither, could go either way",1,0,1,horse
+S28,22,3,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S28,22,3,busy-babies,a dog?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,dog
+S28,22,3,busy-babies,a horse?,No,Yes,"""ruh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S28,22,3,busy-babies,a bird?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,cow
+S28,22,3,busy-babies,a pig?,Yes,Yes,"""mm mm"" ""mm mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S28,22,3,busy-babies,a cat?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S28,22,3,new-house,a teddy bear?,Yes,Yes,"""rah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S28,22,3,new-house,a cup?,No,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,block
+S28,22,3,new-house,a ball?,Yes,Yes,"""book""",Verbal response,,No,,No,,,,,,Yes,"""book""","Neither, could go either way",0,0,0,ball
+S28,22,3,new-house,a bottle?,Yes,Yes,"""bake"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bottle
+S28,22,3,new-house,a car?,No,Yes,"""a boo""",Verbal response,,No,,No,,,,,,Yes,"""a boo""","Neither, could go either way",0,0,0,apple
+S28,22,3,new-house,a cookie?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S28,22,3,new-house,a block?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S28,22,3,new-house,an apple?,No,Yes,"""unintelligible"" *point* ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,car
+S29,18,2,new-house,a ball?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,teddy bear
+S29,18,2,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S29,18,2,new-house,a teddy bear?,No,Yes,"""bawk"" *point* ""bah""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""bah""","Neither, could go either way",1,0,1,ball
+S29,18,2,new-house,a cookie?,No,Yes,"""baby"" *point* ""baby""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""baby""","Neither, could go either way",0,0,0,bottle
+S29,18,2,new-house,an apple?,Yes,Yes,"""baby"" *point* ""baby"" ""baby"" ""baby""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""baby""","Neither, could go either way",0,0,0,apple
+S29,18,2,new-house,a bottle?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S29,18,2,new-house,a cup?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cup
+S29,18,2,new-house,a car?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,car
+S29,18,2,busy-babies,a cat?,No,Yes,"*nod* ""no""",Both verbal and non-verbal responses,Nonverbal first,No,,Yes,No,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bunny
+S29,18,2,busy-babies,a horse?,Yes,Yes,"""no, neigh neigh""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S29,18,2,busy-babies,a bird?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S29,18,2,busy-babies,a pig?,No,Yes,"""dada"" *point* ""dada""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""dada""","Neither, could go either way",0,0,0,dog
+S29,18,2,busy-babies,a bear?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bear
+S29,18,2,busy-babies,a cow?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cow
+S29,18,2,busy-babies,a dog?,No,Yes,"""nuh"" *point* ""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,pig
+S29,18,2,busy-babies,a bunny?,No,Yes,"""no"" *point* ""no""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,point,No,,A false trial,0,0,0,cat
+S30,30,1,busy-babies,a cat?,No,Yes,"""no it's a bunny"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""it's a bunny""","Neither, could go either way",0,0,0,bunny
+S30,30,1,busy-babies,a horse?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S30,30,1,busy-babies,a bird?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S30,30,1,busy-babies,a pig?,No,Yes,"""no, it's dog""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's dog""","Neither, could go either way",0,0,0,dog
+S30,30,1,busy-babies,a bear?,Yes,Yes,"""no, a rooster""",Verbal response,,No,,Yes,No,,,,,Yes,"""a rooster""","Neither, could go either way",0,0,0,bear
+S30,30,1,busy-babies,a cow?,Yes,Yes,"""mm"" *nod* ""no"" *shook head* ""sheep"" ""it's a sheep""",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,Nod,Yes,Shook head,Yes,"""sheep""","Neither, could go either way",0,0,0,cow
+S30,30,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S30,30,1,busy-babies,a bunny?,No,Yes,"""no, it's a cat""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a cat""","Neither, could go either way",0,0,0,cat
+S30,30,1,new-house,a ball?,No,Yes,"""mm no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S30,30,1,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S30,30,1,new-house,a teddy bear?,No,Yes,"""no it's a ball""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a ball""","Neither, could go either way",0,0,0,ball
+S30,30,1,new-house,a cookie?,No,Yes,"""no it's a ball""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a ball""","Neither, could go either way",0,0,0,bottle
+S30,30,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S30,30,1,new-house,a bottle?,No,Yes,"""no that's a cookie""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cookie""","Neither, could go either way",0,0,0,cookie
+S30,30,1,new-house,a cup?,Yes,Yes,"""mhm"" *nod* ""yeah, that's pear"" *point*",Both verbal and non-verbal responses,Same time,Yes,mhm,No,,Yes,Nod,No,,Yes,"""that's pear""","Neither, could go either way",0,0,0,cup
+S30,30,1,new-house,a car?,Yes,Yes,"""mhm""",Verbal response,,Yes,mhm,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S31,17,3,busy-babies,a bunny?,Yes,Yes,"""puh puh""",Verbal response,,No,,No,,,,,,Yes,"""puh puh""","Neither, could go either way",1,0,1,bunny
+S31,17,3,busy-babies,a bear?,No,Yes,"""buh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,horse
+S31,17,3,busy-babies,a cow?,No,Yes,"""mmm"" ""moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bird
+S31,17,3,busy-babies,a dog?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,dog
+S31,17,3,busy-babies,a horse?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bear
+S31,17,3,busy-babies,a bird?,No,Yes,"""buh""",Verbal response,,No,,No,,,,,,Yes,"""buh""","Neither, could go either way",1,0,1,cow
+S31,17,3,busy-babies,a pig?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,pig
+S31,17,3,busy-babies,a cat?,Yes,Yes,"""ta""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S31,17,3,new-house,a teddy bear?,Yes,Yes,"""oh"" ""oh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,teddy bear
+S31,17,3,new-house,a cup?,No,Yes,"""cah""",Verbal response,,No,,No,,,,,,Yes,"""cah""","Neither, could go either way",0,0,0,block
+S31,17,3,new-house,a ball?,Yes,Yes,"""buh""",Verbal response,,No,,No,,,,,,Yes,"""buh""","Neither, could go either way",0,0,0,ball
+S31,17,3,new-house,a bottle?,Yes,Yes,"""buhbuh""",Verbal response,,No,,No,,,,,,Yes,"""buh buh""","Neither, could go either way",1,0,1,bottle
+S31,17,3,new-house,a car?,No,Yes,"""cah"" ""cah"" ""app""",Verbal response,,No,,No,,,,,,Yes,"""cah"" ""app""","Neither, could go either way",1,0,1,apple
+S31,17,3,new-house,a cookie?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cookie
+S31,17,3,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S31,17,3,new-house,an apple?,No,Yes,"""up""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S32,31,2,new-house,a ball?,No,Yes,"""teddy bear"" *point* ""dammy dammy dammy""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""teddy bear""","Neither, could go either way",0,0,0,teddy bear
+S32,31,2,new-house,a block?,Yes,Yes,"""unintelligible*",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S32,31,2,new-house,a teddy bear?,No,Yes,"""that's teddy bear"" *point* ""mama big high"" ""big high ball""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""teddy bear"" ""big high ball""","Neither, could go either way",0,0,0,ball
+S32,31,2,new-house,a cookie?,No,Yes,"""it's cookie""",Verbal response,,No,,No,,,,,,Yes,"""it's cookie""","Neither, could go either way",0,0,0,bottle
+S32,31,2,new-house,an apple?,Yes,Yes,"""mhm""",Verbal response,,Yes,mhm,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S32,31,2,new-house,a bottle?,No,Yes,"""no"" *point* ""cookie""",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""cookie""","Neither, could go either way",0,0,0,cookie
+S32,31,2,new-house,a cup?,Yes,Yes,"""is cup""",Verbal response,,No,,No,,,,,,Yes,"""cup""","Neither, could go either way",0,0,0,cup
+S32,31,2,new-house,a car?,Yes,Yes,"""that's cool""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S32,31,2,busy-babies,a cat?,No,Yes,"""thats a cat""",Verbal response,,No,,No,,,,,,Yes,"""that's a cat""","Neither, could go either way",0,0,0,bunny
+S32,31,2,busy-babies,a horse?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S32,31,2,busy-babies,a bird?,Yes,Yes,"""its boo""",Verbal response,,No,,No,,,,,,Yes,"""boo""","Neither, could go either way",0,0,0,bird
+S32,31,2,busy-babies,a pig?,No,Yes,"""ish pit""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S32,31,2,busy-babies,a bear?,Yes,Yes,"""that's bear""",Verbal response,,No,,No,,,,,,Yes,"""that's bear""","Neither, could go either way",0,0,0,bear
+S32,31,2,busy-babies,a cow?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S32,31,2,busy-babies,a dog?,No,Yes,"""that's dog""",Verbal response,,No,,No,,,,,,Yes,"""that's dog""","Neither, could go either way",0,0,0,pig
+S32,31,2,busy-babies,a bunny?,No,Yes,"""moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S33,29,3,busy-babies,a bunny?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S33,29,3,busy-babies,a bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S33,29,3,busy-babies,a cow?,No,Yes,"""no"" ""it's a birdie"" ""birdie""",Verbal response,,No,,Yes,No,,,,,Yes,"""birdie""","Neither, could go either way",0,0,0,bird
+S33,29,3,busy-babies,a dog?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S33,29,3,busy-babies,a horse?,No,Yes,"""no, a bear""",Verbal response,,No,,Yes,No,,,,,Yes,"""a bear""","Neither, could go either way",0,0,0,bear
+S33,29,3,busy-babies,a bird?,No,Yes,"""no"" *shook head* ""a horsie""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""a horsie""","Neither, could go either way",0,0,0,cow
+S33,29,3,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S33,29,3,busy-babies,a cat?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S33,29,3,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S33,29,3,new-house,a cup?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S33,29,3,new-house,a ball?,Yes,Yes,"""yeah"" ""it's a green bottle""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""it's a green bottle""","Neither, could go either way",0,0,0,ball
+S33,29,3,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S33,29,3,new-house,a car?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,apple
+S33,29,3,new-house,a cookie?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S33,29,3,new-house,a block?,No,Yes,"""nuh no"" ""it's milk""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's milk""","Neither, could go either way",0,0,0,cup
+S33,29,3,new-house,an apple?,No,Yes,"""mm"" ""it's a car""",Verbal response,,No,,No,,,,,,Yes,"""it's a car""","Neither, could go either way",0,0,0,car
+S34,30,4,new-house,a teddy bear?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,teddy bear
+S34,30,4,new-house,a cup?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S34,30,4,new-house,a ball?,Yes,Yes,"""is it is""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S34,30,4,new-house,a bottle?,Yes,Yes,"""yes it is"" ""that's a bottle""",Verbal response,,Yes,Yes,No,,,,,,Yes,"""that's a bottle""","Neither, could go either way",0,0,0,bottle
+S34,30,4,new-house,a car?,No,Yes,"""no"" ""it's a apple""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a apple""","Neither, could go either way",0,0,0,apple
+S34,30,4,new-house,a cookie?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Thumbs up,No,,,,"Neither, could go either way",0,0,0,cookie
+S34,30,4,new-house,a block?,No,Yes,"""no"" ""it's a cup""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a cup""","Neither, could go either way",0,0,0,cup
+S34,30,4,new-house,an apple?,No,Yes,"""no"" ""it's a car""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a car""",A false trial,0,0,0,car
+S34,30,4,busy-babies,a bunny?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bunny
+S34,30,4,busy-babies,a bear?,No,Yes,"""a horse""",Verbal response,,No,,No,,,,,,Yes,"""a horse""",A false trial,0,0,0,horse
+S34,30,4,busy-babies,a cow?,No,Yes,"""no it's a bird""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a bird""","Neither, could go either way",0,0,0,bird
+S34,30,4,busy-babies,a dog?,Yes,Yes,"""na"" *nod*",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,dog
+S34,30,4,busy-babies,a horse?,No,Yes,"""a bear""",Verbal response,,No,,No,,,,,,Yes,"""a bear""",A false trial,0,0,0,bear
+S34,30,4,busy-babies,a bird?,No,Yes,"""a cow""",Verbal response,,No,,No,,,,,,Yes,"""a cow""","Neither, could go either way",0,0,0,cow
+S34,30,4,busy-babies,a pig?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,pig
+S34,30,4,busy-babies,a cat?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cat
+S35,30,2,new-house,a ball?,No,Yes,"""yes"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yes,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,teddy bear
+S35,30,2,new-house,a block?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,block
+S35,30,2,new-house,a teddy bear?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,ball
+S35,30,2,new-house,a cookie?,No,Yes,"""milk""",Verbal response,,No,,No,,,,,,Yes,"""milk""","Neither, could go either way",0,0,0,bottle
+S35,30,2,new-house,an apple?,Yes,Yes,"*nod* ""apple""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S35,30,2,new-house,a bottle?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cookie
+S35,30,2,new-house,a cup?,Yes,Yes,"*point* ""yes""",Both verbal and non-verbal responses,Nonverbal first,Yes,Yes,No,,Yes,point,No,,Yes,"""milk""","Neither, could go either way",0,0,0,cup
+S35,30,2,new-house,a car?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,car
+S35,30,2,busy-babies,a cat?,No,Yes,"""that's a walleh""",Verbal response,,No,,No,,,,,,Yes,"""that's a walleh""","Neither, could go either way",0,0,0,bunny
+S35,30,2,busy-babies,a horse?,Yes,Yes,"*point* ""yes""",Both verbal and non-verbal responses,Nonverbal first,Yes,Yes,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,horse
+S35,30,2,busy-babies,a bird?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,A false trial,0,0,0,bird
+S35,30,2,busy-babies,a pig?,No,Yes,"""that's dog"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""that's dog""","Neither, could go either way",0,0,0,dog
+S35,30,2,busy-babies,a bear?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S35,30,2,busy-babies,a cow?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cow
+S35,30,2,busy-babies,a dog?,No,Yes,"""a pig""",Verbal response,,No,,No,,,,,,Yes,"""a pig""","Neither, could go either way",0,0,0,pig
+S35,30,2,busy-babies,a bunny?,No,Yes,"""no"" *point* ""it's a kitty cat""",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""it's a kitty cat""","Neither, could go either way",0,0,0,cat
+S36,32,1,busy-babies,a cat?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S36,32,1,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S36,32,1,busy-babies,a bird?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S36,32,1,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S36,32,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S36,32,1,busy-babies,a cow?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cow
+S36,32,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S36,32,1,busy-babies,a bunny?,No,Yes,"""no"" ""it's a cat""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a cat""","Neither, could go either way",0,0,0,cat
+S36,32,1,new-house,a ball?,No,Yes,"""No"" ""bear""",Verbal response,,No,,Yes,No,,,,,Yes,"""bear""","Neither, could go either way",0,0,0,teddy bear
+S36,32,1,new-house,a block?,Yes,Yes,"""box""",Verbal response,,No,,No,,,,,,Yes,"""box""","Neither, could go either way",0,0,0,block
+S36,32,1,new-house,a teddy bear?,No,Yes,"""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S36,32,1,new-house,a cookie?,No,Yes,"""nope""",Verbal response,,No,,Yes,nope,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S36,32,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S36,32,1,new-house,a bottle?,No,Yes,"""no, cookies""",Verbal response,,No,,Yes,No,,,,,Yes,"""cookies""","Neither, could go either way",0,0,0,cookie
+S36,32,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S36,32,1,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S37,30,3,busy-babies,a bunny?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S37,30,3,busy-babies,a bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S37,30,3,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S37,30,3,busy-babies,a dog?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S37,30,3,busy-babies,a horse?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S37,30,3,busy-babies,a bird?,No,Yes,"""no, that is cat""",Verbal response,,No,,Yes,No,,,,,Yes,"""that is cat""","Neither, could go either way",0,0,0,cow
+S37,30,3,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S37,30,3,busy-babies,a cat?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S37,30,3,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S37,30,3,new-house,a cup?,No,Yes,"""yeah, that is cab""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""that is cab""","Neither, could go either way",0,0,0,block
+S37,30,3,new-house,a ball?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S37,30,3,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S37,30,3,new-house,a car?,No,Yes,"""no, that is a cah apple""",Verbal response,,No,,Yes,No,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S37,30,3,new-house,a cookie?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S37,30,3,new-house,a block?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cup
+S37,30,3,new-house,an apple?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S38,31,4,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S38,31,4,new-house,a cup?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,block
+S38,31,4,new-house,a ball?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,ball
+S38,31,4,new-house,a bottle?,Yes,Yes,"""ye"" ""yes"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yes,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bottle
+S38,31,4,new-house,a car?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,apple
+S38,31,4,new-house,a cookie?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cookie
+S38,31,4,new-house,a block?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cup
+S38,31,4,new-house,an apple?,No,Yes,"""no"" *shook head* *clap*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,car
+S38,31,4,busy-babies,a bunny?,Yes,Yes,"""ya""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S38,31,4,busy-babies,a bear?,No,Yes,"""it's a horse""",Verbal response,,No,,No,,,,,,Yes,"""it's a horse""","Neither, could go either way",0,0,0,horse
+S38,31,4,busy-babies,a cow?,No,Yes,"""no"" *shook head* ""it bar""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,No,,Yes,"""it bar""","Neither, could go either way",0,0,0,bird
+S38,31,4,busy-babies,a dog?,Yes,Yes,"""da""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S38,31,4,busy-babies,a horse?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S38,31,4,busy-babies,a bird?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S38,31,4,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S38,31,4,busy-babies,a cat?,Yes,Yes,unintelligible,Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S39,29,1,busy-babies,a cat?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S39,29,1,busy-babies,a horse?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S39,29,1,busy-babies,a bird?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S39,29,1,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S39,29,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S39,29,1,busy-babies,a cow?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S39,29,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S39,29,1,busy-babies,a bunny?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cat
+S39,29,1,new-house,a ball?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S39,29,1,new-house,a block?,Yes,Yes,"""yeah"" *nods*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,block
+S39,29,1,new-house,a teddy bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,ball
+S39,29,1,new-house,a cookie?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S39,29,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S39,29,1,new-house,a bottle?,No,Yes," ""no"" *shook head* ""cookies""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""cookies""","Neither, could go either way",0,0,0,cookie
+S39,29,1,new-house,a cup?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,cup
+S39,29,1,new-house,a car?,Yes,Yes,"""yah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S40,19,4,new-house,a teddy bear?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,teddy bear
+S40,19,4,new-house,a cup?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,block
+S40,19,4,new-house,a ball?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,A false trial,0,0,0,ball
+S40,19,4,new-house,a bottle?,Yes,,,,,,,,,,,,,,,,0,1,1,bottle
+S40,19,4,new-house,a car?,No,,,,,,,,,,,,,,,,0,1,1,apple
+S40,19,4,new-house,a cookie?,Yes,,,,,,,,,,,,,,,,0,1,1,cookie
+S40,19,4,new-house,a block?,No,,,,,,,,,,,,,,,,0,1,1,cup
+S40,19,4,new-house,an apple?,No,,,,,,,,,,,,,,,,0,1,1,car
+S40,19,4,busy-babies,a bunny?,Yes,,,,,,,,,,,,,,,,1,1,1,bunny
+S40,19,4,busy-babies,a bear?,No,,,,,,,,,,,,,,,,0,1,1,horse
+S40,19,4,busy-babies,a cow?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,A false trial,0,0,0,bird
+S40,19,4,busy-babies,a dog?,Yes,,,,,,,,,,,,,,,,0,1,1,dog
+S40,19,4,busy-babies,a horse?,No,,,,,,,,,,,,,,,,0,1,1,bear
+S40,19,4,busy-babies,a bird?,No,,,,,,,,,,,,,,,,0,1,1,cow
+S40,19,4,busy-babies,a pig?,Yes,,,,,,,,,,,,,,,,1,1,1,pig
+S40,19,4,busy-babies,a cat?,Yes,,,,,,,,,,,,,,,,0,1,1,cat
+S41,17,1,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S41,17,1,busy-babies,a horse?,Yes,Yes,"""aaahhh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S41,17,1,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S41,17,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S41,17,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S41,17,1,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S41,17,1,busy-babies,a dog?,No,Yes,"""black""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S41,17,1,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S41,17,1,new-house,a ball?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S41,17,1,new-house,a block?,Yes,Yes,"""do bah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S41,17,1,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,ball
+S41,17,1,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S41,17,1,new-house,an apple?,Yes,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S41,17,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S41,17,1,new-house,a cup?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S41,17,1,new-house,a car?,Yes,Yes,"""a car""",Verbal response,,No,,No,,,,,,Yes,"""a car""","Neither, could go either way",0,0,0,car
+S42,19,2,new-house,a ball?,No,Yes,"*point* ""puh""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""puh""","Neither, could go either way",0,0,0,teddy bear
+S42,19,2,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,block
+S42,19,2,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S42,19,2,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S42,19,2,new-house,an apple?,Yes,Yes,"*point* ""nuh""",Both verbal and non-verbal responses,Nonverbal first,No,,Yes,Nah,Yes,point,No,,No,,A false trial,0,0,0,apple
+S42,19,2,new-house,a bottle?,No,Yes,"*point* ""ack"" ""eat""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,A false trial,0,0,0,cookie
+S42,19,2,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S42,19,2,new-house,a car?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,A false trial,0,0,0,car
+S42,19,2,busy-babies,a cat?,No,Yes,"""hah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S42,19,2,busy-babies,a horse?,Yes,Yes,"""dah"" ""kah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S42,19,2,busy-babies,a bird?,Yes,Yes,"""choo choo train""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S42,19,2,busy-babies,a pig?,No,Yes,"*point* ""puh kuh""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,dog
+S42,19,2,busy-babies,a bear?,Yes,Yes,"""cookie""",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,bear
+S42,19,2,busy-babies,a cow?,Yes,Yes,"*point* ""yah""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cow
+S42,19,2,busy-babies,a dog?,No,Yes,"*point* ""cod""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,pig
+S42,19,2,busy-babies,a bunny?,No,Yes,"""bain""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S43,30,2,new-house,a ball?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",0,0,0,teddy bear
+S43,30,2,new-house,a block?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,block
+S43,30,2,new-house,a teddy bear?,No,Yes,"*shook head* ""is that the ball""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,"""is that the ball""","Neither, could go either way",0,0,0,ball
+S43,30,2,new-house,a cookie?,No,Yes,"*shook head* ""to the bottle""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,"""the bottle""","Neither, could go either way",0,0,0,bottle
+S43,30,2,new-house,an apple?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,apple
+S43,30,2,new-house,a bottle?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",0,0,0,cookie
+S43,30,2,new-house,a cup?,Yes,Yes,"*nod* ""it's water""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,Yes,"""water""","Neither, could go either way",0,0,0,cup
+S43,30,2,new-house,a car?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,car
+S43,30,2,busy-babies,a cat?,No,Yes,"*nod* *shook head* ""it's a bunny""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,Nod,Yes,Shook head,Yes,"""it's a bunny""","Neither, could go either way",0,0,0,bunny
+S43,30,2,busy-babies,a horse?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,horse
+S43,30,2,busy-babies,a bird?,Yes,Yes,"*nod* ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S43,30,2,busy-babies,a pig?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",0,0,0,dog
+S43,30,2,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S43,30,2,busy-babies,a cow?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cow
+S43,30,2,busy-babies,a dog?,No,Yes,"*shook head* ""that's pink""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,No,,Yes,Shook head,Yes,"""that's pink""","Neither, could go either way",0,0,0,pig
+S43,30,2,busy-babies,a bunny?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cat
+S44,26,4,new-house,a teddy bear?,Yes,Yes,"""dog"" *point*",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""dog""","Neither, could go either way",0,0,0,teddy bear
+S44,26,4,new-house,a cup?,No,Yes,"""oh here"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,block
+S44,26,4,new-house,a ball?,Yes,Yes,"""what's that what's that"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,ball
+S44,26,4,new-house,a bottle?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S44,26,4,new-house,a car?,No,Yes,"""apple"" *point* ""it's apple""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S44,26,4,new-house,a cookie?,Yes,Yes,*point* *point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,cookie
+S44,26,4,new-house,a block?,No,Yes,"""there"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cup
+S44,26,4,new-house,an apple?,No,Yes,"""oh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S44,26,4,busy-babies,a bunny?,Yes,Yes,"""hapa""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S44,26,4,busy-babies,a bear?,No,Yes,"""horse""",Verbal response,,No,,No,,,,,,Yes,"""horse""","Neither, could go either way",0,0,0,horse
+S44,26,4,busy-babies,a cow?,No,Yes,"""growl""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S44,26,4,busy-babies,a dog?,Yes,Yes,"""ruff""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S44,26,4,busy-babies,a horse?,No,Yes,"""bear""",Verbal response,,No,,No,,,,,,Yes,"""bear""","Neither, could go either way",0,0,0,bear
+S44,26,4,busy-babies,a bird?,No,Yes,"""uhhh"" ""how""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S44,26,4,busy-babies,a pig?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S44,26,4,busy-babies,a cat?,Yes,Yes,unintelligible,Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S45,21,1,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S45,21,1,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S45,21,1,busy-babies,a bird?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S45,21,1,busy-babies,a pig?,No,Yes,"""nnn""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S45,21,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S45,21,1,busy-babies,a cow?,Yes,Yes,"""nuh""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,cow
+S45,21,1,busy-babies,a dog?,No,Yes,"""nnn""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S45,21,1,busy-babies,a bunny?,No,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,cat
+S45,21,1,new-house,a ball?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S45,21,1,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S45,21,1,new-house,a teddy bear?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S45,21,1,new-house,a cookie?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S45,21,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S45,21,1,new-house,a bottle?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S45,21,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S45,21,1,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S46,30,3,busy-babies,a bunny?,Yes,Yes,"""bunny""",Verbal response,,No,,No,,,,,,Yes,"""bunny""","Neither, could go either way",0,0,0,bunny
+S46,30,3,busy-babies,a bear?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,horse
+S46,30,3,busy-babies,a cow?,No,Yes,"""not cow"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,not,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bird
+S46,30,3,busy-babies,a dog?,Yes,Yes,"""yeah dog""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""dog""","Neither, could go either way",0,0,0,dog
+S46,30,3,busy-babies,a horse?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S46,30,3,busy-babies,a bird?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S46,30,3,busy-babies,a pig?,Yes,Yes,"""pink""",Verbal response,,No,,No,,,,,,Yes,"""pink""","Neither, could go either way",0,0,0,pig
+S46,30,3,busy-babies,a cat?,Yes,Yes,"""cat""",Verbal response,,No,,No,,,,,,Yes,"""cat""","Neither, could go either way",0,0,0,cat
+S46,30,3,new-house,a teddy bear?,Yes,Yes,"""cah""",Verbal response,,No,,No,,,,,,Yes,"""cah""","Neither, could go either way",0,0,0,teddy bear
+S46,30,3,new-house,a cup?,No,Yes,"""cup""",Verbal response,,No,,No,,,,,,Yes,"""cup""","Neither, could go either way",0,0,0,block
+S46,30,3,new-house,a ball?,Yes,Yes,"""ball"" ""yeah, ball""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S46,30,3,new-house,a bottle?,Yes,Yes,"""ondo""",Verbal response,,No,,No,,,,,,Yes,"""ondo""","Neither, could go either way",0,0,0,bottle
+S46,30,3,new-house,a car?,No,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S46,30,3,new-house,a cookie?,Yes,,,,,,,,,,,,,,,,0,1,1,cookie
+S46,30,3,new-house,a block?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cup
+S46,30,3,new-house,an apple?,No,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,car
+S47,19,3,busy-babies,a bunny?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bunny
+S47,19,3,busy-babies,a bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S47,19,3,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S47,19,3,busy-babies,a dog?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,dog
+S47,19,3,busy-babies,a horse?,No,Yes,"""down""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bear
+S47,19,3,busy-babies,a bird?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S47,19,3,busy-babies,a pig?,Yes,Yes,"""no"" ""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S47,19,3,busy-babies,a cat?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cat
+S47,19,3,new-house,a teddy bear?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,teddy bear
+S47,19,3,new-house,a cup?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S47,19,3,new-house,a ball?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,ball
+S47,19,3,new-house,a bottle?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S47,19,3,new-house,a car?,No,Yes,"""no"" *point*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,point,No,,"Neither, could go either way",0,0,0,apple
+S47,19,3,new-house,a cookie?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,cookie
+S47,19,3,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cup
+S47,19,3,new-house,an apple?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S48,17,2,new-house,a ball?,No,Yes,"""baba""",Verbal response,,No,,No,,,,,,Yes,"""baba""","Neither, could go either way",0,0,0,teddy bear
+S48,17,2,new-house,a block?,Yes,Yes,"""mop""",Verbal response,,No,,No,,,,,,Yes,"""mop""","Neither, could go either way",0,0,0,block
+S48,17,2,new-house,a teddy bear?,No,Yes,"""mama""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S48,17,2,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S48,17,2,new-house,an apple?,Yes,Yes,"""app""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S48,17,2,new-house,a bottle?,No,Yes,"""ma""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S48,17,2,new-house,a cup?,Yes,Yes,"""ba""",Verbal response,,No,,No,,,,,,Yes,"""ba""","Neither, could go either way",0,0,0,cup
+S48,17,2,new-house,a car?,Yes,Yes,"""boo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S48,17,2,busy-babies,a cat?,No,Yes,"""mama""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S48,17,2,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S48,17,2,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S48,17,2,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S48,17,2,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S48,17,2,busy-babies,a cow?,Yes,Yes,"""mama""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S48,17,2,busy-babies,a dog?,No,Yes,"""mama'",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,pig
+S48,17,2,busy-babies,a bunny?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S49,19,4,new-house,a teddy bear?,Yes,Yes,"""book""",Verbal response,,No,,No,,,,,,Yes,"""book""","Neither, could go either way",1,0,1,teddy bear
+S49,19,4,new-house,a cup?,No,Yes,"""gub"" ""guk""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S49,19,4,new-house,a ball?,Yes,Yes,"""bah""",Verbal response,,No,,No,,,,,,Yes,"""bah""","Neither, could go either way",0,0,0,ball
+S49,19,4,new-house,a bottle?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S49,19,4,new-house,a car?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S49,19,4,new-house,a cookie?,Yes,Yes,"""gaga""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S49,19,4,new-house,a block?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cup
+S49,19,4,new-house,an apple?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S49,19,4,busy-babies,a bunny?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S49,19,4,busy-babies,a bear?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,horse
+S49,19,4,busy-babies,a cow?,No,Yes,"""guh"" ""moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bird
+S49,19,4,busy-babies,a dog?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S49,19,4,busy-babies,a horse?,No,Yes,"""shoe shoe shoe shoe""",Verbal response,,No,,No,,,,,,Yes,"""shoe""","Neither, could go either way",1,0,1,bear
+S49,19,4,busy-babies,a bird?,No,Yes,"""ship""",Verbal response,,No,,No,,,,,,Yes,"""ship""","Neither, could go either way",0,0,0,cow
+S49,19,4,busy-babies,a pig?,Yes,Yes,"""baby"" ""baby""",Verbal response,,No,,No,,,,,,Yes,"""baby""","Neither, could go either way",1,0,1,pig
+S49,19,4,busy-babies,a cat?,Yes,Yes,"""meow"" ""kati""",Verbal response,,No,,No,,,,,,Yes,"""kati""","Neither, could go either way",0,0,0,cat
+S50,32,4,new-house,a teddy bear?,Yes,Yes,"""no it's a moon""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a moon""","Neither, could go either way",0,0,0,teddy bear
+S50,32,4,new-house,a cup?,No,Yes,"""no"" *shook head* ""it's a moon""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""it's a moon""","Neither, could go either way",0,0,0,block
+S50,32,4,new-house,a ball?,Yes,Yes,"""no"" *point* ""it's a green ball"" ",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,point,No,,Yes,"""it's a green ball""","Neither, could go either way",0,0,0,ball
+S50,32,4,new-house,a bottle?,Yes,Yes,"""no it's a milk""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a milk""","Neither, could go either way",0,0,0,bottle
+S50,32,4,new-house,a car?,No,Yes,"""no it's a apple""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a apple""","Neither, could go either way",0,0,0,apple
+S50,32,4,new-house,a cookie?,Yes,Yes,"""uh""",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,cookie
+S50,32,4,new-house,a block?,No,Yes,"""no it's a water""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a water""","Neither, could go either way",0,0,0,cup
+S50,32,4,new-house,an apple?,No,Yes,"""no it's a car""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a car""",A false trial,0,0,0,car
+S50,32,4,busy-babies,a bunny?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S50,32,4,busy-babies,a bear?,No,Yes,"""no it's a horse""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a horse""","Neither, could go either way",0,0,0,horse
+S50,32,4,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,bird
+S50,32,4,busy-babies,a dog?,Yes,Yes,"""hehe"" ""nah kitty""",Verbal response,,No,,Yes,Nah,,,,,Yes,"""kitty""","Neither, could go either way",0,0,0,dog
+S50,32,4,busy-babies,a horse?,No,Yes,"""no, it's a bear""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a bear""","Neither, could go either way",0,0,0,bear
+S50,32,4,busy-babies,a bird?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,cow
+S50,32,4,busy-babies,a pig?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S50,32,4,busy-babies,a cat?,Yes,Yes,"""diggy""",Verbal response,,No,,No,,,,,,Yes,"""diggy""","Neither, could go either way",0,0,0,cat
+S51,23,1,busy-babies,a cat?,No,,,,,,,,,,,,,,,,0,1,1,bunny
+S51,23,1,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S51,23,1,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S51,23,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S51,23,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bear
+S51,23,1,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S51,23,1,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S51,23,1,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S51,23,1,new-house,a ball?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S51,23,1,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S51,23,1,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S51,23,1,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S51,23,1,new-house,an apple?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S51,23,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S51,23,1,new-house,a cup?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S51,23,1,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S52,16,1,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S52,16,1,busy-babies,a horse?,Yes,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",1,0,1,horse
+S52,16,1,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bird
+S52,16,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,dog
+S52,16,1,busy-babies,a bear?,Yes,Yes,"""yeay""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bear
+S52,16,1,busy-babies,a cow?,Yes,Yes,"""cow""",Verbal response,,No,,No,,,,,,Yes,"""cow""","Neither, could go either way",1,0,1,cow
+S52,16,1,busy-babies,a dog?,No,Yes,"""caw caw caw caw"" *flap arms*",Both verbal and non-verbal responses,Same time,No,,No,,No,,No,,No,,"Neither, could go either way",0,0,0,pig
+S52,16,1,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cat
+S52,16,1,new-house,a ball?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S52,16,1,new-house,a block?,Yes,Yes,"""bock"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""bock""","Neither, could go either way",0,0,0,block
+S52,16,1,new-house,a teddy bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,ball
+S52,16,1,new-house,a cookie?,No,Yes,"""a green""",Verbal response,,No,,No,,,,,,Yes,"""a green""","Neither, could go either way",0,0,0,bottle
+S52,16,1,new-house,an apple?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,apple
+S52,16,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S52,16,1,new-house,a cup?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,cup
+S52,16,1,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S53,25,3,busy-babies,a bunny?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,bunny
+S53,25,3,busy-babies,a bear?,No,Yes,"""horse"" ""horse""",Verbal response,,No,,No,,,,,,Yes,"""horse""","Neither, could go either way",0,0,0,horse
+S53,25,3,busy-babies,a cow?,No,Yes,"""chicken""""chicken"" ""mhm"" ""baby chicken""",Verbal response,,Yes,mhm,No,,,,,,Yes,"""chicken""","Neither, could go either way",0,0,0,bird
+S53,25,3,busy-babies,a dog?,Yes,Yes,"""guo guo""",Verbal response,,No,,No,,,,,,Yes,"""guo guo"" (Grasshopper in Chinese)","Neither, could go either way",0,0,0,dog
+S53,25,3,busy-babies,a horse?,No,Yes,"""hey"" ""hehe""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S53,25,3,busy-babies,a bird?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S53,25,3,busy-babies,a pig?,Yes,Yes,"""blick"" ""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S53,25,3,busy-babies,a cat?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S53,25,3,new-house,a teddy bear?,Yes,Yes,"*point* ""bear""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""bear""","Neither, could go either way",1,0,1,teddy bear
+S53,25,3,new-house,a cup?,No,Yes,"*point* ""big"" ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""big""","Neither, could go either way",0,0,0,block
+S53,25,3,new-house,a ball?,Yes,Yes,"""mm"" ""mm"" ""mm"" ""mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S53,25,3,new-house,a bottle?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",1,0,1,bottle
+S53,25,3,new-house,a car?,No,Yes,"*point* ""pingguo""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""pingguo"" (Chinese for apple)","Neither, could go either way",0,0,0,apple
+S53,25,3,new-house,a cookie?,Yes,Yes,"""cookie"" ""daddy""",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",1,0,1,cookie
+S53,25,3,new-house,a block?,No,Yes,"""bawk""",Verbal response,,No,,No,,,,,,Yes,"""bawk""","Neither, could go either way",0,0,0,cup
+S53,25,3,new-house,an apple?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S54,25,4,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S54,25,4,new-house,a cup?,No,Yes,"*point* ""unintelligible"" *point* ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""unintelligible""","Neither, could go either way",0,0,0,block
+S54,25,4,new-house,a ball?,Yes,Yes,"""wih"" ""wee""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S54,25,4,new-house,a bottle?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S54,25,4,new-house,a car?,No,Yes,"*point* ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""unintelligible""","Neither, could go either way",0,0,0,apple
+S54,25,4,new-house,a cookie?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S54,25,4,new-house,a block?,No,Yes,"""cup"" *point* ""my cup""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""my cup""","Neither, could go either way",0,0,0,cup
+S54,25,4,new-house,an apple?,No,Yes,"*point* ""a car""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""a car""","Neither, could go either way",0,0,0,car
+S54,25,4,busy-babies,a bunny?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bunny
+S54,25,4,busy-babies,a bear?,No,Yes,"*point* ""unintelligible""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""unintelligible""","Neither, could go either way",0,0,0,horse
+S54,25,4,busy-babies,a cow?,No,Yes,"""moo"" ""moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S54,25,4,busy-babies,a dog?,Yes,Yes,"""I know that"" ""guo guo""",Verbal response,,No,,No,,,,,,Yes,"""guo guo""","Neither, could go either way",1,0,1,dog
+S54,25,4,busy-babies,a horse?,No,Yes,"""cookie""",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,bear
+S54,25,4,busy-babies,a bird?,No,Yes,"""cow""",Verbal response,,No,,No,,,,,,Yes,"""cow""","Neither, could go either way",1,0,1,cow
+S54,25,4,busy-babies,a pig?,Yes,Yes,"""oh oh oh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S54,25,4,busy-babies,a cat?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S55,18,3,busy-babies,a bunny?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,bunny
+S55,18,3,busy-babies,a bear?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,horse
+S55,18,3,busy-babies,a cow?,No,Yes,*point* *nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bird
+S55,18,3,busy-babies,a dog?,Yes,Yes,"*point* ""cop"" ""cop"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""cop""","Neither, could go either way",0,0,0,dog
+S55,18,3,busy-babies,a horse?,No,Yes,"*point* ""wop""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""wop""","Neither, could go either way",1,0,1,bear
+S55,18,3,busy-babies,a bird?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,cow
+S55,18,3,busy-babies,a pig?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,pig
+S55,18,3,busy-babies,a cat?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cat
+S55,18,3,new-house,a teddy bear?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,teddy bear
+S55,18,3,new-house,a cup?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,block
+S55,18,3,new-house,a ball?,Yes,Yes,"*nod* ""ball""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S55,18,3,new-house,a bottle?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bottle
+S55,18,3,new-house,a car?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,apple
+S55,18,3,new-house,a cookie?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,cookie
+S55,18,3,new-house,a block?,No,Yes,"""bof"" *nod*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,Nod,No,,Yes,"""bof""","Neither, could go either way",0,0,0,cup
+S55,18,3,new-house,an apple?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,car
+S56,26,2,new-house,a ball?,No,,,,,,,,,,,,,,,,0,1,1,teddy bear
+S56,26,2,new-house,a block?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,block
+S56,26,2,new-house,a teddy bear?,No,Yes,"""ball"" ""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S56,26,2,new-house,a cookie?,No,Yes,"""me me"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""me me""","Neither, could go either way",0,0,0,bottle
+S56,26,2,new-house,an apple?,Yes,Yes,"""apple"" *nod*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S56,26,2,new-house,a bottle?,No,Yes,"""book"" ""no""",Verbal response,,No,,Yes,No,,,,,Yes,"""book""","Neither, could go either way",0,0,0,cookie
+S56,26,2,new-house,a cup?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cup
+S56,26,2,new-house,a car?,Yes,Yes,"""that's a car""",Verbal response,,No,,No,,,,,,Yes,"""that's a car""","Neither, could go either way",0,0,0,car
+S56,26,2,busy-babies,a cat?,No,Yes,"""no"" *shook head* ""a rabbit""",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,No,,Yes,Shook head,Yes,"""a rabbit""","Neither, could go either way",0,0,0,bunny
+S56,26,2,busy-babies,a horse?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S56,26,2,busy-babies,a bird?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bird
+S56,26,2,busy-babies,a pig?,No,Yes,"""oh no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S56,26,2,busy-babies,a bear?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,bear
+S56,26,2,busy-babies,a cow?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cow
+S56,26,2,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,pig
+S56,26,2,busy-babies,a bunny?,No,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cat
+S57,22,2,new-house,a ball?,No,Yes,"""teddy bear""",Verbal response,,No,,No,,,,,,Yes,"""teddy bear""","Neither, could go either way",0,0,0,teddy bear
+S57,22,2,new-house,a block?,Yes,Yes,"*nod* ""block""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,Nod,No,,Yes,"""block""","Neither, could go either way",0,0,0,block
+S57,22,2,new-house,a teddy bear?,No,Yes,"""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S57,22,2,new-house,a cookie?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S57,22,2,new-house,an apple?,Yes,Yes,"""apple"" ""no"" ""no""",Verbal response,,No,,Yes,No,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S57,22,2,new-house,a bottle?,No,Yes,"""bake"" ""mock"" ""bake""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S57,22,2,new-house,a cup?,Yes,Yes,"""app"" *nod*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,Nod,No,,Yes,"""app""","Neither, could go either way",0,0,0,cup
+S57,22,2,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S57,22,2,busy-babies,a cat?,No,Yes,"""bunny""",Verbal response,,No,,No,,,,,,Yes,"""bunny""","Neither, could go either way",0,0,0,bunny
+S57,22,2,busy-babies,a horse?,Yes,Yes,"""neigh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S57,22,2,busy-babies,a bird?,Yes,Yes,"""bot""",Verbal response,,No,,No,,,,,,Yes,"""bot""","Neither, could go either way",0,0,0,bird
+S57,22,2,busy-babies,a pig?,No,Yes,"""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,dog
+S57,22,2,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S57,22,2,busy-babies,a cow?,Yes,Yes,"""top""",Verbal response,,No,,No,,,,,,Yes,"""top""","Neither, could go either way",0,0,0,cow
+S57,22,2,busy-babies,a dog?,No,Yes,"""piggy""",Verbal response,,No,,No,,,,,,Yes,"""piggy""","Neither, could go either way",0,0,0,pig
+S57,22,2,busy-babies,a bunny?,No,Yes,"""okay""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S58,25,3,busy-babies,a bunny?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S58,25,3,busy-babies,a bear?,No,Yes,"""no"" *sign horse*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,sign horse,No,,Yes,horse (in sign),A false trial,0,0,0,horse
+S58,25,3,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S58,25,3,busy-babies,a dog?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S58,25,3,busy-babies,a horse?,No,Yes,"""nuh"" ""buh""",Verbal response,,No,,Yes,Nah,,,,,Yes,"""buh"" (bear)",A false trial,0,0,0,bear
+S58,25,3,busy-babies,a bird?,No,Yes,"""no"" ""moo""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cow
+S58,25,3,busy-babies,a pig?,Yes,Yes,"""yeah"" *point* ""pig""",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,point,No,,Yes,"""pig""","Neither, could go either way",0,0,0,pig
+S58,25,3,busy-babies,a cat?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S58,25,3,new-house,a teddy bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S58,25,3,new-house,a cup?,No,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,block
+S58,25,3,new-house,a ball?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,ball
+S58,25,3,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S58,25,3,new-house,a car?,No,Yes,"""no"" *point* ""apple"" ""apple""",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S58,25,3,new-house,a cookie?,Yes,Yes,"""eat goo"" ",Verbal response,,No,,No,,,,,,Yes,"""goo"" (cookie)","Neither, could go either way",0,0,0,cookie
+S58,25,3,new-house,a block?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S58,25,3,new-house,an apple?,No,Yes,"""no"" ""cah"" (car)",Verbal response,,No,,Yes,No,,,,,Yes,"""cah"" (car)","Neither, could go either way",0,0,0,car
+S59,32,1,busy-babies,a cat?,No,Yes,"""no"" *shook head* ""bunny""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""bunny""","Neither, could go either way",0,0,0,bunny
+S59,32,1,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S59,32,1,busy-babies,a bird?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S59,32,1,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S59,32,1,busy-babies,a bear?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S59,32,1,busy-babies,a cow?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S59,32,1,busy-babies,a dog?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,pig
+S59,32,1,busy-babies,a bunny?,No,Yes,"""kitty cat""",Verbal response,,No,,No,,,,,,Yes,"""kitty cat""","Neither, could go either way",0,0,0,cat
+S59,32,1,new-house,a ball?,No,Yes,"""a bear""",Verbal response,,No,,No,,,,,,Yes,"""a bear""","Neither, could go either way",0,0,0,teddy bear
+S59,32,1,new-house,a block?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S59,32,1,new-house,a teddy bear?,No,Yes,"""a ball""",Verbal response,,No,,No,,,,,,Yes,"""a ball""","Neither, could go either way",0,0,0,ball
+S59,32,1,new-house,a cookie?,No,Yes,"""um mut""",Verbal response,,No,,No,,,,,,Yes,"""um mut""","Neither, could go either way",0,0,0,bottle
+S59,32,1,new-house,an apple?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S59,32,1,new-house,a bottle?,No,Yes,"""a cookie""",Verbal response,,No,,No,,,,,,Yes,"""a cookie""","Neither, could go either way",0,0,0,cookie
+S59,32,1,new-house,a cup?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S59,32,1,new-house,a car?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S60,24,3,busy-babies,a bunny?,Yes,Yes,"""buh"" ""ah bah""",Verbal response,,No,,No,,,,,,Yes,"""ah bah""",A false trial,0,0,0,bunny
+S60,24,3,busy-babies,a bear?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S60,24,3,busy-babies,a cow?,No,Yes,"""how""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S60,24,3,busy-babies,a dog?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S60,24,3,busy-babies,a horse?,No,,,,,,,,,,,,,,,,0,1,1,bear
+S60,24,3,busy-babies,a bird?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,cow
+S60,24,3,busy-babies,a pig?,Yes,,,,,,,,,,,,,,,,0,1,1,pig
+S60,24,3,busy-babies,a cat?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S60,24,3,new-house,a teddy bear?,Yes,Yes,"""buh"" *point* ""big bird""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""buh""","Neither, could go either way",0,0,0,teddy bear
+S60,24,3,new-house,a cup?,No,Yes,"""gah""",Verbal response,,No,,No,,,,,,Yes,"""gah""","Neither, could go either way",0,0,0,block
+S60,24,3,new-house,a ball?,Yes,Yes,"""a frog""",Verbal response,,No,,No,,,,,,Yes,"""a frog""","Neither, could go either way",0,0,0,ball
+S60,24,3,new-house,a bottle?,Yes,Yes,"""yeah a bottle""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""a bottle""","Neither, could go either way",0,0,0,bottle
+S60,24,3,new-house,a car?,No,Yes,"""a car""",Verbal response,,No,,No,,,,,,Yes,"""a car""","Neither, could go either way",0,0,0,apple
+S60,24,3,new-house,a cookie?,Yes,Yes,"""yeah cookie""",Verbal response,,Yes,Yah,No,,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,cookie
+S60,24,3,new-house,a block?,No,Yes,"""mwalk"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""mwalk""","Neither, could go either way",0,0,0,cup
+S60,24,3,new-house,an apple?,No,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,car
+S61,18,3,busy-babies,a bunny?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bunny
+S61,18,3,busy-babies,a bear?,No,Yes,"""bah""",Verbal response,,No,,No,,,,,,Yes,"""bah""","Neither, could go either way",0,0,0,horse
+S61,18,3,busy-babies,a cow?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S61,18,3,busy-babies,a dog?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S61,18,3,busy-babies,a horse?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S61,18,3,busy-babies,a bird?,No,Yes,"""da da da""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S61,18,3,busy-babies,a pig?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S61,18,3,busy-babies,a cat?,Yes,Yes,"""meow meow""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S61,18,3,new-house,a teddy bear?,Yes,Yes,"""rahhh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,teddy bear
+S61,18,3,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S61,18,3,new-house,a ball?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,ball
+S61,18,3,new-house,a bottle?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S61,18,3,new-house,a car?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S61,18,3,new-house,a cookie?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,cookie
+S61,18,3,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S61,18,3,new-house,an apple?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S63,21,2,new-house,a ball?,No,Yes,"""woah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S63,21,2,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S63,21,2,new-house,a teddy bear?,No,Yes,"""birdie""",Verbal response,,No,,No,,,,,,Yes,"""birdie""","Neither, could go either way",0,0,0,ball
+S63,21,2,new-house,a cookie?,No,Yes,"""cookie"" ""milk""",Verbal response,,No,,No,,,,,,Yes,"""cookie"" ""milk""","Neither, could go either way",0,0,0,bottle
+S63,21,2,new-house,an apple?,Yes,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S63,21,2,new-house,a bottle?,No,Yes,"""monkey"" *point* ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""monkey"" ""unintelligible""",A false trial,0,0,0,cookie
+S63,21,2,new-house,a cup?,Yes,Yes,"""box""",Verbal response,,No,,No,,,,,,Yes,"""box""","Neither, could go either way",0,0,0,cup
+S63,21,2,new-house,a car?,Yes,,,,,,,,,,,,,,,,0,1,1,car
+S63,21,2,busy-babies,a cat?,No,Yes,"""cat"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""cat""",A false trial,0,0,0,bunny
+S63,21,2,busy-babies,a horse?,Yes,Yes,"""horse"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""horse""","Neither, could go either way",0,0,0,horse
+S63,21,2,busy-babies,a bird?,Yes,Yes,"""yes"" *point* ""birdie"" ""all done""",Both verbal and non-verbal responses,Verbal first,Yes,Yes,No,,Yes,point,No,,Yes,"""birdie""","Neither, could go either way",0,0,0,bird
+S63,21,2,busy-babies,a pig?,No,Yes,"""pig"" *point* ""puppy""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""pig"" ""puppy""",A false trial,0,0,0,dog
+S63,21,2,busy-babies,a bear?,Yes,Yes,"*point* ""bird""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""bird""","Neither, could go either way",1,0,1,bear
+S63,21,2,busy-babies,a cow?,Yes,Yes,"*point* ""dog""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""cat""","Neither, could go either way",0,0,0,cow
+S63,21,2,busy-babies,a dog?,No,Yes,"""cah"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""cah""","Neither, could go either way",0,0,0,pig
+S63,21,2,busy-babies,a bunny?,No,Yes,"""hah hah hah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S64,23,1,busy-babies,a cat?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bunny
+S64,23,1,busy-babies,a horse?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,horse
+S64,23,1,busy-babies,a bird?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bird
+S64,23,1,busy-babies,a pig?,No,Yes,"""doggy"" *point* ""doggy""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""doggy""","Neither, could go either way",0,0,0,dog
+S64,23,1,busy-babies,a bear?,Yes,Yes,"""no"" *shake head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bear
+S64,23,1,busy-babies,a cow?,Yes,Yes,"*shook head* ""no""",Both verbal and non-verbal responses,Nonverbal first,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cow
+S64,23,1,busy-babies,a dog?,No,Yes,"""pink oink"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""pink oink""","Neither, could go either way",0,0,0,pig
+S64,23,1,busy-babies,a bunny?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S64,23,1,new-house,a ball?,No,Yes,"""oh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S64,23,1,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S64,23,1,new-house,a teddy bear?,No,Yes,"""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S64,23,1,new-house,a cookie?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S64,23,1,new-house,an apple?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,apple
+S64,23,1,new-house,a bottle?,No,Yes,"""cookie""",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,cookie
+S64,23,1,new-house,a cup?,Yes,Yes,"""cup"" ""nope"" *shook head*",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,No,,Yes,Shook head,Yes,"""cup""","Neither, could go either way",0,0,0,cup
+S64,23,1,new-house,a car?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S66,22,1,busy-babies,a cat?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S66,22,1,busy-babies,a horse?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S66,22,1,busy-babies,a bird?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S66,22,1,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,dog
+S66,22,1,busy-babies,a bear?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bear
+S66,22,1,busy-babies,a cow?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cow
+S66,22,1,busy-babies,a dog?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,pig
+S66,22,1,busy-babies,a bunny?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cat
+S66,22,1,new-house,a ball?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S66,22,1,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S66,22,1,new-house,a teddy bear?,No,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,A false trial,0,0,0,ball
+S66,22,1,new-house,a cookie?,No,Yes,"""cookie""",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",0,0,0,bottle
+S66,22,1,new-house,an apple?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,apple
+S66,22,1,new-house,a bottle?,No,Yes,"""but no"" ""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S66,22,1,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S66,22,1,new-house,a car?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,car
+S67,25,2,new-house,a ball?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S67,25,2,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,block
+S67,25,2,new-house,a teddy bear?,No,Yes,"""no"" ""it's a ball""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's a ball""","Neither, could go either way",0,0,0,ball
+S67,25,2,new-house,a cookie?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,bottle
+S67,25,2,new-house,an apple?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,apple
+S67,25,2,new-house,a bottle?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,cookie
+S67,25,2,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S67,25,2,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S67,25,2,busy-babies,a cat?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bunny
+S67,25,2,busy-babies,a horse?,Yes,Yes,"""no"" ""that's a et""",Verbal response,,No,,No,,,,,,Yes,"""that's a et""",A false trial,0,0,0,horse
+S67,25,2,busy-babies,a bird?,Yes,Yes,"""ah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bird
+S67,25,2,busy-babies,a pig?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,1,0,1,dog
+S67,25,2,busy-babies,a bear?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,bear
+S67,25,2,busy-babies,a cow?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S67,25,2,busy-babies,a dog?,No,Yes,"""no it's pig""",Verbal response,,No,,Yes,No,,,,,Yes,"""it's pig""",A false trial,1,0,1,pig
+S67,25,2,busy-babies,a bunny?,No,Yes,"""no that's a kitty cat""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a kitty cat""",A false trial,0,0,0,cat
+S68,17,1,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S68,17,1,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S68,17,1,busy-babies,a bird?,Yes,Yes,"""ba buh""",Verbal response,,No,,No,,,,,,Yes,"""ba buh""","Neither, could go either way",0,0,0,bird
+S68,17,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,A false trial,1,1,1,dog
+S68,17,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,A false trial,1,1,1,bear
+S68,17,1,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S68,17,1,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S68,17,1,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cat
+S68,17,1,new-house,a ball?,No,Yes,"*point* ""yeah""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,point,No,,No,,A false trial,0,0,0,teddy bear
+S68,17,1,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,block
+S68,17,1,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,ball
+S68,17,1,new-house,a cookie?,No,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",1,0,1,bottle
+S68,17,1,new-house,an apple?,Yes,Yes,"""app"" ""puh""",Verbal response,,No,,No,,,,,,Yes,"""app"" ""puh""","Neither, could go either way",1,0,1,apple
+S68,17,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cookie
+S68,17,1,new-house,a cup?,Yes,Yes,"""pap""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S68,17,1,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S70,22,4,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S70,22,4,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,block
+S70,22,4,new-house,a ball?,Yes,Yes,"""mm yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,ball
+S70,22,4,new-house,a bottle?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,bottle
+S70,22,4,new-house,a car?,No,Yes,"""ah oh"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""ah oh""","Neither, could go either way",1,0,1,apple
+S70,22,4,new-house,a cookie?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,cookie
+S70,22,4,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S70,22,4,new-house,an apple?,No,Yes,"""giya"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""giya""","Neither, could go either way",0,0,0,car
+S70,22,4,busy-babies,a bunny?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bunny
+S70,22,4,busy-babies,a bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S70,22,4,busy-babies,a cow?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S70,22,4,busy-babies,a dog?,Yes,Yes,"""unintelligible"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,dog
+S70,22,4,busy-babies,a horse?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S70,22,4,busy-babies,a bird?,No,Yes,"""da"" *point* ""moo""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""da""","Neither, could go either way",1,0,1,cow
+S70,22,4,busy-babies,a pig?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S70,22,4,busy-babies,a cat?,Yes,Yes,"""ah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cat
+S71,17,2,new-house,a ball?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S71,17,2,new-house,a block?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,block
+S71,17,2,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S71,17,2,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bottle
+S71,17,2,new-house,an apple?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,apple
+S71,17,2,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cookie
+S71,17,2,new-house,a cup?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cup
+S71,17,2,new-house,a car?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,car
+S71,17,2,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bunny
+S71,17,2,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S71,17,2,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S71,17,2,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,dog
+S71,17,2,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S71,17,2,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cow
+S71,17,2,busy-babies,a dog?,No,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,pig
+S71,17,2,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S72,17,1,busy-babies,a cat?,No,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",1,0,1,bunny
+S72,17,1,busy-babies,a horse?,Yes,Yes,"*point* ""rahbah""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""rah bah""",A false trial,0,0,0,horse
+S72,17,1,busy-babies,a bird?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,bird
+S72,17,1,busy-babies,a pig?,No,Yes,*point* *point* *point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,dog
+S72,17,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S72,17,1,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,cow
+S72,17,1,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,pig
+S72,17,1,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,A false trial,1,1,1,cat
+S72,17,1,new-house,a ball?,No,Yes,"""bah bah""",Verbal response,,No,,No,,,,,,Yes,"""bah bah""","Neither, could go either way",1,0,1,teddy bear
+S72,17,1,new-house,a block?,Yes,Yes,"*point* ""gah"" ""rah"" ""ah bah""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""unintelligible""","Neither, could go either way",1,0,1,block
+S72,17,1,new-house,a teddy bear?,No,Yes,"""ah pah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,poin,No,,Yes,"""ah pah""","Neither, could go either way",0,0,0,ball
+S72,17,1,new-house,a cookie?,No,Yes,"*point* ""wah""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""wah""","Neither, could go either way",0,0,0,bottle
+S72,17,1,new-house,an apple?,Yes,Yes,"*point* ""bah bah""",Both verbal and non-verbal responses,Nonverbal first,No,,No,,Yes,point,No,,Yes,"""bah bah""","Neither, could go either way",0,0,0,apple
+S72,17,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S72,17,1,new-house,a cup?,Yes,Yes,"""bubble"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""bubble""","Neither, could go either way",0,0,0,cup
+S72,17,1,new-house,a car?,Yes,Yes,"""wah""",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,car
+S73,17,2,new-house,a ball?,No,Yes,"""bah""",Verbal response,,No,,No,,,,,,Yes,"""bah""","Neither, could go either way",0,0,0,teddy bear
+S73,17,2,new-house,a block?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S73,17,2,new-house,a teddy bear?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S73,17,2,new-house,a cookie?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S73,17,2,new-house,an apple?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S73,17,2,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S73,17,2,new-house,a cup?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S73,17,2,new-house,a car?,Yes,Yes,"""a truck""",Verbal response,,No,,No,,,,,,Yes,"""a truck""","Neither, could go either way",0,0,0,car
+S73,17,2,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S73,17,2,busy-babies,a horse?,Yes,Yes,"""nayo"" ""na no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S73,17,2,busy-babies,a bird?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S73,17,2,busy-babies,a pig?,No,Yes,"""tuh"" ""duh dah"" ""duh ah duh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S73,17,2,busy-babies,a bear?,Yes,Yes,"""dah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bear
+S73,17,2,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S73,17,2,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S73,17,2,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S74,16,3,busy-babies,a bunny?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S74,16,3,busy-babies,a bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S74,16,3,busy-babies,a cow?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S74,16,3,busy-babies,a dog?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S74,16,3,busy-babies,a horse?,No,No,,,,,,,,,,,,,,A false trial,0,1,1,bear
+S74,16,3,busy-babies,a bird?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S74,16,3,busy-babies,a pig?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S74,16,3,busy-babies,a cat?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S74,16,3,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S74,16,3,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S74,16,3,new-house,a ball?,Yes,No,,,,,,,,,,,,,,A false trial,0,1,1,ball
+S74,16,3,new-house,a bottle?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bottle
+S74,16,3,new-house,a car?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S74,16,3,new-house,a cookie?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S74,16,3,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S74,16,3,new-house,an apple?,No,No,,,,,,,,,,,,,,A false trial,0,1,1,car
+S75,16,4,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,teddy bear
+S75,16,4,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,block
+S75,16,4,new-house,a ball?,Yes,Yes,"""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",1,0,1,ball
+S75,16,4,new-house,a bottle?,Yes,Yes,"""bah""",Verbal response,,No,,No,,,,,,Yes,"""bah""","Neither, could go either way",1,0,1,bottle
+S75,16,4,new-house,a car?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,apple
+S75,16,4,new-house,a cookie?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S75,16,4,new-house,a block?,No,Yes,"""bah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S75,16,4,new-house,an apple?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S75,16,4,busy-babies,a bunny?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",1,0,1,bunny
+S75,16,4,busy-babies,a bear?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",1,0,1,horse
+S75,16,4,busy-babies,a cow?,No,Yes,"""moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S75,16,4,busy-babies,a dog?,Yes,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",1,0,1,dog
+S75,16,4,busy-babies,a horse?,No,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",1,0,1,bear
+S75,16,4,busy-babies,a bird?,No,Yes,"""oh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cow
+S75,16,4,busy-babies,a pig?,Yes,Yes,*nod*,Non-verbal response,,,,,,Yes,Nod,No,,,,"Neither, could go either way",0,0,0,pig
+S75,16,4,busy-babies,a cat?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",1,0,1,cat
+S76,19,4,new-house,a teddy bear?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",1,0,1,teddy bear
+S76,19,4,new-house,a cup?,No,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S76,19,4,new-house,a ball?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S76,19,4,new-house,a bottle?,Yes,Yes,"""yes""",Verbal response,,Yes,Yes,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S76,19,4,new-house,a car?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S76,19,4,new-house,a cookie?,Yes,Yes,"""unintelligible"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""unintelligible""","Neither, could go either way",1,0,1,cookie
+S76,19,4,new-house,a block?,No,Yes,"""pot""",Verbal response,,No,,No,,,,,,Yes,"""pot""","Neither, could go either way",1,0,1,cup
+S76,19,4,new-house,an apple?,No,Yes,"""a dar"" *point* ""a dar""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""dar""","Neither, could go either way",0,0,0,car
+S76,19,4,busy-babies,a bunny?,Yes,Yes,"""no bunny"" *point*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,point,No,,"Neither, could go either way",1,0,1,bunny
+S76,19,4,busy-babies,a bear?,No,Yes,"""no"" *point*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,point,No,,"Neither, could go either way",1,0,1,horse
+S76,19,4,busy-babies,a cow?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bird
+S76,19,4,busy-babies,a dog?,Yes,Yes,"""dah"" ""piggy"" ""piggy"" ""piggy""",Verbal response,,No,,No,,,,,,Yes,"""piggy""","Neither, could go either way",0,0,0,dog
+S76,19,4,busy-babies,a horse?,No,Yes,"""nuh"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,Nah,No,,Yes,Shook head,No,,A false trial,0,0,0,bear
+S76,19,4,busy-babies,a bird?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cow
+S76,19,4,busy-babies,a pig?,Yes,Yes,"""nuh""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,pig
+S76,19,4,busy-babies,a cat?,Yes,Yes,"""dat""",Verbal response,,No,,No,,,,,,Yes,"""dat""",A false trial,0,0,0,cat
+S77,18,4,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S77,18,4,new-house,a cup?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,block
+S77,18,4,new-house,a ball?,Yes,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,ball
+S77,18,4,new-house,a bottle?,Yes,Yes,"""bottle""",Verbal response,,No,,No,,,,,,Yes,"""bottle""","Neither, could go either way",0,0,0,bottle
+S77,18,4,new-house,a car?,No,Yes,"""ah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S77,18,4,new-house,a cookie?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S77,18,4,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S77,18,4,new-house,an apple?,No,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,car
+S77,18,4,busy-babies,a bunny?,Yes,Yes,"""hot""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S77,18,4,busy-babies,a bear?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,horse
+S77,18,4,busy-babies,a cow?,No,Yes,"""go away""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S77,18,4,busy-babies,a dog?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S77,18,4,busy-babies,a horse?,No,Yes,"""oh"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bear
+S77,18,4,busy-babies,a bird?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S77,18,4,busy-babies,a pig?,Yes,Yes,"""piggy""",Verbal response,,No,,No,,,,,,Yes,"""piggy""","Neither, could go either way",0,0,0,pig
+S77,18,4,busy-babies,a cat?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S78,16,2,new-house,a ball?,No,Yes,"""muh beh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S78,16,2,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S78,16,2,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S78,16,2,new-house,a cookie?,No,Yes,"""geh"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bottle
+S78,16,2,new-house,an apple?,Yes,Yes,"""ah reh"" *point*",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""ah reh""","Neither, could go either way",1,0,1,apple
+S78,16,2,new-house,a bottle?,No,Yes,"""eh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S78,16,2,new-house,a cup?,Yes,Yes,"""edeh"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,cup
+S78,16,2,new-house,a car?,Yes,Yes,"""ye"" ""ye""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S78,16,2,busy-babies,a cat?,No,Yes,*point* *point* *point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",1,0,1,bunny
+S78,16,2,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S78,16,2,busy-babies,a bird?,Yes,Yes,"""mbah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bird
+S78,16,2,busy-babies,a pig?,No,Yes,"*point* ""unintelligible""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,dog
+S78,16,2,busy-babies,a bear?,Yes,Yes,"""bah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,bear
+S78,16,2,busy-babies,a cow?,Yes,Yes,"""beh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cow
+S78,16,2,busy-babies,a dog?,No,Yes,"""guh"" *point* ""guh""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,pig
+S78,16,2,busy-babies,a bunny?,No,Yes,"""yeah"" *point* ""unintelligible""",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,cat
+S79,18,4,new-house,a teddy bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S79,18,4,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S79,18,4,new-house,a ball?,Yes,Yes,*shook head*,Non-verbal response,,,,,,No,,Yes,Shook head,,,"Neither, could go either way",1,0,1,ball
+S79,18,4,new-house,a bottle?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bottle
+S79,18,4,new-house,a car?,No,Yes,"""um""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S79,18,4,new-house,a cookie?,Yes,Yes,"""ha""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S79,18,4,new-house,a block?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S79,18,4,new-house,an apple?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,car
+S79,18,4,busy-babies,a bunny?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S79,18,4,busy-babies,a bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S79,18,4,busy-babies,a cow?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bird
+S79,18,4,busy-babies,a dog?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,dog
+S79,18,4,busy-babies,a horse?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S79,18,4,busy-babies,a bird?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S79,18,4,busy-babies,a pig?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S79,18,4,busy-babies,a cat?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S80,17,1,busy-babies,a cat?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,bunny
+S80,17,1,busy-babies,a horse?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,horse
+S80,17,1,busy-babies,a bird?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,bird
+S80,17,1,busy-babies,a pig?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,dog
+S80,17,1,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,bear
+S80,17,1,busy-babies,a cow?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,cow
+S80,17,1,busy-babies,a dog?,No,Yes,"""ehehe"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,pig
+S80,17,1,busy-babies,a bunny?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cat
+S80,17,1,new-house,a ball?,No,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,teddy bear
+S80,17,1,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S80,17,1,new-house,a teddy bear?,No,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,ball
+S80,17,1,new-house,a cookie?,No,Yes,"""yeah"" *point*",Both verbal and non-verbal responses,Verbal first,Yes,Yah,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bottle
+S80,17,1,new-house,an apple?,Yes,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,apple
+S80,17,1,new-house,a bottle?,No,Yes,"""no"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",0,0,0,cookie
+S80,17,1,new-house,a cup?,Yes,Yes,"""no"" *shook head* ""no"" *point*",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,cup
+S80,17,1,new-house,a car?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",1,0,1,car
+S81,19,2,new-house,a ball?,No,Yes,"""mm bah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,*point*,No,,No,,"Neither, could go either way",1,0,1,teddy bear
+S81,19,2,new-house,a block?,Yes,Yes,"""yeah"" *point*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,block
+S81,19,2,new-house,a teddy bear?,No,Yes,"""wee"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,ball
+S81,19,2,new-house,a cookie?,No,Yes,"""guh"" *point* ""guh doh""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,bottle
+S81,19,2,new-house,an apple?,Yes,Yes,"""um"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,apple
+S81,19,2,new-house,a bottle?,No,Yes,"""bubble"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""bubble""","Neither, could go either way",1,0,1,cookie
+S81,19,2,new-house,a cup?,Yes,Yes,"""bah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cup
+S81,19,2,new-house,a car?,Yes,Yes,"""doh"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""doh""","Neither, could go either way",0,0,0,car
+S81,19,2,busy-babies,a cat?,No,Yes,"*point* ""dish""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""dish""","Neither, could go either way",0,0,0,bunny
+S81,19,2,busy-babies,a horse?,Yes,Yes,"*point* ""goo""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,horse
+S81,19,2,busy-babies,a bird?,Yes,Yes,"""moo"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",1,0,1,bird
+S81,19,2,busy-babies,a pig?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,dog
+S81,19,2,busy-babies,a bear?,Yes,Yes,"""woof"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,bear
+S81,19,2,busy-babies,a cow?,Yes,Yes,"""dah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,"""point""",No,,No,,"Neither, could go either way",0,0,0,cow
+S81,19,2,busy-babies,a dog?,No,Yes,"""mm gah"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""gah""","Neither, could go either way",0,0,0,pig
+S81,19,2,busy-babies,a bunny?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S82,18,2,new-house,a ball?,No,Yes,"""bow""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S82,18,2,new-house,a block?,Yes,Yes,"""back"" ""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S82,18,2,new-house,a teddy bear?,No,Yes,"""yah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S82,18,2,new-house,a cookie?,No,Yes,"""cookie"" ""cookie""",Verbal response,,No,,No,,,,,,Yes,"""cookie""","Neither, could go either way",1,0,1,bottle
+S82,18,2,new-house,an apple?,Yes,Yes,"""apple"" ""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S82,18,2,new-house,a bottle?,No,Yes,"""ball"" ""ball"" ""ball""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,cookie
+S82,18,2,new-house,a cup?,Yes,Yes,"""duck"" ""dog""",Verbal response,,No,,No,,,,,,Yes,"""duck"" ""dog""","Neither, could go either way",0,0,0,cup
+S82,18,2,new-house,a car?,Yes,Yes,"""cow"" ""moo""",Verbal response,,No,,No,,,,,,Yes,"""cow""","Neither, could go either way",0,0,0,car
+S82,18,2,busy-babies,a cat?,No,Yes,"""dack"" ""mine""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S82,18,2,busy-babies,a horse?,Yes,Yes,"""eeee""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S82,18,2,busy-babies,a bird?,Yes,Yes,"""birdie"" ""birdie""",Verbal response,,No,,No,,,,,,Yes,"""birdie""","Neither, could go either way",0,0,0,bird
+S82,18,2,busy-babies,a pig?,No,Yes,"""beak"" ""beak""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S82,18,2,busy-babies,a bear?,Yes,Yes,"""bear"" ""bear""",Verbal response,,No,,No,,,,,,Yes,"""bear""","Neither, could go either way",0,0,0,bear
+S82,18,2,busy-babies,a cow?,Yes,Yes,"""go"" ""boo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S82,18,2,busy-babies,a dog?,No,Yes,"""gown"" ""no"" ""unintelligible""",Verbal response,,No,,Yes,No,,,,,No,,A false trial,0,0,0,pig
+S82,18,2,busy-babies,a bunny?,No,Yes,"""mine""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S83,16,4,new-house,a teddy bear?,Yes,Yes,"*point* ""uh""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,"""point""",No,,No,,"Neither, could go either way",0,0,0,teddy bear
+S83,16,4,new-house,a cup?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,block
+S83,16,4,new-house,a ball?,Yes,Yes,"""ih""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S83,16,4,new-house,a bottle?,Yes,Yes,"""baby"" ""baby"" *point* ""babble""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""babble""","Neither, could go either way",0,0,0,bottle
+S83,16,4,new-house,a car?,No,Yes,"""apple"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S83,16,4,new-house,a cookie?,Yes,Yes,"""uh"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cookie
+S83,16,4,new-house,a block?,No,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,cup
+S83,16,4,new-house,an apple?,No,Yes,"""uh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S83,16,4,busy-babies,a bunny?,Yes,Yes,"""opp"" ""eh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S83,16,4,busy-babies,a bear?,No,Yes,"""eh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S83,16,4,busy-babies,a cow?,No,Yes,"""ih""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S83,16,4,busy-babies,a dog?,Yes,Yes,"""eh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S83,16,4,busy-babies,a horse?,No,Yes,"""ey""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S83,16,4,busy-babies,a bird?,No,Yes,"""ih""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S83,16,4,busy-babies,a pig?,Yes,Yes,"""uh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S83,16,4,busy-babies,a cat?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,cat
+S84,17,1,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,bunny
+S84,17,1,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,horse
+S84,17,1,busy-babies,a bird?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,bird
+S84,17,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,dog
+S84,17,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S84,17,1,busy-babies,a cow?,Yes,Yes,"""moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cow
+S84,17,1,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S84,17,1,busy-babies,a bunny?,No,Yes,"""unintelligible"" *point*",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cat
+S84,17,1,new-house,a ball?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,teddy bear
+S84,17,1,new-house,a block?,Yes,Yes,"""nuh"" *shook head*",Both verbal and non-verbal responses,Same time,No,,Yes,Nah,No,,Yes,Shook head,No,,"Neither, could go either way",1,0,1,block
+S84,17,1,new-house,a teddy bear?,No,No,,,,,,,,,,,,,,"Neither, could go either way",1,1,1,ball
+S84,17,1,new-house,a cookie?,No,Yes,"""ma"" ""ma""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,bottle
+S84,17,1,new-house,an apple?,Yes,Yes,"*point* ""oh"" ""oh""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,apple
+S84,17,1,new-house,a bottle?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cookie
+S84,17,1,new-house,a cup?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cup
+S84,17,1,new-house,a car?,Yes,Yes,*point*,Non-verbal response,,,,,,Yes,point,No,,,,"Neither, could go either way",0,0,0,car
+S85,19,2,new-house,a ball?,No,Yes,"""buh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S85,19,2,new-house,a block?,Yes,Yes,"""buh""",Verbal response,,No,,No,,,,,,Yes,"""buh""","Neither, could go either way",0,0,0,block
+S85,19,2,new-house,a teddy bear?,No,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,ball
+S85,19,2,new-house,a cookie?,No,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",1,0,1,bottle
+S85,19,2,new-house,an apple?,Yes,Yes,"""buh buh""",Verbal response,,No,,No,,,,,,Yes,"""buh buh""","Neither, could go either way",0,0,0,apple
+S85,19,2,new-house,a bottle?,No,Yes,"""moh buh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S85,19,2,new-house,a cup?,Yes,Yes,"""unnah""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S85,19,2,new-house,a car?,Yes,Yes,"""duh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S85,19,2,busy-babies,a cat?,No,Yes,"""nan""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S85,19,2,busy-babies,a horse?,Yes,Yes,"""neiggh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S85,19,2,busy-babies,a bird?,Yes,Yes,"""boh""",Verbal response,,No,,No,,,,,,Yes,"""boh""","Neither, could go either way",0,0,0,bird
+S85,19,2,busy-babies,a pig?,No,Yes,"""uh oh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,dog
+S85,19,2,busy-babies,a bear?,Yes,Yes,"""muh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S85,19,2,busy-babies,a cow?,Yes,Yes,"""muh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S85,19,2,busy-babies,a dog?,No,Yes,"""doo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S85,19,2,busy-babies,a bunny?,No,Yes,"""bubby""",Verbal response,,No,,No,,,,,,Yes,"""bubby""","Neither, could go either way",0,0,0,cat
+S87,19,1,busy-babies,a cat?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bunny
+S87,19,1,busy-babies,a horse?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,horse
+S87,19,1,busy-babies,a bird?,Yes,Yes,"""mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S87,19,1,busy-babies,a pig?,No,No,,,,,,,,,,,,,,A false trial,0,1,1,dog
+S87,19,1,busy-babies,a bear?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,bear
+S87,19,1,busy-babies,a cow?,Yes,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cow
+S87,19,1,busy-babies,a dog?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,pig
+S87,19,1,busy-babies,a bunny?,No,No,,,,,,,,,,,,,,"Neither, could go either way",0,1,1,cat
+S87,19,1,new-house,a ball?,No,Yes,*laugh*,Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,teddy bear
+S87,19,1,new-house,a block?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S87,19,1,new-house,a teddy bear?,No,Yes,"""bleh teh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,ball
+S87,19,1,new-house,a cookie?,No,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S87,19,1,new-house,an apple?,Yes,Yes,"""ohhh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S87,19,1,new-house,a bottle?,No,Yes,*laugh*,Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,cookie
+S87,19,1,new-house,a cup?,Yes,Yes,"""yih ih""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S87,19,1,new-house,a car?,Yes,Yes,"""euh""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S88,24,4,new-house,a teddy bear?,Yes,Yes,"""mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,teddy bear
+S88,24,4,new-house,a cup?,No,Yes,"""cop it""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,block
+S88,24,4,new-house,a ball?,Yes,Yes,"""a cah"" *point* ""ball""",Both verbal and non-verbal responses,Verbal first,No,,No,,Yes,point,No,,Yes,"""ball""","Neither, could go either way",0,0,0,ball
+S88,24,4,new-house,a bottle?,Yes,Yes,"""mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S88,24,4,new-house,a car?,No,Yes,"""apple""",Verbal response,,No,,No,,,,,,Yes,"""ball""","Neither, could go either way",0,0,0,apple
+S88,24,4,new-house,a cookie?,Yes,Yes,"""mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",1,0,1,cookie
+S88,24,4,new-house,a block?,No,Yes,"*point* ""boo""",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cup
+S88,24,4,new-house,an apple?,No,,,,,,,,,,,,,,,,0,1,1,car
+S88,24,4,busy-babies,a bunny?,Yes,Yes,"""mm"" ""a bunny""",Verbal response,,No,,No,,,,,,Yes,"""a bunny""","Neither, could go either way",0,0,0,bunny
+S88,24,4,busy-babies,a bear?,No,Yes,"""neigh""",Verbal response,,No,,No,,,,,,Yes,"""neigh""","Neither, could go either way",0,0,0,horse
+S88,24,4,busy-babies,a cow?,No,Yes,"""teeky""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S88,24,4,busy-babies,a dog?,Yes,Yes,"""woof woof""",Verbal response,,No,,No,,,,,,Yes,"""woof woof""","Neither, could go either way",0,0,0,dog
+S88,24,4,busy-babies,a horse?,No,Yes,"""roar""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S88,24,4,busy-babies,a bird?,No,Yes,"""boo boo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S88,24,4,busy-babies,a pig?,Yes,Yes,*snort snort*,Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S88,24,4,busy-babies,a cat?,Yes,Yes,"""mm""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S89,19,3,busy-babies,a bunny?,Yes,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,bunny
+S89,19,3,busy-babies,a bear?,No,Yes,"""raw""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S89,19,3,busy-babies,a cow?,No,Yes,"""mm moo""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,bird
+S89,19,3,busy-babies,a dog?,Yes,Yes,"""dat"" *point* ""doo"" ""doo"" ""doo doo"" ",Both verbal and non-verbal responses,Same time,No,,No,,Yes,point,No,,Yes,"""dat""","Neither, could go either way",0,0,0,dog
+S89,19,3,busy-babies,a horse?,No,Yes,"*point* ""nah""",Both verbal and non-verbal responses,Same time,No,,Yes,Nah,No,,Yes,point,No,,"Neither, could go either way",0,0,0,bear
+S89,19,3,busy-babies,a bird?,No,Yes,"*roar* ""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cow
+S89,19,3,busy-babies,a pig?,Yes,Yes,"""unintelligible""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,pig
+S89,19,3,busy-babies,a cat?,Yes,Yes,"""meow"" ""meow""",Verbal response,,No,,No,,,,,,No,,"Neither, could go either way",0,0,0,cat
+S89,19,3,new-house,a teddy bear?,Yes,Yes,"""tento blah""",Verbal response,,No,,No,,,,,,No,,A false trial,0,0,0,teddy bear
+S89,19,3,new-house,a cup?,No,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,block
+S89,19,3,new-house,a ball?,Yes,Yes,"""nah""",Verbal response,,No,,Yes,Nah,,,,,No,,"Neither, could go either way",0,0,0,ball
+S89,19,3,new-house,a bottle?,Yes,Yes,"""berry"" ""baby"" ""come""",Verbal response,,No,,No,,,,,,Yes,"""baby""","Neither, could go either way",0,0,0,bottle
+S89,19,3,new-house,a car?,No,Yes,"""apple"" ""apple'",Verbal response,,No,,No,,,,,,Yes,"""apple""","Neither, could go either way",0,0,0,apple
+S89,19,3,new-house,a cookie?,Yes,Yes,"""no"" ""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,cookie
+S89,19,3,new-house,a block?,No,Yes,"""no"" ""payuh"" *point* ""payuh""",Both verbal and non-verbal responses,Same time,No,,Yes,No,Yes,point,No,,Yes,"""payuh""","Neither, could go either way",0,0,0,cup
+S89,19,3,new-house,an apple?,No,Yes,"""cah""",Verbal response,,No,,No,,,,,,Yes,"""cah""","Neither, could go either way",0,0,0,car
+S90,31,2,new-house,a ball?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,teddy bear
+S90,31,2,new-house,a block?,Yes,Yes,"""nah"" ""that's a grey dot"" ""A"" *point*",Both verbal and non-verbal responses,Verbal first,No,,Yes,Nah,Yes,*point*,No,,Yes,"""that's a grey dot"" ""A""",A true trial,0,0,0,block
+S90,31,2,new-house,a teddy bear?,No,Yes,"""no that's a ball""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a ball""",A false trial,0,0,0,ball
+S90,31,2,new-house,a cookie?,No,Yes,"""no""",Verbal response,,No,,Yes,No,,,,,No,,"Neither, could go either way",0,0,0,bottle
+S90,31,2,new-house,an apple?,Yes,Yes,"""yeah'",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,apple
+S90,31,2,new-house,a bottle?,No,Yes,"""no that's a cookie""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's a cookie""","Neither, could go either way",0,0,0,cookie
+S90,31,2,new-house,a cup?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,cup
+S90,31,2,new-house,a car?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,car
+S90,31,2,busy-babies,a cat?,No,Yes,"""no"" *point* ""that's a bunny""",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,*point*,No,,Yes,"""that's a bunny""","Neither, could go either way",0,0,0,bunny
+S90,31,2,busy-babies,a horse?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,horse
+S90,31,2,busy-babies,a bird?,Yes,Yes,"""yeah"" *nod*",Both verbal and non-verbal responses,Same time,Yes,Yah,No,,Yes,Nod,No,,No,,"Neither, could go either way",0,0,0,bird
+S90,31,2,busy-babies,a pig?,No,Yes,"*shook head* ""no that's a dog""",Both verbal and non-verbal responses,Same time,No,,Yes,No,No,,Yes,Shook head,Yes,"""that's a dog""","Neither, could go either way",0,0,0,dog
+S90,31,2,busy-babies,a bear?,Yes,Yes,"""yeah""",Verbal response,,Yes,Yah,No,,,,,,No,,"Neither, could go either way",0,0,0,bear
+S90,31,2,busy-babies,a cow?,Yes,Yes,"*point* ""yeah""",Both verbal and non-verbal responses,Nonverbal first,Yes,Yah,No,,Yes,point,No,,No,,"Neither, could go either way",0,0,0,cow
+S90,31,2,busy-babies,a dog?,No,Yes,"""no that's piggy""",Verbal response,,No,,Yes,No,,,,,Yes,"""that's piggy""","Neither, could go either way",0,0,0,pig
+S90,31,2,busy-babies,a bunny?,No,Yes,"""no"" *point* ""that's a cat""",Both verbal and non-verbal responses,Verbal first,No,,Yes,No,Yes,*point*,No,,Yes,"""that's a cat""","Neither, could go either way",0,0,0,cat
