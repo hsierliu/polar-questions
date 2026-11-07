@@ -1,16 +1,16 @@
 # Polar Questions
 
-This repository contains code for a blind-coding website and the analyses for our polar questions study. The preregistration for this study can be found on [OSF](https://osf.io/fngb6). For context, the blind-coding website allows a researcher to upload videos and split them into segments, and other researchers to blind-code child responses and parent questions. Video segments and responses (in CSV format) are saved on Dropbox.
+This repository contains materials used in our polar questions study, code for a blind-coding website, and the analyses we ran. The preregistration for this study can be found on [OSF](https://osf.io/fngb6). 
 
 **Who to contact:** hsierliu@fas.harvard.edu, vgomes@fas.harvard.edu
 
 > [!NOTE]
-> Access to the website requires an authorized Google account. Please contact Hsi-Er to gain access and if you run into any issues! For any questions about the study itself, feel free to contact Victor and/or Hsi-Er.
+> Access to the coding website requires an authorized Google account. Please contact Hsi-Er to gain access and if you run into any issues! For any questions about the study itself, feel free to contact Victor and Hsi-Er.
 
 ## Repository structure
 
 ```text
-pq-coding/
+polar-questions/
 ├── coding/                         # blind-coding website
 │   ├── api/
 │   │   └── dropbox.js              # server authentication, permissions, and Dropbox storage
@@ -26,18 +26,17 @@ pq-coding/
 │   └── vite.config.js              # React development and build settings
 ├── data-analysis/                  # study analyses and data
 │   ├── analysis.Rmd                # analysis code
-│   ├── analysis.md                 # viewable analysis
+│   ├── analysis.md                 # !! viewable analysis
 │   ├── initialD.csv                # first-coder dataset
 │   ├── secondD.csv                 # second-coder dataset
-│   ├── finalD.csv                  # final dataset
-│   ├── mainFig.png                 # main figure: verbal responses and gestures
-│   └── other-figures/              # figures used in the analysis report
+│   ├── finalD.csv                  # final dataset (first-coder)
+│   ├── mainFig.png                 # main figure for BUCLD: verbal responses and gestures
+│   └── other-figures/              # figures used in the analysis md file
 ├── materials/                      # study materials
 │   ├── books - order 1 and 2.pdf   # stimulus books for orders 1 and 2
 │   ├── books - order 3 and 4.pdf   # stimulus books for orders 3 and 4
-│   └── coding questions.pdf       # coding questions
-├── BUCLD51_Poster.pdf               # BUCLD 51 poster
-└── README.md                       # project overview and instructions
+│   └── coding questions.pdf        # coding questions
+└── BUCLD51_Poster.pdf              # BUCLD 51 poster
 ```
 
 

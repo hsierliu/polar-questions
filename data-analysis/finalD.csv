@@ -1,0 +1,903 @@
+"participant_id","age_months","order","book","question","target","ageBin","exclude_cdi","parent_p1","parent_bias","no","yes","noGest","yesGest","deny","affirm","child_q4_dropdown","child_q5_dropdown","child_q6_dropdown","child_q7_dropdown","neg_restyp","aff_restyp","age_c"
+"S01",24.387,1,"busy-babies","a cat?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.09868625277162
+"S01",24.387,1,"busy-babies","a horse?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S01",24.387,1,"busy-babies","a bird?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S01",24.387,1,"busy-babies","a pig?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.09868625277162
+"S01",24.387,1,"busy-babies","a bear?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S01",24.387,1,"busy-babies","a cow?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S01",24.387,1,"busy-babies","a dog?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.09868625277162
+"S01",24.387,1,"busy-babies","a bunny?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S01",24.387,1,"new-house","a ball?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S01",24.387,1,"new-house","a block?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S01",24.387,1,"new-house","a teddy bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.09868625277162
+"S01",24.387,1,"new-house","a cookie?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S01",24.387,1,"new-house","an apple?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S01",24.387,1,"new-house","a cup?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S01",24.387,1,"new-house","a car?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S02",22.387,2,"new-house","a ball?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.09868625277162
+"S02",22.387,2,"new-house","a block?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"new-house","a teddy bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"new-house","a cookie?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"new-house","an apple?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.09868625277162
+"S02",22.387,2,"new-house","a bottle?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"new-house","a cup?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-3.09868625277162
+"S02",22.387,2,"new-house","a car?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","nope","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a cat?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a horse?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a bird?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a pig?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a bear?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a cow?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a dog?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.09868625277162
+"S02",22.387,2,"busy-babies","a bunny?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.09868625277162
+"S03",31.484,3,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.99831374722838
+"S03",31.484,3,"busy-babies","a bear?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.99831374722838
+"S03",31.484,3,"busy-babies","a cow?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.99831374722838
+"S03",31.484,3,"busy-babies","a dog?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.99831374722838
+"S03",31.484,3,"busy-babies","a horse?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.99831374722838
+"S03",31.484,3,"busy-babies","a bird?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.99831374722838
+"S03",31.484,3,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.99831374722838
+"S03",31.484,3,"busy-babies","a cat?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.99831374722838
+"S03",31.484,3,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.99831374722838
+"S03",31.484,3,"new-house","a cup?","false","28-32",0,"neither",0,1,0,1,1,1,0,"","no","Nod","Shook head","Verbal + gesture","None",5.99831374722838
+"S03",31.484,3,"new-house","a ball?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.99831374722838
+"S03",31.484,3,"new-house","a bottle?","true","28-32",0,"neither",0,0,0,1,1,1,1,"","","Nod","Shook head","Gesture only","Gesture only",5.99831374722838
+"S03",31.484,3,"new-house","a car?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.99831374722838
+"S03",31.484,3,"new-house","a cookie?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.99831374722838
+"S03",31.484,3,"new-house","a block?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.99831374722838
+"S03",31.484,3,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.99831374722838
+"S04",23.387,4,"new-house","a teddy bear?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"new-house","a cup?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-2.09868625277162
+"S04",23.387,4,"new-house","a ball?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"new-house","a bottle?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"new-house","a car?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"new-house","a cookie?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"new-house","a block?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"new-house","an apple?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"busy-babies","a bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"busy-babies","a cow?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"busy-babies","a dog?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"busy-babies","a horse?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"busy-babies","a bird?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.09868625277162
+"S04",23.387,4,"busy-babies","a pig?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-2.09868625277162
+"S04",23.387,4,"busy-babies","a cat?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-2.09868625277162
+"S05",24.484,3,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.00168625277162
+"S05",24.484,3,"busy-babies","a bear?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"busy-babies","a cow?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.00168625277162
+"S05",24.484,3,"busy-babies","a dog?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.00168625277162
+"S05",24.484,3,"busy-babies","a horse?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yuh","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"busy-babies","a bird?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.00168625277162
+"S05",24.484,3,"busy-babies","a pig?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"busy-babies","a cat?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yuh","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"new-house","a teddy bear?","true","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.00168625277162
+"S05",24.484,3,"new-house","a cup?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","Nope","","","Verbal only","None",-1.00168625277162
+"S05",24.484,3,"new-house","a ball?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"new-house","a bottle?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"new-house","a car?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.00168625277162
+"S05",24.484,3,"new-house","a cookie?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.00168625277162
+"S05",24.484,3,"new-house","a block?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.00168625277162
+"S05",24.484,3,"new-house","an apple?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.00168625277162
+"S06",30.267,4,"new-house","a teddy bear?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"new-house","a cup?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"new-house","a ball?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","pointing","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"new-house","a bottle?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","pointing","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"new-house","a car?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","pointing","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"new-house","a cookie?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","pointing","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"new-house","a block?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.78131374722838
+"S06",30.267,4,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a bunny?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","nah","","Shook head","Verbal + gesture","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a dog?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a pig?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.78131374722838
+"S06",30.267,4,"busy-babies","a cat?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.78131374722838
+"S07",29.516,1,"busy-babies","a cat?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",4.03031374722838
+"S07",29.516,1,"busy-babies","a horse?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"busy-babies","a pig?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",4.03031374722838
+"S07",29.516,1,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"busy-babies","a cow?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S07",29.516,1,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S07",29.516,1,"new-house","a ball?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",4.03031374722838
+"S07",29.516,1,"new-house","a block?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"new-house","a teddy bear?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",4.03031374722838
+"S07",29.516,1,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S07",29.516,1,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",4.03031374722838
+"S07",29.516,1,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",4.03031374722838
+"S07",29.516,1,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",4.03031374722838
+"S08",23.71,1,"busy-babies","a cat?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.77568625277162
+"S08",23.71,1,"busy-babies","a horse?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.77568625277162
+"S08",23.71,1,"busy-babies","a bird?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-1.77568625277162
+"S08",23.71,1,"busy-babies","a pig?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.77568625277162
+"S08",23.71,1,"busy-babies","a bear?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-1.77568625277162
+"S08",23.71,1,"busy-babies","a cow?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.77568625277162
+"S08",23.71,1,"busy-babies","a dog?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.77568625277162
+"S08",23.71,1,"busy-babies","a bunny?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.77568625277162
+"S08",23.71,1,"new-house","a ball?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.77568625277162
+"S08",23.71,1,"new-house","a block?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.77568625277162
+"S08",23.71,1,"new-house","a teddy bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.77568625277162
+"S08",23.71,1,"new-house","a cookie?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.77568625277162
+"S08",23.71,1,"new-house","an apple?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.77568625277162
+"S08",23.71,1,"new-house","a bottle?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.77568625277162
+"S08",23.71,1,"new-house","a cup?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.77568625277162
+"S08",23.71,1,"new-house","a car?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.77568625277162
+"S09",16.742,1,"busy-babies","a cat?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.74368625277162
+"S09",16.742,1,"busy-babies","a pig?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.74368625277162
+"S09",16.742,1,"busy-babies","a cow?","true","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.74368625277162
+"S09",16.742,1,"busy-babies","a dog?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.74368625277162
+"S09",16.742,1,"busy-babies","a bunny?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.74368625277162
+"S09",16.742,1,"new-house","a bottle?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.74368625277162
+"S09",16.742,1,"new-house","a car?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.74368625277162
+"S10",24.033,2,"new-house","a ball?","false","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-1.45268625277162
+"S10",24.033,2,"new-house","a block?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.45268625277162
+"S10",24.033,2,"new-house","an apple?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.45268625277162
+"S10",24.033,2,"new-house","a cup?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.45268625277162
+"S10",24.033,2,"new-house","a car?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.45268625277162
+"S10",24.033,2,"busy-babies","a cat?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.45268625277162
+"S10",24.033,2,"busy-babies","a horse?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-1.45268625277162
+"S10",24.033,2,"busy-babies","a bird?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.45268625277162
+"S10",24.033,2,"busy-babies","a pig?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.45268625277162
+"S10",24.033,2,"busy-babies","a bear?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-1.45268625277162
+"S10",24.033,2,"busy-babies","a cow?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.45268625277162
+"S10",24.033,2,"busy-babies","a dog?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-1.45268625277162
+"S10",24.033,2,"busy-babies","a bunny?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.45268625277162
+"S11",29.833,2,"new-house","a ball?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","pointing","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"new-house","a block?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"new-house","a teddy bear?","false","28-32",0,"false",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.34731374722838
+"S11",29.833,2,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,1,1,0,"","no","Nod","","Verbal only","None",4.34731374722838
+"S11",29.833,2,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",4.34731374722838
+"S11",29.833,2,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.34731374722838
+"S11",29.833,2,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.34731374722838
+"S11",29.833,2,"busy-babies","a horse?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",4.34731374722838
+"S11",29.833,2,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.34731374722838
+"S11",29.833,2,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"busy-babies","a cow?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.34731374722838
+"S11",29.833,2,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.34731374722838
+"S11",29.833,2,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.34731374722838
+"S12",22.567,3,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"busy-babies","a bear?","false","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"busy-babies","a cow?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-2.91868625277162
+"S12",22.567,3,"busy-babies","a dog?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"busy-babies","a horse?","false","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"busy-babies","a bird?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-2.91868625277162
+"S12",22.567,3,"busy-babies","a pig?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"busy-babies","a cat?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"new-house","a teddy bear?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"new-house","a ball?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"new-house","a car?","false","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"new-house","a cookie?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"new-house","a block?","false","21-26",0,"neither",0,0,1,0,1,0,1,"yuh","","Nod","","None","Verbal + gesture",-2.91868625277162
+"S12",22.567,3,"new-house","an apple?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-2.91868625277162
+"S13",24.333,4,"new-house","a cup?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-1.15268625277162
+"S13",24.333,4,"new-house","a ball?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.15268625277162
+"S13",24.333,4,"new-house","a bottle?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.15268625277162
+"S13",24.333,4,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.15268625277162
+"S13",24.333,4,"new-house","a block?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","pointing","","None","Verbal only",-1.15268625277162
+"S13",24.333,4,"new-house","an apple?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.15268625277162
+"S13",24.333,4,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.15268625277162
+"S13",24.333,4,"busy-babies","a dog?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.15268625277162
+"S13",24.333,4,"busy-babies","a horse?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.15268625277162
+"S13",24.333,4,"busy-babies","a cat?","true","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.15268625277162
+"S14",18.267,2,"new-house","a ball?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.21868625277162
+"S14",18.267,2,"new-house","a teddy bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.21868625277162
+"S14",18.267,2,"new-house","an apple?","true","16-19",0,"neither",0,0,1,0,0,0,1,"uh huh","","","","None","Verbal only",-7.21868625277162
+"S14",18.267,2,"new-house","a bottle?","false","16-19",0,"neither",0,0,1,0,1,0,1,"uh huh","","Nod","","None","Verbal + gesture",-7.21868625277162
+"S14",18.267,2,"new-house","a cup?","true","16-19",0,"neither",0,0,1,0,0,0,1,"uh huh","","","","None","Verbal only",-7.21868625277162
+"S14",18.267,2,"busy-babies","a cat?","false","16-19",0,"neither",0,0,1,0,1,0,1,"uh huh","","Nod","","None","Verbal + gesture",-7.21868625277162
+"S14",18.267,2,"busy-babies","a bird?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-7.21868625277162
+"S14",18.267,2,"busy-babies","a cow?","true","16-19",0,"neither",0,0,1,0,1,0,1,"uh huh","","Nod","","None","Verbal + gesture",-7.21868625277162
+"S14",18.267,2,"busy-babies","a bunny?","false","16-19",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",-7.21868625277162
+"S15",17.194,3,"busy-babies","a dog?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"busy-babies","a horse?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"busy-babies","a bird?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"busy-babies","a cat?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"new-house","a ball?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"new-house","a bottle?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"new-house","a car?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.29168625277162
+"S15",17.194,3,"new-house","a block?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","pointing","","None","Verbal only",-8.29168625277162
+"S15",17.194,3,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.29168625277162
+"S17",29.516,2,"new-house","a ball?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.03031374722838
+"S17",29.516,2,"new-house","a block?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.03031374722838
+"S17",29.516,2,"new-house","a teddy bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",4.03031374722838
+"S17",29.516,2,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",4.03031374722838
+"S17",29.516,2,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",4.03031374722838
+"S17",29.516,2,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"busy-babies","a horse?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",4.03031374722838
+"S17",29.516,2,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",4.03031374722838
+"S17",29.516,2,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.03031374722838
+"S17",29.516,2,"busy-babies","a cow?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S17",29.516,2,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.03031374722838
+"S18",25.774,1,"busy-babies","a cat?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"busy-babies","a horse?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",0.288313747228383
+"S18",25.774,1,"busy-babies","a bird?","true","21-26",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",0.288313747228383
+"S18",25.774,1,"busy-babies","a pig?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"busy-babies","a bear?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",0.288313747228383
+"S18",25.774,1,"busy-babies","a cow?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",0.288313747228383
+"S18",25.774,1,"busy-babies","a dog?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",0.288313747228383
+"S18",25.774,1,"busy-babies","a bunny?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","pointing","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"new-house","a ball?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","nuh","","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"new-house","a block?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",0.288313747228383
+"S18",25.774,1,"new-house","a teddy bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"new-house","a cookie?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"new-house","an apple?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",0.288313747228383
+"S18",25.774,1,"new-house","a bottle?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.288313747228383
+"S18",25.774,1,"new-house","a cup?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",0.288313747228383
+"S18",25.774,1,"new-house","a car?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",0.288313747228383
+"S19",29.607,4,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"new-house","a cup?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.12131374722838
+"S19",29.607,4,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"new-house","a car?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.12131374722838
+"S19",29.607,4,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"new-house","a block?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.12131374722838
+"S19",29.607,4,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.12131374722838
+"S19",29.607,4,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.12131374722838
+"S19",29.607,4,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.12131374722838
+"S19",29.607,4,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.12131374722838
+"S19",29.607,4,"busy-babies","a bird?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S19",29.607,4,"busy-babies","a cat?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",4.12131374722838
+"S20",18.806,4,"new-house","a teddy bear?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"new-house","a bottle?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.67968625277162
+"S20",18.806,4,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a bunny?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a cow?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a horse?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a pig?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S20",18.806,4,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.67968625277162
+"S21",30.806,4,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","a cup?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","a ball?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","a bottle?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","a car?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","a cookie?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","a block?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"new-house","an apple?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a bear?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a cow?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a dog?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a horse?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a bird?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a pig?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S21",30.806,4,"busy-babies","a cat?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.32031374722838
+"S22",28.724,3,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.23831374722838
+"S22",28.724,3,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",3.23831374722838
+"S22",28.724,3,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"busy-babies","a horse?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",3.23831374722838
+"S22",28.724,3,"busy-babies","a pig?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.23831374722838
+"S22",28.724,3,"busy-babies","a cat?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"new-house","a cup?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",3.23831374722838
+"S22",28.724,3,"new-house","a car?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.23831374722838
+"S22",28.724,3,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yes","","Nod","","None","Verbal + gesture",3.23831374722838
+"S22",28.724,3,"new-house","a block?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",3.23831374722838
+"S22",28.724,3,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.23831374722838
+"S23",29.968,1,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a horse?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a bird?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a bear?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a cow?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"new-house","a ball?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"new-house","a block?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"new-house","a teddy bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.48231374722838
+"S23",29.968,1,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,0,0,1,"it is","","","","None","Verbal only",4.48231374722838
+"S23",29.968,1,"new-house","a bottle?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",4.48231374722838
+"S23",29.968,1,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,0,0,1,"it is","","","","None","Verbal only",4.48231374722838
+"S23",29.968,1,"new-house","a car?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",4.48231374722838
+"S24",30.321,3,"busy-babies","a bunny?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.83531374722838
+"S24",30.321,3,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.83531374722838
+"S24",30.321,3,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.83531374722838
+"S24",30.321,3,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.83531374722838
+"S24",30.321,3,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.83531374722838
+"S24",30.321,3,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.83531374722838
+"S24",30.321,3,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.83531374722838
+"S24",30.321,3,"busy-babies","a cat?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.83531374722838
+"S24",30.321,3,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.83531374722838
+"S24",30.321,3,"new-house","a cup?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.83531374722838
+"S24",30.321,3,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.83531374722838
+"S24",30.321,3,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.83531374722838
+"S24",30.321,3,"new-house","a car?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.83531374722838
+"S24",30.321,3,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.83531374722838
+"S24",30.321,3,"new-house","a block?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",4.83531374722838
+"S24",30.321,3,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.83531374722838
+"S25",30.871,4,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.38531374722838
+"S25",30.871,4,"new-house","a cup?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.38531374722838
+"S25",30.871,4,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.38531374722838
+"S25",30.871,4,"new-house","a car?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.38531374722838
+"S25",30.871,4,"new-house","a block?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"new-house","an apple?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",5.38531374722838
+"S25",30.871,4,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",5.38531374722838
+"S25",30.871,4,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.38531374722838
+"S25",30.871,4,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.38531374722838
+"S25",30.871,4,"busy-babies","a cat?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",5.38531374722838
+"S27",25.393,2,"new-house","a ball?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.0926862527716175
+"S27",25.393,2,"new-house","a block?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.0926862527716175
+"S27",25.393,2,"new-house","a teddy bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.0926862527716175
+"S27",25.393,2,"new-house","a cookie?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-0.0926862527716175
+"S27",25.393,2,"new-house","an apple?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.0926862527716175
+"S27",25.393,2,"new-house","a bottle?","false","21-26",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",-0.0926862527716175
+"S27",25.393,2,"new-house","a cup?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-0.0926862527716175
+"S27",25.393,2,"new-house","a car?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a cat?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a horse?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a bird?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a pig?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a bear?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a cow?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a dog?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-0.0926862527716175
+"S27",25.393,2,"busy-babies","a bunny?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-0.0926862527716175
+"S28",22.143,3,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-3.34268625277162
+"S28",22.143,3,"busy-babies","a cow?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.34268625277162
+"S28",22.143,3,"busy-babies","a dog?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-3.34268625277162
+"S28",22.143,3,"busy-babies","a horse?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yuh","","","","None","Verbal only",-3.34268625277162
+"S28",22.143,3,"busy-babies","a pig?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.34268625277162
+"S28",22.143,3,"busy-babies","a cat?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-3.34268625277162
+"S28",22.143,3,"new-house","a teddy bear?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.34268625277162
+"S28",22.143,3,"new-house","a cup?","false","21-26",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",-3.34268625277162
+"S28",22.143,3,"new-house","a ball?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.34268625277162
+"S28",22.143,3,"new-house","a bottle?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-3.34268625277162
+"S28",22.143,3,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.34268625277162
+"S28",22.143,3,"new-house","a cookie?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-3.34268625277162
+"S28",22.143,3,"new-house","a block?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-3.34268625277162
+"S28",22.143,3,"new-house","an apple?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-3.34268625277162
+"S29",18.321,2,"new-house","a ball?","false","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-7.16468625277162
+"S29",18.321,2,"new-house","a block?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-7.16468625277162
+"S29",18.321,2,"new-house","a cookie?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-7.16468625277162
+"S29",18.321,2,"new-house","an apple?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-7.16468625277162
+"S29",18.321,2,"new-house","a bottle?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-7.16468625277162
+"S29",18.321,2,"new-house","a cup?","true","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-7.16468625277162
+"S29",18.321,2,"new-house","a car?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-7.16468625277162
+"S29",18.321,2,"busy-babies","a cat?","false","16-19",0,"neither",0,1,0,0,1,1,0,"","no","Nod","","Verbal only","None",-7.16468625277162
+"S29",18.321,2,"busy-babies","a horse?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-7.16468625277162
+"S29",18.321,2,"busy-babies","a bird?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-7.16468625277162
+"S29",18.321,2,"busy-babies","a pig?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-7.16468625277162
+"S29",18.321,2,"busy-babies","a bear?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-7.16468625277162
+"S29",18.321,2,"busy-babies","a cow?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-7.16468625277162
+"S29",18.321,2,"busy-babies","a dog?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-7.16468625277162
+"S29",18.321,2,"busy-babies","a bunny?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-7.16468625277162
+"S30",30.821,1,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.33531374722838
+"S30",30.821,1,"busy-babies","a horse?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",5.33531374722838
+"S30",30.821,1,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"busy-babies","a bear?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"busy-babies","a cow?","true","28-32",0,"neither",0,1,0,1,1,1,0,"","no","Nod","Shook head","Verbal + gesture","None",5.33531374722838
+"S30",30.821,1,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"new-house","a ball?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"new-house","a block?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"new-house","a teddy bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",5.33531374722838
+"S30",30.821,1,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.33531374722838
+"S30",30.821,1,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",5.33531374722838
+"S30",30.821,1,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"mhm","","","","None","Verbal only",5.33531374722838
+"S31",17.786,3,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.69968625277162
+"S31",17.786,3,"new-house","a cup?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.69968625277162
+"S31",17.786,3,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.69968625277162
+"S31",17.786,3,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.69968625277162
+"S32",31.607,2,"new-house","a ball?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",6.12131374722838
+"S32",31.607,2,"new-house","a block?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"new-house","a teddy bear?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yeh","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"new-house","a cookie?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yeh","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,0,0,1,"mhm","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.12131374722838
+"S32",31.607,2,"new-house","a cup?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.12131374722838
+"S32",31.607,2,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeh","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"busy-babies","a cat?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.12131374722838
+"S32",31.607,2,"busy-babies","a horse?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeh","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"busy-babies","a bird?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.12131374722838
+"S32",31.607,2,"busy-babies","a pig?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yeh","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeh","","","","None","Verbal only",6.12131374722838
+"S32",31.607,2,"busy-babies","a cow?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.12131374722838
+"S32",31.607,2,"busy-babies","a dog?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.12131374722838
+"S32",31.607,2,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.12131374722838
+"S33",29.286,3,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",3.80031374722838
+"S33",29.286,3,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.80031374722838
+"S33",29.286,3,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.80031374722838
+"S33",29.286,3,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",3.80031374722838
+"S33",29.286,3,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"busy-babies","a cat?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",3.80031374722838
+"S33",29.286,3,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",3.80031374722838
+"S33",29.286,3,"new-house","a cup?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"new-house","a car?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.80031374722838
+"S33",29.286,3,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.80031374722838
+"S33",29.286,3,"new-house","a block?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.80031374722838
+"S33",29.286,3,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.80031374722838
+"S34",30.679,4,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.19331374722838
+"S34",30.679,4,"new-house","a cup?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.19331374722838
+"S34",30.679,4,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",5.19331374722838
+"S34",30.679,4,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",5.19331374722838
+"S34",30.679,4,"new-house","a car?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.19331374722838
+"S34",30.679,4,"new-house","a cookie?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.19331374722838
+"S34",30.679,4,"new-house","a block?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.19331374722838
+"S34",30.679,4,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.19331374722838
+"S34",30.679,4,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.19331374722838
+"S34",30.679,4,"busy-babies","a bear?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.19331374722838
+"S34",30.679,4,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.19331374722838
+"S34",30.679,4,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.19331374722838
+"S34",30.679,4,"busy-babies","a horse?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.19331374722838
+"S34",30.679,4,"busy-babies","a bird?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.19331374722838
+"S34",30.679,4,"busy-babies","a pig?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.19331374722838
+"S34",30.679,4,"busy-babies","a cat?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.19331374722838
+"S35",30.679,2,"new-house","a ball?","false","28-32",0,"neither",0,0,1,0,1,0,1,"yes","","Nod","","None","Verbal + gesture",5.19331374722838
+"S35",30.679,2,"new-house","a block?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.19331374722838
+"S35",30.679,2,"new-house","a teddy bear?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.19331374722838
+"S35",30.679,2,"new-house","a cookie?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.19331374722838
+"S35",30.679,2,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.19331374722838
+"S35",30.679,2,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.19331374722838
+"S35",30.679,2,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yes","","Nod","","None","Verbal + gesture",5.19331374722838
+"S35",30.679,2,"new-house","a car?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.19331374722838
+"S35",30.679,2,"busy-babies","a cat?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.19331374722838
+"S35",30.679,2,"busy-babies","a horse?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yes","","Nod","","None","Verbal + gesture",5.19331374722838
+"S35",30.679,2,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yes","","Nod","","None","Verbal + gesture",5.19331374722838
+"S35",30.679,2,"busy-babies","a pig?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",5.19331374722838
+"S35",30.679,2,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",5.19331374722838
+"S35",30.679,2,"busy-babies","a cow?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.19331374722838
+"S35",30.679,2,"busy-babies","a dog?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",5.19331374722838
+"S35",30.679,2,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","pointing","","Verbal only","None",5.19331374722838
+"S36",32.25,1,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"busy-babies","a horse?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.76431374722838
+"S36",32.25,1,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.76431374722838
+"S36",32.25,1,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.76431374722838
+"S36",32.25,1,"busy-babies","a cow?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",6.76431374722838
+"S36",32.25,1,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"new-house","a ball?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"new-house","a block?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.76431374722838
+"S36",32.25,1,"new-house","a teddy bear?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",6.76431374722838
+"S36",32.25,1,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","Nope","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.76431374722838
+"S36",32.25,1,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.76431374722838
+"S36",32.25,1,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.76431374722838
+"S36",32.25,1,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.76431374722838
+"S37",30.226,3,"busy-babies","a bunny?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"busy-babies","a dog?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"busy-babies","a cat?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"new-house","a cup?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"new-house","a car?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",4.74031374722838
+"S37",30.226,3,"new-house","a block?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S37",30.226,3,"new-house","an apple?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",4.74031374722838
+"S38",31.357,4,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.87131374722838
+"S38",31.357,4,"new-house","a cup?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.87131374722838
+"S38",31.357,4,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.87131374722838
+"S38",31.357,4,"new-house","a bottle?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yes","","Nod","","None","Verbal + gesture",5.87131374722838
+"S38",31.357,4,"new-house","a car?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.87131374722838
+"S38",31.357,4,"new-house","a cookie?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",5.87131374722838
+"S38",31.357,4,"new-house","a block?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.87131374722838
+"S38",31.357,4,"new-house","an apple?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.87131374722838
+"S38",31.357,4,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.87131374722838
+"S38",31.357,4,"busy-babies","a bear?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.87131374722838
+"S38",31.357,4,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.87131374722838
+"S38",31.357,4,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.87131374722838
+"S38",31.357,4,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.87131374722838
+"S38",31.357,4,"busy-babies","a bird?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.87131374722838
+"S38",31.357,4,"busy-babies","a pig?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.87131374722838
+"S38",31.357,4,"busy-babies","a cat?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",5.87131374722838
+"S39",29.065,1,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"busy-babies","a horse?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"busy-babies","a bird?","true","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.57931374722838
+"S39",29.065,1,"busy-babies","a cow?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.57931374722838
+"S39",29.065,1,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"busy-babies","a bunny?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"new-house","a ball?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"new-house","a block?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",3.57931374722838
+"S39",29.065,1,"new-house","a teddy bear?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",3.57931374722838
+"S39",29.065,1,"new-house","a cookie?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",3.57931374722838
+"S39",29.065,1,"new-house","a bottle?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",3.57931374722838
+"S39",29.065,1,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yah","","Nod","","None","Verbal + gesture",3.57931374722838
+"S39",29.065,1,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",3.57931374722838
+"S42",19.226,2,"new-house","a ball?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.25968625277162
+"S42",19.226,2,"new-house","an apple?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-6.25968625277162
+"S42",19.226,2,"new-house","a bottle?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.25968625277162
+"S42",19.226,2,"new-house","a cup?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-6.25968625277162
+"S42",19.226,2,"new-house","a car?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.25968625277162
+"S42",19.226,2,"busy-babies","a bird?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.25968625277162
+"S42",19.226,2,"busy-babies","a pig?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.25968625277162
+"S42",19.226,2,"busy-babies","a bear?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.25968625277162
+"S42",19.226,2,"busy-babies","a cow?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.25968625277162
+"S42",19.226,2,"busy-babies","a dog?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.25968625277162
+"S42",19.226,2,"busy-babies","a bunny?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.25968625277162
+"S43",30.714,2,"new-house","a ball?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"new-house","a block?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.22831374722838
+"S43",30.714,2,"new-house","a teddy bear?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"new-house","a cookie?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"new-house","an apple?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.22831374722838
+"S43",30.714,2,"new-house","a bottle?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",5.22831374722838
+"S43",30.714,2,"new-house","a car?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.22831374722838
+"S43",30.714,2,"busy-babies","a cat?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"busy-babies","a bird?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.22831374722838
+"S43",30.714,2,"busy-babies","a pig?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.22831374722838
+"S43",30.714,2,"busy-babies","a cow?","true","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.22831374722838
+"S43",30.714,2,"busy-babies","a dog?","false","28-32",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",5.22831374722838
+"S43",30.714,2,"busy-babies","a bunny?","false","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.22831374722838
+"S44",26.714,4,"new-house","a teddy bear?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",1.22831374722838
+"S44",26.714,4,"new-house","a cup?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",1.22831374722838
+"S44",26.714,4,"new-house","a ball?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",1.22831374722838
+"S44",26.714,4,"new-house","a cookie?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",1.22831374722838
+"S44",26.714,4,"new-house","a block?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",1.22831374722838
+"S44",26.714,4,"new-house","an apple?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a cow?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a dog?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a horse?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a bird?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S44",26.714,4,"busy-babies","a pig?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",1.22831374722838
+"S44",26.714,4,"busy-babies","a cat?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",1.22831374722838
+"S45",21.5,1,"busy-babies","a bird?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.98568625277162
+"S45",21.5,1,"busy-babies","a pig?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.98568625277162
+"S45",21.5,1,"busy-babies","a bear?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.98568625277162
+"S45",21.5,1,"busy-babies","a cow?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","nuh","","","Verbal only","None",-3.98568625277162
+"S45",21.5,1,"busy-babies","a dog?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.98568625277162
+"S45",21.5,1,"busy-babies","a bunny?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-3.98568625277162
+"S45",21.5,1,"new-house","a ball?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","a block?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yuh","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","a teddy bear?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","a cookie?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","an apple?","true","21-26",0,"true",1,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","a bottle?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","a cup?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.98568625277162
+"S45",21.5,1,"new-house","a car?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-3.98568625277162
+"S46",30.5,3,"busy-babies","a bunny?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.01431374722838
+"S46",30.5,3,"busy-babies","a bear?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",5.01431374722838
+"S46",30.5,3,"busy-babies","a cow?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","not","","","Verbal only","None",5.01431374722838
+"S46",30.5,3,"busy-babies","a dog?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.01431374722838
+"S46",30.5,3,"busy-babies","a horse?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.01431374722838
+"S46",30.5,3,"busy-babies","a bird?","false","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.01431374722838
+"S46",30.5,3,"busy-babies","a pig?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.01431374722838
+"S46",30.5,3,"busy-babies","a cat?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.01431374722838
+"S46",30.5,3,"new-house","a teddy bear?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.01431374722838
+"S46",30.5,3,"new-house","a cup?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.01431374722838
+"S46",30.5,3,"new-house","a ball?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",5.01431374722838
+"S46",30.5,3,"new-house","a bottle?","true","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",5.01431374722838
+"S46",30.5,3,"new-house","a car?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.01431374722838
+"S46",30.5,3,"new-house","a block?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",5.01431374722838
+"S46",30.5,3,"new-house","an apple?","false","28-32",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",5.01431374722838
+"S47",19.75,3,"busy-babies","a bunny?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-5.73568625277162
+"S47",19.75,3,"busy-babies","a bear?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-5.73568625277162
+"S47",19.75,3,"busy-babies","a cow?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"busy-babies","a dog?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-5.73568625277162
+"S47",19.75,3,"busy-babies","a bird?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-5.73568625277162
+"S47",19.75,3,"busy-babies","a pig?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"busy-babies","a cat?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"new-house","a cup?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"new-house","a ball?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"new-house","a bottle?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"new-house","a car?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S47",19.75,3,"new-house","an apple?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.73568625277162
+"S48",17.367,2,"new-house","a ball?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"new-house","a block?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"new-house","a teddy bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"new-house","a cookie?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-8.11868625277162
+"S48",17.367,2,"new-house","an apple?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-8.11868625277162
+"S48",17.367,2,"new-house","a bottle?","false","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-8.11868625277162
+"S48",17.367,2,"new-house","a cup?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"new-house","a car?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-8.11868625277162
+"S48",17.367,2,"busy-babies","a cat?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"busy-babies","a horse?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-8.11868625277162
+"S48",17.367,2,"busy-babies","a cow?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"busy-babies","a dog?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.11868625277162
+"S48",17.367,2,"busy-babies","a bunny?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-8.11868625277162
+"S49",19.483,4,"new-house","a cup?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"new-house","a bottle?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"new-house","a car?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"busy-babies","a bunny?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"busy-babies","a bird?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S49",19.483,4,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.00268625277162
+"S52",16.536,1,"busy-babies","a dog?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.94968625277162
+"S52",16.536,1,"new-house","a block?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-8.94968625277162
+"S52",16.536,1,"new-house","a cookie?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.94968625277162
+"S52",16.536,1,"new-house","an apple?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-8.94968625277162
+"S53",25.964,3,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a cow?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a dog?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a horse?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a bird?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a pig?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"busy-babies","a cat?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"new-house","a cup?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",0.47831374722838
+"S53",25.964,3,"new-house","a ball?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S53",25.964,3,"new-house","a block?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"new-house","a cup?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",0.47831374722838
+"S54",25.964,4,"new-house","a ball?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",0.47831374722838
+"S54",25.964,4,"new-house","a block?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"new-house","an apple?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"busy-babies","a bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",0.47831374722838
+"S54",25.964,4,"busy-babies","a cow?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"busy-babies","a horse?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"busy-babies","a pig?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.47831374722838
+"S54",25.964,4,"busy-babies","a cat?","true","21-26",0,"neither",0,0,0,1,0,1,0,"","","","Shook head","Gesture only","None",0.47831374722838
+"S55",18.517,3,"busy-babies","a cow?","false","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-6.96868625277162
+"S55",18.517,3,"busy-babies","a pig?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"new-house","a teddy bear?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"new-house","a cup?","false","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"new-house","a bottle?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"new-house","a car?","false","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S55",18.517,3,"new-house","a block?","false","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.96868625277162
+"S56",26.258,2,"new-house","a block?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S56",26.258,2,"new-house","a teddy bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.772313747228381
+"S56",26.258,2,"new-house","a cookie?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",0.772313747228381
+"S56",26.258,2,"new-house","an apple?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S56",26.258,2,"new-house","a bottle?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.772313747228381
+"S56",26.258,2,"new-house","a cup?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S56",26.258,2,"new-house","a car?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",0.772313747228381
+"S56",26.258,2,"busy-babies","a cat?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",0.772313747228381
+"S56",26.258,2,"busy-babies","a horse?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",0.772313747228381
+"S56",26.258,2,"busy-babies","a bird?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S56",26.258,2,"busy-babies","a pig?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",0.772313747228381
+"S56",26.258,2,"busy-babies","a bear?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S56",26.258,2,"busy-babies","a cow?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S56",26.258,2,"busy-babies","a dog?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",0.772313747228381
+"S56",26.258,2,"busy-babies","a bunny?","false","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",0.772313747228381
+"S57",22.065,2,"new-house","a ball?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"new-house","a block?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-3.42068625277162
+"S57",22.065,2,"new-house","a teddy bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"new-house","a cookie?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.42068625277162
+"S57",22.065,2,"new-house","an apple?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.42068625277162
+"S57",22.065,2,"new-house","a bottle?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"new-house","a cup?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-3.42068625277162
+"S57",22.065,2,"busy-babies","a cat?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"busy-babies","a horse?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"busy-babies","a bird?","true","21-26",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-3.42068625277162
+"S57",22.065,2,"busy-babies","a pig?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"busy-babies","a cow?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"busy-babies","a dog?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.42068625277162
+"S57",22.065,2,"busy-babies","a bunny?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-3.42068625277162
+"S58",25,3,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"busy-babies","a bear?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.485686252771618
+"S58",25,3,"busy-babies","a cow?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yuh","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"busy-babies","a dog?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"busy-babies","a horse?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.485686252771618
+"S58",25,3,"busy-babies","a bird?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.485686252771618
+"S58",25,3,"busy-babies","a pig?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"busy-babies","a cat?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"new-house","a teddy bear?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"new-house","a cup?","false","21-26",0,"false",1,1,0,0,0,1,0,"","nah","","","Verbal only","None",-0.485686252771618
+"S58",25,3,"new-house","a ball?","true","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.485686252771618
+"S58",25,3,"new-house","a bottle?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"new-house","a car?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.485686252771618
+"S58",25,3,"new-house","a cookie?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"new-house","a block?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-0.485686252771618
+"S58",25,3,"new-house","an apple?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-0.485686252771618
+"S59",32.516,1,"busy-babies","a cat?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",7.03031374722838
+"S59",32.516,1,"busy-babies","a horse?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"busy-babies","a bird?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"busy-babies","a pig?","false","28-32",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",7.03031374722838
+"S59",32.516,1,"busy-babies","a bear?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"busy-babies","a cow?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"busy-babies","a dog?","false","28-32",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",7.03031374722838
+"S59",32.516,1,"busy-babies","a bunny?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",7.03031374722838
+"S59",32.516,1,"new-house","a ball?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",7.03031374722838
+"S59",32.516,1,"new-house","a block?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"new-house","a teddy bear?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",7.03031374722838
+"S59",32.516,1,"new-house","a cookie?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",7.03031374722838
+"S59",32.516,1,"new-house","an apple?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"new-house","a bottle?","false","28-32",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",7.03031374722838
+"S59",32.516,1,"new-house","a cup?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S59",32.516,1,"new-house","a car?","true","28-32",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",7.03031374722838
+"S60",24.387,3,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"busy-babies","a bear?","false","21-26",0,"false",1,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S60",24.387,3,"busy-babies","a cow?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"busy-babies","a cat?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","a teddy bear?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","a cup?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","a ball?","true","21-26",0,"true",1,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","a bottle?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-1.09868625277162
+"S60",24.387,3,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","a cookie?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","a block?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S60",24.387,3,"new-house","an apple?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.09868625277162
+"S61",18.857,3,"busy-babies","a bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.62868625277162
+"S61",18.857,3,"busy-babies","a bird?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.62868625277162
+"S61",18.857,3,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.62868625277162
+"S61",18.857,3,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.62868625277162
+"S61",18.857,3,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,1,0,1,"","","Nod","","None","Gesture only",-6.62868625277162
+"S63",21.548,2,"new-house","a ball?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"new-house","a teddy bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"new-house","a cookie?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"new-house","an apple?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"new-house","a bottle?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"new-house","a cup?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"busy-babies","a cat?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"busy-babies","a horse?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"busy-babies","a bird?","true","21-26",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-3.93768625277162
+"S63",21.548,2,"busy-babies","a pig?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"busy-babies","a cow?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"busy-babies","a dog?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S63",21.548,2,"busy-babies","a bunny?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-3.93768625277162
+"S64",23.903,1,"busy-babies","a cat?","false","21-26",0,"false",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a horse?","true","21-26",0,"true",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a bird?","true","21-26",0,"true",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a pig?","false","21-26",0,"false",1,0,0,0,0,0,0,"","","","","None","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a bear?","true","21-26",0,"false",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a cow?","true","21-26",0,"true",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a dog?","false","21-26",0,"false",1,0,0,0,0,0,0,"","","","","None","None",-1.58268625277162
+"S64",23.903,1,"busy-babies","a bunny?","false","21-26",0,"false",1,0,0,0,0,0,0,"","","","","None","None",-1.58268625277162
+"S64",23.903,1,"new-house","a ball?","false","21-26",0,"neither",0,1,0,1,0,1,0,"","no","","turned head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"new-house","a block?","true","21-26",0,"true",1,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.58268625277162
+"S64",23.903,1,"new-house","a teddy bear?","false","21-26",0,"false",1,0,0,0,0,0,0,"","","","","None","None",-1.58268625277162
+"S64",23.903,1,"new-house","a cookie?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.58268625277162
+"S64",23.903,1,"new-house","an apple?","true","21-26",0,"true",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"new-house","a bottle?","false","21-26",0,"false",1,0,0,0,0,0,0,"","","","","None","None",-1.58268625277162
+"S64",23.903,1,"new-house","a cup?","true","21-26",0,"true",1,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-1.58268625277162
+"S64",23.903,1,"new-house","a car?","true","21-26",0,"true",1,1,0,0,0,1,0,"","no","","","Verbal only","None",-1.58268625277162
+"S68",17.767,1,"busy-babies","a cat?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.71868625277162
+"S68",17.767,1,"busy-babies","a bird?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.71868625277162
+"S68",17.767,1,"new-house","a ball?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yah","","","","None","Verbal only",-7.71868625277162
+"S68",17.767,1,"new-house","a cup?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.71868625277162
+"S70",22.3,4,"new-house","an apple?","false","21-26",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-3.18568625277162
+"S70",22.3,4,"busy-babies","a horse?","false","21-26",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-3.18568625277162
+"S71",17.419,2,"busy-babies","a bird?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.06668625277162
+"S71",17.419,2,"busy-babies","a dog?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.06668625277162
+"S71",17.419,2,"busy-babies","a bunny?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.06668625277162
+"S72",17.033,1,"busy-babies","a horse?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.45268625277162
+"S72",17.033,1,"new-house","a teddy bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.45268625277162
+"S72",17.033,1,"new-house","an apple?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.45268625277162
+"S72",17.033,1,"new-house","a cup?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.45268625277162
+"S73",17.516,2,"new-house","a ball?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.96968625277162
+"S73",17.516,2,"new-house","a block?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-7.96968625277162
+"S73",17.516,2,"new-house","a teddy bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.96968625277162
+"S73",17.516,2,"new-house","a car?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.96968625277162
+"S73",17.516,2,"busy-babies","a horse?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-7.96968625277162
+"S73",17.516,2,"busy-babies","a pig?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.96968625277162
+"S73",17.516,2,"busy-babies","a bear?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-7.96968625277162
+"S76",19.367,4,"new-house","a cup?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-6.11868625277162
+"S76",19.367,4,"new-house","a ball?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-6.11868625277162
+"S76",19.367,4,"new-house","a bottle?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-6.11868625277162
+"S76",19.367,4,"new-house","a car?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","nuh uh","","","Verbal only","None",-6.11868625277162
+"S76",19.367,4,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.11868625277162
+"S76",19.367,4,"busy-babies","a cow?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-6.11868625277162
+"S76",19.367,4,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.11868625277162
+"S76",19.367,4,"busy-babies","a horse?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-6.11868625277162
+"S76",19.367,4,"busy-babies","a bird?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-6.11868625277162
+"S76",19.367,4,"busy-babies","a pig?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.11868625277162
+"S76",19.367,4,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.11868625277162
+"S77",18.733,4,"new-house","a cup?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"new-house","a bottle?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"new-house","a car?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a bunny?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a cow?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a horse?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a bird?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a pig?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.75268625277162
+"S77",18.733,4,"busy-babies","a cat?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-6.75268625277162
+"S79",18.581,4,"new-house","a car?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.90468625277162
+"S79",18.581,4,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.90468625277162
+"S79",18.581,4,"busy-babies","a bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-6.90468625277162
+"S80",17.194,1,"busy-babies","a bird?","true","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.29168625277162
+"S80",17.194,1,"busy-babies","a bunny?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.29168625277162
+"S80",17.194,1,"new-house","a ball?","false","16-19",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",-8.29168625277162
+"S80",17.194,1,"new-house","a block?","true","16-19",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-8.29168625277162
+"S80",17.194,1,"new-house","a teddy bear?","false","16-19",0,"neither",0,0,1,0,1,0,1,"yeah","","Nod","","None","Verbal + gesture",-8.29168625277162
+"S80",17.194,1,"new-house","a cookie?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yeah","","","","None","Verbal only",-8.29168625277162
+"S80",17.194,1,"new-house","a bottle?","false","16-19",0,"neither",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",-8.29168625277162
+"S83",16.677,4,"new-house","a teddy bear?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"new-house","a ball?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"new-house","a bottle?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"new-house","a car?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"new-house","a cookie?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"new-house","a block?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a bunny?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a cow?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a horse?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a bird?","false","16-19",0,"neither",0,0,1,0,0,0,1,"yes","","","","None","Verbal only",-8.80868625277162
+"S83",16.677,4,"busy-babies","a pig?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S83",16.677,4,"busy-babies","a cat?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-8.80868625277162
+"S88",24.323,4,"new-house","a cup?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"new-house","a ball?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-1.16268625277162
+"S88",24.323,4,"new-house","a bottle?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"new-house","a car?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"new-house","a block?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a bunny?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a bear?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a cow?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a dog?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a horse?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a bird?","false","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a pig?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S88",24.323,4,"busy-babies","a cat?","true","21-26",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-1.16268625277162
+"S89",19.867,3,"busy-babies","a bunny?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a bear?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a cow?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a dog?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a horse?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a bird?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a pig?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"busy-babies","a cat?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.61868625277162
+"S89",19.867,3,"new-house","a teddy bear?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"new-house","a cup?","false","16-19",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-5.61868625277162
+"S89",19.867,3,"new-house","a ball?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","no","","","Verbal only","None",-5.61868625277162
+"S89",19.867,3,"new-house","a bottle?","true","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"new-house","a car?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S89",19.867,3,"new-house","a cookie?","true","16-19",0,"neither",0,1,0,0,0,1,0,"","nah","","","Verbal only","None",-5.61868625277162
+"S89",19.867,3,"new-house","a block?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","pointing","","None","None",-5.61868625277162
+"S89",19.867,3,"new-house","an apple?","false","16-19",0,"neither",0,0,0,0,0,0,0,"","","","","None","None",-5.61868625277162
+"S90",31.548,2,"new-house","a ball?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"new-house","a block?","true","28-32",0,"true",1,1,0,0,0,1,0,"","nah","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"new-house","a teddy bear?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"new-house","a cookie?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"new-house","an apple?","true","28-32",0,"true",1,0,1,0,0,0,1,"yah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"new-house","a bottle?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"new-house","a cup?","true","28-32",0,"true",1,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"new-house","a car?","true","28-32",0,"true",1,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"busy-babies","a cat?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"busy-babies","a horse?","true","28-32",0,"true",1,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"busy-babies","a bird?","true","28-32",0,"true",1,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"busy-babies","a pig?","false","28-32",0,"true",0,1,0,1,0,1,0,"","no","","Shook head","Verbal + gesture","None",6.06231374722838
+"S90",31.548,2,"busy-babies","a bear?","true","28-32",0,"true",1,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"busy-babies","a cow?","true","28-32",0,"true",1,0,1,0,0,0,1,"yeah","","","","None","Verbal only",6.06231374722838
+"S90",31.548,2,"busy-babies","a dog?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
+"S90",31.548,2,"busy-babies","a bunny?","false","28-32",0,"true",0,1,0,0,0,1,0,"","no","","","Verbal only","None",6.06231374722838
